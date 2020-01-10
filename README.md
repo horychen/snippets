@@ -28,12 +28,10 @@ Userful snippets
 	"translate_tabs_to_spaces": true,
 	"update_check": false
 }
-
 ```
 
 ## Key bindings
 ```
-
 [
     { "keys": ["ctrl+o"], "command": "show_panel", "args": {"panel": "output.exec"} },
     { "keys": ["alt+z"], "command": "unfold" },
@@ -43,7 +41,7 @@ Userful snippets
 ```
 
 ## !C_GCC.sublime-build
-···
+```
 {
     "working_dir": "$file_path",
     "cmd": "gcc -Wall $file_name -o $file_base_name",
@@ -60,5 +58,4 @@ Userful snippets
         }
     ]
 }
-
-···
+```
