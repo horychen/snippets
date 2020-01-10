@@ -5,12 +5,13 @@ Userful snippets
 > Environment: Windows, WSL
 1. cd ~/.ssh, make sure there are no existing files named id_rsa*. If so, rm id_rsa*. This is possible if you have done this before and you forget how you did it, like me.
 2. cd ~, ssh-keygen -t rsa, enter, enter, enter...
-3. ssh-add -l, if it says "The agent has no identities.", run ssh-add ~/.ssh/id_rsa, is says "Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)".
+3. ssh-add -l, if it says "The agent has no identities.", run ssh-add ~/.ssh/id_rsa, is says "Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)". If it prompts "no authetification agent", you need to manually start ssh agent by eval $(ssh-agent -s).
 4. Test with ssh -T git@github.com, it says: "Hi horychen! You've successfully authenticated, but GitHub does not provide shell access."
 5. Add public key to "https://github.com/settings/keys". To obtain the public key, use cat ~/.ssh/id_rsa.pub to print and copy from the terminal you are using.
 6. git remote set-url origin git@github.com:horychen/snippets.git
-
-Done.
+7. If you do not want to start ssh agent everytime, see https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login/38980986
+8. After you add those snippets from step 7 to .bashrc (I do not have .bash_profile), you need to compile it by source ~/.bashrc.
+9. Now you can git pull and git push without entering your user account and password anymore for this repo.
 
 # Sublime Text 3
 ## User settings
