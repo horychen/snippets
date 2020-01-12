@@ -71,3 +71,21 @@ Userful snippets
     ]
 }
 ```
+
+## Packages
+- BracketHighlighter
+- Dayle Rees Color Schemes
+- DocBlockr
+- Emmt
+- FileBrowser
+- GitGutter
+- JsPrettier
+- Materialize
+- Package Control
+- PackageResourceViewer
+- Predawn
+- Predawn Monokai
+- SideBarEnhancements
+- SideBarTools
+- SublimeLinter
+- Theme - Soda
