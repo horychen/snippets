@@ -27,6 +27,31 @@ rem ref: https://stackoverflow.com/questions/26551/how-can-i-pass-arguments-to-a
 rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- font will be lost
 ```
 
+# AutoHotkey (use ".ahk to .exe" tool to convert .ahk file to .exe file)
+```
+#NoEnv
+#Warn
+SendMode Input  
+SetWorkingDir %A_ScriptDir%  
+SetTitleMatchMode 2
+
+#q:: closePythonPlot() 
+closePythonPlot()
+{
+    isExist = 1
+    while isExist
+    {
+        PostMessage, 0x112, 0xF060,,, Figure
+        IfWinNotExist, Figure
+        {
+            isExist = 0
+        }
+    }
+}
+
+#o::  Winset, Alwaysontop, , A
+```
+
 # Sublime Text 3
 ## User settings
 ```
