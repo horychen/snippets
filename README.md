@@ -13,6 +13,20 @@ Userful snippets
 8. After you add those snippets from step 7 to .bashrc (I do not have .bash_profile), you need to compile it by source ~/.bashrc.
 9. Now you can git pull and git push without entering your user account and password anymore for this repo.
 
+# PDF2EPS (texlive is installed)
+```batch
+echo off
+set arg1=%1
+shift
+shift
+pdftops %arg1%.pdf %arg1%-temp.ps
+ps2eps %arg1%-temp.ps
+move %arg1%-temp.eps %arg1%.eps
+
+rem ref: https://stackoverflow.com/questions/26551/how-can-i-pass-arguments-to-a-batch-file
+rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- font will be lost
+```
+
 # Sublime Text 3
 ## User settings
 ```
