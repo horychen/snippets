@@ -5,7 +5,7 @@ Userful snippets
 > Environment: Windows, WSL
 1. cd ~/.ssh, make sure there are no existing files named id_rsa*. If so, rm id_rsa*. This is possible if you have done this before and you forget how you did it, like me.
 2. cd ~, ssh-keygen -t rsa, enter, enter, enter...
-3. ssh-add -l, if it says "The agent has no identities.", run ssh-add ~/.ssh/id_rsa, is says "Identity added: ~/.ssh/id_rsa (~/.ssh/id_rsa)". If it prompts "no authetification agent", you need to manually start ssh agent by eval $(ssh-agent -s).
+3. ssh-add -l, if it says "The agent has no identities.", run ssh-add ~/.ssh/id_rsa, and it says "Identity added: ~/.ssh/id\_rsa (~/.ssh/id\_rsa)". If it prompts "no authetification agent", you need to manually start ssh agent by eval $(ssh-agent -s).
 4. Test with ssh -T git@github.com, it says: "Hi horychen! You've successfully authenticated, but GitHub does not provide shell access."
 5. Add public key to "https://github.com/settings/keys". To obtain the public key, use cat ~/.ssh/id_rsa.pub to print and copy from the terminal you are using.
 6. git remote set-url origin git@github.com:horychen/snippets.git
