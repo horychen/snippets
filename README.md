@@ -13,7 +13,7 @@ Userful snippets
 8. After you add those snippets from step 7 to .bashrc (I do not have .bash_profile), you need to compile it by source ~/.bashrc.
 9. Now you can git pull and git push without entering your user account and password anymore for this repo.
 
-# PDF2EPS (texlive is installed)
+# pdf2eps (texlive is installed)
 ```batch
 echo off
 set arg1=%1
@@ -51,6 +51,12 @@ closePythonPlot()
 
 #o::  Winset, Alwaysontop, , A
 ```
+
+# Code Composer Studio 9 Setting
+1. Project -> Import CCS Project
+2. Window -> Preferences -> General -> Content Types -> C Source File -> Default Encoding, type in UTF-8 and update, and restart CCS9.
+3. Window -> Preferences -> General -> Colors and Fonts -> Text Font, select font consolas and font size of 12.
+4. to be updated.
 
 # Sublime Text 3
 ## User settings
