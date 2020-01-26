@@ -58,6 +58,9 @@ closePythonPlot()
 3. Window -> Preferences -> General -> Colors and Fonts -> Text Font, select font consolas and font size of 12.
 4. to be updated.
 
+# English Windows 10 Language for Non-Unicode Programs
+Winkey -> type in "region settings" -> related settings -> Additional data, time & regional settings -> Region -> Administrative tab -> Change system locale... -> Chinese (*)
+
 # Sublime Text 3
 ## User settings
 ```
