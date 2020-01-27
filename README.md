@@ -61,11 +61,13 @@ closePythonPlot()
 # English Windows 10 Language for Non-Unicode Programs
 Winkey -> type in "region settings" -> related settings -> Additional data, time & regional settings -> Region -> Administrative tab -> Change system locale... -> Chinese (*)
 
-# WinEdt 10.3
-Options -> Preferences -> Unicode
-Enable UTF-8 Formart for Modes: ```*;UTF-8;EDT;INI|UNICODE;UTF-7;ACP;OEM```
-Enable ANSI Format for Modes: ```ACP|UNICODE;UTF-8;UTF-7;OEM```
-
+# WinEdt 10.3 and SumatraPDF
+- WinEdt -> Options -> Preferences -> Unicode
+	- Enable UTF-8 Formart for Modes: ```*;UTF-8;EDT;INI|UNICODE;UTF-7;ACP;OEM```
+	- Enable ANSI Format for Modes: ```ACP|UNICODE;UTF-8;UTF-7;OEM```
+- WinEdt -> Execution Modes -> LaTeX or XeLaTeX -> Start Viewer -> Forward Search -> Use shift F8 to forward search
+- SumatraPDF -> File -> Setting -> Options -> Set inverse search command-line
+	- "D:\Program Files\WinEdt Team\WinEdt 10\WinEdt.exe" -C="WinEdt 10.3" "[Open(|%f|);SelPar(%l,8);]"
 
 # Sublime Text 3
 ## User settings
