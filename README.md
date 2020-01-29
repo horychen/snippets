@@ -68,6 +68,14 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 - WinEdt -> Execution Modes -> LaTeX or XeLaTeX -> Start Viewer -> Forward Search -> Use shift F8 to forward search
 - SumatraPDF -> File -> Setting -> Options -> Set inverse search command-line
 	- "D:\Program Files\WinEdt Team\WinEdt 10\WinEdt.exe" -C="WinEdt 10.3" "[Open(|%f|);SelPar(%l,8);]"
+- Options -> Toolbar -> 2 row Small
+- Shortcuts:
+	- Ctrl+Shift+Alt+right arrow = comment
+	- Ctrl+Shift+H = set current directory
+	- Ctrl+Shift+C = Hide output window
+	- Ctrl+Enter = Auto fill
+	- Shift+Enter = Auto spell
+	
 
 # Sublime Text 3
 ## User settings
