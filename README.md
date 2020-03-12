@@ -27,6 +27,11 @@ rem ref: https://stackoverflow.com/questions/26551/how-can-i-pass-arguments-to-a
 rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- font will be lost
 ```
 
+# LaTeX
+latexmk -pdflatex="pdflatex -file-line-error -synctex=1" -pdf digest
+latexmk -pdf -e "$pdflatex=q/xelatex %O %S/" document.tex
+:: https://stackoverflow.com/questions/3124273/compile-xelatex-tex-file-with-latexmk
+
 # AutoHotkey (use ".ahk to .exe" tool to convert .ahk file to .exe file)
 ```
 #NoEnv
