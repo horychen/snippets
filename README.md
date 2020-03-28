@@ -3,17 +3,29 @@ Userful snippets
 
 # Anaconda 3
 1. Revise history.py
-```
-File "D:\Users\horyc\Anaconda3\lib\site-packages\pyreadline\lineeditor\history.py", line 82, in read_history_file
-    for line in open(filename, 'r'):
-UnicodeDecodeError: 'gbk' codec can't decode byte 0x81 in position 2260: illegal multibyte sequence
-```
-Go to line 82 of history.py, and change it to ```for line in open(filename, 'r', encoding='utf-8'):```.
-2. Install control. conda install -c conda-forge control (read: https://python-control.readthedocs.io/en/0.8.3/intro.html#installation)
+	```
+	File "D:\Users\horyc\Anaconda3\lib\site-packages\pyreadline\lineeditor\history.py", line 82, in read_history_file
+	    for line in open(filename, 'r'):
+	UnicodeDecodeError: 'gbk' codec can't decode byte 0x81 in position 2260: illegal multibyte sequence
+	```
+	Go to line 82 of history.py, and change it to ```for line in open(filename, 'r', encoding='utf-8'):```.
+
+2. Install control. (read: https://python-control.readthedocs.io/en/0.8.3/intro.html#installation)
+	```conda install -c conda-forge control ```
+
 3. Install pygmo via conda.
+	```
+	conda config --add channels conda-forge
+	conda install pygmo
+	```
+
 4. pip install pyx.
+
 5. pip install pyfemm.
-6. Put the path of open-ssl (D:\Users\horyc\Anaconda3\pkgs\pyopenssl-19.1.0-py37_0\Library\bin) to system enviroment variable path.
+
+6. pip install you-get.
+
+6. Put the path of open-ssl (D:\Users\horyc\Anaconda3\pkgs\pyopenssl-19.1.0-py37_0\Library\bin) to system enviroment variable path. The path depends on Anaconda version. Mine is Anaconda 2020-03.
 
 # My ways to use SSH with Github
 > Environment: Windows, WSL
