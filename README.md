@@ -25,7 +25,10 @@ Userful snippets
 
 6. pip install you-get.
 
-6. Put the path of open-ssl (D:\Users\horyc\Anaconda3\pkgs\pyopenssl-19.1.0-py37_0\Library\bin) to system enviroment variable path. The path depends on Anaconda version. Mine is Anaconda 2020-03.
+7. Put the path of open-ssl (D:\Users\horyc\Anaconda3\pkgs\pyopenssl-19.1.0-py37_0\Library\bin) to system enviroment variable path. The path depends on Anaconda version. Mine is Anaconda 2020-03.
+
+8. If you encounter "The procesure entry point not located" error, see https://stackoverflow.com/questions/59645179/update-anaconda-failed-entry-point-not-found 
+	> Removed pythoncom37.dll and pywintypes37 from C:\Windows\System32.
 
 # My ways to use SSH with Github
 > Environment: Windows, WSL
