@@ -1,7 +1,7 @@
 # Snippets
 Userful snippets
 
-# Anaconda 3
+# Anaconda 3 (after installing it, I tend to do what is follows)
 1. Revise history.py
 	```
 	File "D:\Users\horyc\Anaconda3\lib\site-packages\pyreadline\lineeditor\history.py", line 82, in read_history_file
@@ -179,11 +179,13 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 - GitGutter
 - JsPrettier
 - Materialize
-- Package Control
+- *Package Control*
 - PackageResourceViewer
 - Predawn
 - Predawn Monokai
-- SideBarEnhancements
+- *SideBarEnhancements*
 - SideBarTools
 - SublimeLinter
 - Theme - Soda
+- *Outline* (Ctrl+Shfit+P type in Browse Mode, Dark mode: {"color_scheme": "Packages/Outline/outline-Dark.hidden-tmTheme"}, see https://packagecontrol.io/packages/Outline
+
