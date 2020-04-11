@@ -1,6 +1,17 @@
 # Snippets
 Userful snippets
 
+# JMAG Designer: set cases
+```python
+app = designer.GetApplication()
+app.SetCurrentStudy(u"2D_DPNV@60Hz_Ime=13A_Ise=0A_s=Cases")
+app.View().SetCurrentCase(1)
+which_variable = 0
+for index, slip in enumerate([1, 0.8, 0.6, 0.4, 0.3, 0.2, 0.1, 0.09, 0.08, 0.07, 0.04, 0.01, 0]):
+	app.GetModel(u"Motor Performance_Torque vs Speed(Slip)_13Arms").GetStudy(u"2D_DPNV@60Hz_Ime=13A_Ise=0A_s=Cases").GetDesignTable().AddCase()
+	app.GetModel(u"Motor Performance_Torque vs Speed(Slip)_13Arms").GetStudy(u"2D_DPNV@60Hz_Ime=13A_Ise=0A_s=Cases").GetDesignTable().SetValue(index+1, which_variable, slip)
+```
+
 # Anaconda 3 (after installing it, I tend to do what is follows)
 1. Revise history.py
 	```
