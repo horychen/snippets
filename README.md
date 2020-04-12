@@ -1,7 +1,10 @@
 # Snippets
 Userful snippets
 
-# JMAG Designer: set cases
+# Rstudio
+- Tools-Code-Saving-Default text encoding: set to UTF-8
+
+# JMAG Designer: set cases via python
 ```python
 app = designer.GetApplication()
 app.SetCurrentStudy(u"2D_DPNV@60Hz_Ime=13A_Ise=0A_s=Cases")
