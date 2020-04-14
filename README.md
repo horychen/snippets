@@ -62,14 +62,18 @@ Finally I have found the correct way to crop the white space of a pdf figure pro
 > https://tex.stackexchange.com/questions/20883/how-to-convert-pdf-to-eps/133239
 
 In short, create a new batch file named "pdf2eps" for example and paste in the below content:
-> rem pdf2eps <page number> <pdf file without ext>  
-> echo off  
-> pdfcrop "%2.pdf" "%2-temp.pdf"  
-> pdftops -f %1 -l %1 -eps "%2-temp.pdf" "%2.eps"  
-> del  "%2-temp.pdf"  
+```
+rem pdf2eps <page number> <pdf file without ext>  
+echo off  
+pdfcrop "%2.pdf" "%2-temp.pdf"  
+pdftops -f %1 -l %1 -eps "%2-temp.pdf" "%2.eps"  
+del  "%2-temp.pdf"  
+```
 
 Now change directory to the directory with the pdf file and open cmd.exe and type in:
-> pdf2eps_crop 1 pdf-file-name-without-suffix
+```
+pdf2eps_crop 1 <pdf-file-name-without-suffix>
+```
 
 # pdf2eps (texlive is installed)
 ```batch
