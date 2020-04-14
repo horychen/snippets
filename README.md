@@ -58,15 +58,15 @@ for index, slip in enumerate([1, 0.8, 0.6, 0.4, 0.3, 0.2, 0.1, 0.09, 0.08, 0.07,
 
 # pdf2eps with crop (remove white space)
 Finally I have found the correct way to crop the white space of a pdf figure produced by Python.
-> Refer to:
+> Refer to:  
 > https://tex.stackexchange.com/questions/20883/how-to-convert-pdf-to-eps/133239
 
 In short, create a new batch file named "pdf2eps" for example and paste in the below content:
-> rem pdf2eps <page number> <pdf file without ext>
-> echo off
-> pdfcrop "%2.pdf" "%2-temp.pdf"
-> pdftops -f %1 -l %1 -eps "%2-temp.pdf" "%2.eps"
-> del  "%2-temp.pdf"
+> rem pdf2eps <page number> <pdf file without ext>  
+> echo off  
+> pdfcrop "%2.pdf" "%2-temp.pdf"  
+> pdftops -f %1 -l %1 -eps "%2-temp.pdf" "%2.eps"  
+> del  "%2-temp.pdf"  
 
 Now change directory to the directory with the pdf file and open cmd.exe and type in:
 > pdf2eps_crop 1 pdf-file-name-without-suffix
