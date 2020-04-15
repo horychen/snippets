@@ -89,7 +89,11 @@ rem ref: https://stackoverflow.com/questions/26551/how-can-i-pass-arguments-to-a
 rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- font will be lost
 ```
 
-# LaTeX
+# LaTeXmk
+my favorite:
+```
+latexmk -pdflatex="pdflatex -file-line-error -synctex=1 -halt-on-error -sleep=1 -interaction=nonstopmode" -pdf -pvc -view=none <Tex-file>
+```
 pdfLaTeX with synctex
 ```
 latexmk -pdflatex="pdflatex -file-line-error -synctex=1" -pdf <tex-file-name>
