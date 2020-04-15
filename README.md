@@ -90,9 +90,15 @@ rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- fon
 ```
 
 # LaTeX
-latexmk -pdflatex="pdflatex -file-line-error -synctex=1" -pdf digest
+pdfLaTeX with synctex
+```
+latexmk -pdflatex="pdflatex -file-line-error -synctex=1" -pdf <tex-file-name>
+```
+XeLaTeX 
+```
 latexmk -pdf -e "$pdflatex=q/xelatex %O %S/" document.tex
 :: https://stackoverflow.com/questions/3124273/compile-xelatex-tex-file-with-latexmk
+```
 
 # AutoHotkey (use ".ahk to .exe" tool to convert .ahk file to .exe file)
 ```
