@@ -105,7 +105,20 @@ rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- fon
 ```
 
 # LaTeXmk
-my favorite:
+Overleaf: 
+> https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten
+```
+:: make sure you have "latexmk" file from overleaf in the directory(https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten)
+
+:: Renmae your .tex file to "output.tex".
+
+:: Option 1
+latexmk -pdf -synctex=1 -halt-on-error
+
+:: Option 2
+::latexmk -pdf -synctex=1 -halt-on-error -pvc -view=none :: <- latexmk will panic if you error with references.
+```
+preview continuously:
 ```
 latexmk -pdflatex="pdflatex -file-line-error -synctex=1 -halt-on-error -sleep=1 -interaction=nonstopmode" -pdf -pvc -view=none <Tex-file>
 ```
