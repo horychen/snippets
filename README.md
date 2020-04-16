@@ -4,7 +4,8 @@ Userful snippets
 # Rstudio
 - Tools-Code-Saving-Default text encoding: set to UTF-8
 
-# JMAG Designer: set cases via python
+# JMAG Designer Script
+Set cases via python---slip
 ```python
 app = designer.GetApplication()
 app.SetCurrentStudy(u"2D_DPNV@60Hz_Ime=13A_Ise=0A_s=Cases")
@@ -13,6 +14,21 @@ which_variable = 0
 for index, slip in enumerate([1, 0.8, 0.6, 0.4, 0.3, 0.2, 0.1, 0.09, 0.08, 0.07, 0.04, 0.01, 0]):
 	app.GetModel(u"Motor Performance_Torque vs Speed(Slip)_13Arms").GetStudy(u"2D_DPNV@60Hz_Ime=13A_Ise=0A_s=Cases").GetDesignTable().AddCase()
 	app.GetModel(u"Motor Performance_Torque vs Speed(Slip)_13Arms").GetStudy(u"2D_DPNV@60Hz_Ime=13A_Ise=0A_s=Cases").GetDesignTable().SetValue(index+1, which_variable, slip)
+```
+Set cases via python---current amplitude
+```python
+# -*- coding: utf-8 -*-
+app = designer.GetApplication()
+app.SetCurrentStudy(u"ind88888Tran2TSS-ForceCapabilityTest-Rated")
+app.View().SetCurrentCase(1)
+
+DW_AMP = 77.3295312916975
+BW_AMP = 3.96561698931782
+
+for ind in range(20):
+	app.GetModel(u"ind88888").GetStudy(u"ind88888Tran2TSS-ForceCapabilityTest-Rated").GetDesignTable().AddCase()
+	app.GetModel(u"ind88888").GetStudy(u"ind88888Tran2TSS-ForceCapabilityTest-Rated").GetDesignTable().SetValue(ind+1, 3, DW_AMP - BW_AMP*0.5*(ind+1))
+	app.GetModel(u"ind88888").GetStudy(u"ind88888Tran2TSS-ForceCapabilityTest-Rated").GetDesignTable().SetValue(ind+1, 4, BW_AMP*(ind+1))
 ```
 
 # Anaconda 3 (after installing it, I tend to do what is follows)
