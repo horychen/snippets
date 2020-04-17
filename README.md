@@ -119,6 +119,8 @@ Overleaf:
 
 :: Option 2 (This is my favorite)
 latexmk -pdf -synctex=1 -pvc -view=none :: <- latexmk will panic if you error with references.
+
+:: [Important] Sometimes, latexmk will remove the already generated .pdf file at the end of compilation and insists that there are errors (e.g., refer to bibtex's log file .blg). By searching online, people put \end{document} before \bibliographystyle command, but this is not your case. In fact, if you put your files back to overleaf, it just compiles really well. In this situation, my working solution is to create a new .tex file with a different name and paste your original .tex content to the new .tex file and run ```latexmk -pdf <your-new-tex-file-name>. It works for me.```
 ```
 preview continuously:
 ```
