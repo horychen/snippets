@@ -112,21 +112,21 @@ Overleaf:
 
 :: (Optional) Renmae your .tex file to "output.tex".
 
-:: Never use -halt-on-error. My experience with this parameter is miserable.
+:: Do not use -halt-on-error or -file-line-error. No effect.
 
 :: Option 1
-::latexmk -pdf -file-line-error -synctex=1 
+::latexmk -pdf -synctex=1 
 
 :: Option 2 (This is my favorite)
-latexmk -pdf -synctex=1 -file-line-error -pvc -view=none :: <- latexmk will panic if you error with references.
+latexmk -pdf -synctex=1 -pvc -view=none :: <- latexmk will panic if you error with references.
 ```
 preview continuously:
 ```
-latexmk -pdflatex="pdflatex -file-line-error -synctex=1 -halt-on-error -sleep=1 -interaction=nonstopmode" -pdf -pvc -view=none <Tex-file>
+latexmk -pdflatex="pdflatex -synctex=1 -halt-on-error -interaction=nonstopmode" -pdf -pvc -view=none <Tex-file>
 ```
 pdfLaTeX with synctex
 ```
-latexmk -pdflatex="pdflatex -file-line-error -synctex=1" -pdf <tex-file-name>
+latexmk -pdflatex="pdflatex -synctex=1" -pdf <tex-file-name>
 ```
 XeLaTeX 
 ```
