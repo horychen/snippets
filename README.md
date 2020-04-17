@@ -104,19 +104,21 @@ rem ref: https://stackoverflow.com/questions/26551/how-can-i-pass-arguments-to-a
 rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- font will be lost
 ```
 
-# LaTeXmk
+# latexmk
 Overleaf: 
 > https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten
 ```
 :: make sure you have "latexmk" file from overleaf in the directory(https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten)
 
-:: Renmae your .tex file to "output.tex".
+:: (Optional) Renmae your .tex file to "output.tex".
+
+:: Never use -halt-on-error. My experience with this parameter is miserable.
 
 :: Option 1
-latexmk -pdf -synctex=1 -halt-on-error
+::latexmk -pdf -file-line-error -synctex=1 
 
-:: Option 2
-::latexmk -pdf -synctex=1 -halt-on-error -pvc -view=none :: <- latexmk will panic if you error with references.
+:: Option 2 (This is my favorite)
+latexmk -pdf -synctex=1 -file-line-error -pvc -view=none :: <- latexmk will panic if you error with references.
 ```
 preview continuously:
 ```
