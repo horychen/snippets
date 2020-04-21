@@ -1,7 +1,75 @@
 # Snippets
-Userful snippets
+Userful snippets (keep updating).
 
-# Rstudio
+# pdf2eps with crop (remove white space)
+Finally I have found the correct way to crop the white space of a pdf figure produced by Python.
+> Refer to:  
+> https://tex.stackexchange.com/questions/20883/how-to-convert-pdf-to-eps/133239
+
+In short, create a new batch file named "pdf2eps" for example and paste in the below content:
+```
+rem pdf2eps <page number> <pdf file without ext>  
+echo off  
+pdfcrop "%2.pdf" "%2-temp.pdf"  
+pdftops -f %1 -l %1 -eps "%2-temp.pdf" "%2.eps"  
+del  "%2-temp.pdf"  
+```
+
+Now change directory to the directory with the pdf file and open cmd.exe and type in:
+```
+pdf2eps_crop 1 <pdf-file-name-without-suffix>
+```
+
+# pdf2eps (texlive is installed)
+```batch
+echo off
+set arg1=%1
+shift
+shift
+pdftops %arg1%.pdf %arg1%-temp.ps
+ps2eps %arg1%-temp.ps
+move %arg1%-temp.eps %arg1%.eps
+
+rem ref: https://stackoverflow.com/questions/26551/how-can-i-pass-arguments-to-a-batch-file
+rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- font will be lost
+```
+
+# latexmk
+Overleaf: 
+> https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten
+```
+:: make sure you have "latexmk" file from overleaf in the directory(https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten)
+
+:: (Optional) Renmae your .tex file to "output.tex".
+
+:: Do not use -halt-on-error or -file-line-error. No effect.
+
+:: Option 1
+::latexmk -pdf -synctex=1 
+
+:: Option 2 (This is my favorite)
+latexmk -pdf -synctex=1 -pvc -view=none :: <- latexmk will panic if you error with references.
+
+:: [Important] Sometimes, latexmk will remove the already generated .pdf file at the end of compilation and insists that there are errors (e.g., refer to bibtex's log file .blg). By searching online, people put \end{document} before \bibliographystyle command, but this is not your case. In fact, if you put your files back to overleaf, it just compiles really well. In this situation, my working solution is to create a new .tex file with a different name and paste your original .tex content to the new .tex file and run ```latexmk -pdf <your-new-tex-file-name>. It works for me.```
+```
+preview continuously:
+```
+latexmk -pdflatex="pdflatex -synctex=1 -halt-on-error -interaction=nonstopmode" -pdf -pvc -view=none <Tex-file>
+```
+pdfLaTeX with synctex
+```
+latexmk -pdflatex="pdflatex -synctex=1" -pdf <tex-file-name>
+```
+XeLaTeX 
+```
+latexmk -pdf -e "$pdflatex=q/xelatex %O %S/" document.tex
+:: https://stackoverflow.com/questions/3124273/compile-xelatex-tex-file-with-latexmk
+```
+
+# Inkscape tips
+In order to remove white space around a figure, there are two ways. First is to save your figure as .pdf file and use "pdfcrop" in cmd.exe to crop out the white space. Second is to save it as an .eps file, but before you do "save as", you need go to File->Document Properties->Custome size->Resize page to content->Resize page to drawing or selection, and also check here Border->Show page border if you like.
+
+# RStudio
 - Tools-Code-Saving-Default text encoding: set to UTF-8
 
 # JMAG Designer Script
@@ -71,70 +139,6 @@ for ind in range(20):
 8. After you add those snippets from step 7 to .bashrc (I do not have .bash_profile), you need to restart bash or compile it by ```source ~/.bashrc``` to make it effective.
 9. Now you can git pull and git push without entering your user account and password anymore for this repo.
 
-# pdf2eps with crop (remove white space)
-Finally I have found the correct way to crop the white space of a pdf figure produced by Python.
-> Refer to:  
-> https://tex.stackexchange.com/questions/20883/how-to-convert-pdf-to-eps/133239
-
-In short, create a new batch file named "pdf2eps" for example and paste in the below content:
-```
-rem pdf2eps <page number> <pdf file without ext>  
-echo off  
-pdfcrop "%2.pdf" "%2-temp.pdf"  
-pdftops -f %1 -l %1 -eps "%2-temp.pdf" "%2.eps"  
-del  "%2-temp.pdf"  
-```
-
-Now change directory to the directory with the pdf file and open cmd.exe and type in:
-```
-pdf2eps_crop 1 <pdf-file-name-without-suffix>
-```
-
-# pdf2eps (texlive is installed)
-```batch
-echo off
-set arg1=%1
-shift
-shift
-pdftops %arg1%.pdf %arg1%-temp.ps
-ps2eps %arg1%-temp.ps
-move %arg1%-temp.eps %arg1%.eps
-
-rem ref: https://stackoverflow.com/questions/26551/how-can-i-pass-arguments-to-a-batch-file
-rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- font will be lost
-```
-
-# latexmk
-Overleaf: 
-> https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten
-```
-:: make sure you have "latexmk" file from overleaf in the directory(https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten)
-
-:: (Optional) Renmae your .tex file to "output.tex".
-
-:: Do not use -halt-on-error or -file-line-error. No effect.
-
-:: Option 1
-::latexmk -pdf -synctex=1 
-
-:: Option 2 (This is my favorite)
-latexmk -pdf -synctex=1 -pvc -view=none :: <- latexmk will panic if you error with references.
-
-:: [Important] Sometimes, latexmk will remove the already generated .pdf file at the end of compilation and insists that there are errors (e.g., refer to bibtex's log file .blg). By searching online, people put \end{document} before \bibliographystyle command, but this is not your case. In fact, if you put your files back to overleaf, it just compiles really well. In this situation, my working solution is to create a new .tex file with a different name and paste your original .tex content to the new .tex file and run ```latexmk -pdf <your-new-tex-file-name>. It works for me.```
-```
-preview continuously:
-```
-latexmk -pdflatex="pdflatex -synctex=1 -halt-on-error -interaction=nonstopmode" -pdf -pvc -view=none <Tex-file>
-```
-pdfLaTeX with synctex
-```
-latexmk -pdflatex="pdflatex -synctex=1" -pdf <tex-file-name>
-```
-XeLaTeX 
-```
-latexmk -pdf -e "$pdflatex=q/xelatex %O %S/" document.tex
-:: https://stackoverflow.com/questions/3124273/compile-xelatex-tex-file-with-latexmk
-```
 
 # AutoHotkey (use ".ahk to .exe" tool to convert .ahk file to .exe file)
 ```
