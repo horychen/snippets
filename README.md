@@ -1,6 +1,13 @@
 # Snippets
 Userful snippets (keep updating).
 
+# SolidWorks
+1. ctrl+1: normal to plane view
+2. hold right click and move for quick tool access
+3. ctrl+middle wheel: move
+4. alt+middle wheel: rotate
+5. shift+middle wheel: zoom
+
 # pdf2eps with crop (remove white space)
 Finally I have found the correct way to crop the white space of a pdf figure produced by Python.
 > Refer to:  
