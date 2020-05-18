@@ -12,7 +12,10 @@ Build Com Object for SolidWorks.
 ```
 python D:\Users\horyc\Anaconda3\Lib\site-packages\win32com\client\makepy.py -v -o PySldWorks.py "D:\Program Files\SOLIDWORKS Corp\SOLIDWORKS (2)\sldworks.tlb"
 ```
-> https://mail.python.org/pipermail/python-win32/2015-March/013426.html
+> MakePy: https://mail.python.org/pipermail/python-win32/2015-March/013426.html
+> Joshua Redstone's Blog: http://joshuaredstone.blogspot.com/2015/02/solidworks-macros-via-python.html
+> Nothing: https://stackoverflow.com/questions/41175007/pass-the-variable-nothing-using-pythons-win32com/61851346#61851346
+
 
 # pdf2eps with crop (remove white space)
 Finally I have found the correct way to crop the white space of a pdf figure produced by Python.
