@@ -8,6 +8,12 @@ Userful snippets (keep updating).
 4. alt+middle wheel: rotate
 5. shift+middle wheel: zoom
 
+Build Com Object for SolidWorks.
+```
+python D:\Users\horyc\Anaconda3\Lib\site-packages\win32com\client\makepy.py -v -o PySldWorks.py "D:\Program Files\SOLIDWORKS Corp\SOLIDWORKS (2)\sldworks.tlb"
+```
+> https://mail.python.org/pipermail/python-win32/2015-March/013426.html
+
 # pdf2eps with crop (remove white space)
 Finally I have found the correct way to crop the white space of a pdf figure produced by Python.
 > Refer to:  
