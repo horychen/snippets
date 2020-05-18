@@ -1,6 +1,17 @@
 # Snippets
 Userful snippets (keep updating).
 
+# OBS Studio 
+Issue 1: For laptop haveing two GPUs (for me, it has one integrated from intel and one from NVDIA something with 1050Ti), if you see a black screen, you may need to 
+1. Press winkey
+2. Type in graphic settings
+3. In Graphic settings, click Browse and locate your OBS Studio executive.
+4. Click options, choose between Power saving and High performance.
+For me, I use power saving to record on my PC screen and use high performance to record on an external monitor.
+
+Issue 2: If you see "failed to open nvenc codec" and you happen to try to use integrated GPU with OBS Studio, please take a look at (this link)[https://obsproject.com/forum/threads/failed-to-open-nvenc-codec-generic-error-in-an-external-library-i-have-tried-everything.112568/]. NVDIA GPU can do hardware encoding while integrated may not be able to do exactly the same (e.g., NVENC). I fix this after reading the following from the link:
+> I also had this problem. On another website, I found this can be caused by trying to use the GPU for encoding when the GPU doesn't support that encoding. Click "Settings" then select "Output". Change "Encoding" to "Software" under "Streaming" and "Recording."
+
 # SolidWorks
 1. ctrl+1: normal to plane view
 2. hold right click and move for quick tool access
