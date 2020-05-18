@@ -12,9 +12,12 @@ Build Com Object for SolidWorks.
 ```
 python D:\Users\horyc\Anaconda3\Lib\site-packages\win32com\client\makepy.py -v -o PySldWorks.py "D:\Program Files\SOLIDWORKS Corp\SOLIDWORKS (2)\sldworks.tlb"
 ```
-> MakePy: https://mail.python.org/pipermail/python-win32/2015-March/013426.html
-> Joshua Redstone's Blog: http://joshuaredstone.blogspot.com/2015/02/solidworks-macros-via-python.html
-> Nothing: https://stackoverflow.com/questions/41175007/pass-the-variable-nothing-using-pythons-win32com/61851346#61851346
+> How to use makepy from win32com package: https://mail.python.org/pipermail/python-win32/2015-March/013426.html
+> This last email reply likes refers to Joshua Redstone's Blog.
+>
+> Joshua Redstone's Blog shows how to look up for ByRef variable for passing to COM object: http://joshuaredstone.blogspot.com/2015/02/solidworks-macros-via-python.html
+>
+> pythoncom.Nothing for Callout argument in SelectByID2: https://stackoverflow.com/questions/41175007/pass-the-variable-nothing-using-pythons-win32com/61851346#61851346
 
 
 # pdf2eps with crop (remove white space)
