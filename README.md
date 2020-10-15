@@ -1,6 +1,13 @@
 # Snippets
 Userful snippets (keep updating).
 
+# Font is lost when importing pdf to inkscape
+The following batch command will convert DimensionedPMMotor.pdf to DimensionedPMMotorFontAsPath.pdf, converting text/font into path.
+```
+"D:\Program Files\gs\gs9.52\bin\gswin64.exe" -o DimensionedPMMotorFontAsPath.pdf -dNoOutputFonts -sDEVICE=pdfwrite DimensionedPMMotor.pdf
+```
+Reference: https://bugs.launchpad.net/inkscape/+bug/295564
+
 # OBS Studio 
 Issue 1: For laptop haveing two GPUs (for me, it has one integrated from intel and one from NVDIA something with 1050Ti), if you see a black screen, you may need to 
 1. Press winkey
