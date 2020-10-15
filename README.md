@@ -9,7 +9,9 @@ The following batch command will convert DimensionedPMMotor.pdf to DimensionedPM
 Reference: https://bugs.launchpad.net/inkscape/+bug/295564
 
 # Git checkout a unmaned commit as a new branch
+```
 git checkout -b <new branch name for this commit>
+```
 
 # OBS Studio 
 Issue 1: For laptop haveing two GPUs (for me, it has one integrated from intel and one from NVDIA something with 1050Ti), if you see a black screen, you may need to 
