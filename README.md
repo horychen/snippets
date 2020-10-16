@@ -1,6 +1,60 @@
 # Snippets
 Userful snippets (keep updating).
 
+# File name: makefile 
+```
+# Should be equivalent to your list of C files, if you don't build selectively
+SRC=$(wildcard *.c)
+
+CFLAGS = -I. -L.
+
+%.o : %.c
+	gcc -c $(CFLAGS) $< -o $@
+
+main: $(SRC)
+	gcc -o $@ $^ $(CFLAGS)
+
+# https://stackoverflow.com/questions/170467/makefiles-compile-all-c-files-at-once
+# https://stackoverflow.com/questions/3932895/makefile-aliases/3933012#3933012
+```
+
+# File name: !C_GCC.sublime-build
+```json
+{
+    "working_dir": "$file_path",
+    "cmd": "gcc -Wall $file_name -o $file_base_name",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "selector": "source.c",
+    "variants": 
+    [
+        {   
+        "name": "ACMSIMC_TUT",
+            "shell_cmd": "gcc $file commissioning.c inverter.c controller.c observer.c -L. -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        },
+
+        {   
+        "name": "ACMSIMC_iSMC",
+            "shell_cmd": "gcc $file comm.c inverter.c controller.c observer.c -L. -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        },
+
+        {   
+        "name": "GMAKE",
+            "shell_cmd": "gmake $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        },
+
+        {   
+        "name": "ACMSIMC_V3",
+            "shell_cmd": "gcc $file dopri45.c controller/controller.c selfCommission/selfCommission.c selfCommission/Goertzel.c observerTAAO/observerTAAO.c -L. -I. -Imodeling -Icontroller -IselfCommission -IobserverTAAO -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        },
+
+        {   
+        "name": "ACMSIMC_V4",
+            "shell_cmd": "gcc $file controller/controller.c observer_FirstApproxAnderson86/observerFirstApproxAnderson86.c observer_NaturalOb/observerNatural.c selfCommission/Goertzel.c -L. -I. -Imodeling -Icontroller -Iobserver_FirstApproxAnderson86 -Iobserver_NaturalOb -IselfCommission -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        }
+    ]
+}
+```
+
 # Font is lost when importing pdf to inkscape
 The following batch command will convert DimensionedPMMotor.pdf to DimensionedPMMotorFontAsPath.pdf, converting text/font into path.
 ```
