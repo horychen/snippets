@@ -152,6 +152,6 @@ alias path='echo -e ${PATH//:/\\n}'
 
 
 # Quick navigation
-alias c="cd /mnt/d/OneDrive\ -\ UW-Madison/c"
-alias b="cd /mnt/d/OneDrive\ -\ UW-Madison/b"
-alias elmer="cd /mnt/d/OneDrive\ -\ UW-Madison/"
+alias c="cd /mnt/d/DrH/c"
+alias b="cd /mnt/d/DrH/b"
+alias elmer="cd /mnt/d/DrH/"
