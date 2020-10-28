@@ -1,17 +1,120 @@
 # Snippets
-Userful snippets
+Userful snippets (keep updating).
 
-# My ways to use SSH with Github
-> Environment: Windows, WSL
-1. ```cd ~/.ssh```, make sure there are no existing files named ```id_rsa*```. If so, rm ```id_rsa*```. This is possible if you have done this before and you forget how you did it, like me.
-2. ```cd ~```, ```ssh-keygen -t rsa```, press enter, enter, enter...
-3. ```ssh-add -l```, if it says "The agent has no identities.", run ```ssh-add ~/.ssh/id_rsa```, and it says ```Identity added: ~/.ssh/id\_rsa (~/.ssh/id\_rsa)```. If it prompts ```no authetification agent```, you need to manually start ssh agent by ```eval $(ssh-agent -s)```.
-4. Add yoru generated public key to "https://github.com/settings/keys". To attain the public key, use ```cat ~/.ssh/id_rsa.pub``` to print and copy from the terminal you are using.
-5. Test it with ```ssh -T git@github.com```, it says: "Hi horychen! You've successfully authenticated, but GitHub does not provide shell access."
-6. ```git remote set-url origin git@github.com:horychen/snippets.git```
-7. If you want to automatically start ssh agent when you open bash, see https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login/38980986
-8. After you add those snippets from step 7 to .bashrc (I do not have .bash_profile), you need to restart bash or compile it by ```source ~/.bashrc``` to make it effective.
-9. Now you can git pull and git push without entering your user account and password anymore for this repo.
+# File name: makefile 
+```
+# Should be equivalent to your list of C files, if you don't build selectively
+SRC=$(wildcard *.c)
+
+CFLAGS = -I. -L.
+
+%.o : %.c
+	gcc -c $(CFLAGS) $< -o $@
+
+main: $(SRC)
+	gcc -o $@ $^ $(CFLAGS)
+
+# https://stackoverflow.com/questions/170467/makefiles-compile-all-c-files-at-once
+# https://stackoverflow.com/questions/3932895/makefile-aliases/3933012#3933012
+```
+
+# File name: !C_GCC.sublime-build
+```json
+{
+    "working_dir": "$file_path",
+    "cmd": "gcc -Wall $file_name -o $file_base_name",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "selector": "source.c",
+    "variants": 
+    [
+        {   
+        "name": "ACMSIMC_TUT",
+            "shell_cmd": "gcc $file commissioning.c inverter.c controller.c observer.c -L. -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        },
+
+        {   
+        "name": "ACMSIMC_iSMC",
+            "shell_cmd": "gcc $file comm.c inverter.c controller.c observer.c -L. -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        },
+
+        {   
+        "name": "GMAKE",
+            "shell_cmd": "gmake $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        },
+
+        {   
+        "name": "ACMSIMC_V3",
+            "shell_cmd": "gcc $file dopri45.c controller/controller.c selfCommission/selfCommission.c selfCommission/Goertzel.c observerTAAO/observerTAAO.c -L. -I. -Imodeling -Icontroller -IselfCommission -IobserverTAAO -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        },
+
+        {   
+        "name": "ACMSIMC_V4",
+            "shell_cmd": "gcc $file controller/controller.c observer_FirstApproxAnderson86/observerFirstApproxAnderson86.c observer_NaturalOb/observerNatural.c selfCommission/Goertzel.c -L. -I. -Imodeling -Icontroller -Iobserver_FirstApproxAnderson86 -Iobserver_NaturalOb -IselfCommission -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        }
+    ]
+}
+```
+
+# Font is lost when importing pdf to inkscape
+The following batch command will convert DimensionedPMMotor.pdf to DimensionedPMMotorFontAsPath.pdf, converting text/font into path.
+```
+"D:\Program Files\gs\gs9.52\bin\gswin64.exe" -o DimensionedPMMotorFontAsPath.pdf -dNoOutputFonts -sDEVICE=pdfwrite DimensionedPMMotor.pdf
+```
+Reference: https://bugs.launchpad.net/inkscape/+bug/295564
+
+# Git checkout a unmaned commit as a new branch
+```
+git checkout -b <new branch name for this commit>
+```
+
+# OBS Studio 
+Issue 1: For laptop haveing two GPUs (for me, it has one integrated from intel and one from NVDIA something with 1050Ti), if you see a black screen, you may need to 
+1. Press winkey
+2. Type in graphic settings
+3. In Graphic settings, click Browse and locate your OBS Studio executive.
+4. Click options, choose between Power saving and High performance.
+For me, I use power saving to record on my PC screen and use high performance to record on an external monitor.
+
+Issue 2: If you see "failed to open nvenc codec" and you happen to try to use integrated GPU with OBS Studio, please take a look at (this link)[https://obsproject.com/forum/threads/failed-to-open-nvenc-codec-generic-error-in-an-external-library-i-have-tried-everything.112568/]. NVDIA GPU can do hardware encoding while integrated may not be able to do exactly the same (e.g., NVENC). I fix this after reading the following from the link:
+> I also had this problem. On another website, I found this can be caused by trying to use the GPU for encoding when the GPU doesn't support that encoding. Click "Settings" then select "Output". Change "Encoding" to "Software" under "Streaming" and "Recording."
+
+# SolidWorks
+1. ctrl+1: normal to plane view
+2. hold right click and move for quick tool access
+3. ctrl+middle wheel: move
+4. alt+middle wheel: rotate
+5. shift+middle wheel: zoom
+
+Build Com Object for SolidWorks.
+```
+python D:\Users\horyc\Anaconda3\Lib\site-packages\win32com\client\makepy.py -v -o PySldWorks.py "D:\Program Files\SOLIDWORKS Corp\SOLIDWORKS (2)\sldworks.tlb"
+```
+> How to use makepy from win32com package: https://mail.python.org/pipermail/python-win32/2015-March/013426.html
+> This last email reply likes refers to Joshua Redstone's Blog.
+>
+> Joshua Redstone's Blog shows how to look up for ByRef variable for passing to COM object: http://joshuaredstone.blogspot.com/2015/02/solidworks-macros-via-python.html
+>
+> pythoncom.Nothing for Callout argument in SelectByID2: https://stackoverflow.com/questions/41175007/pass-the-variable-nothing-using-pythons-win32com/61851346#61851346
+
+
+# pdf2eps with crop (remove white space)
+Finally I have found the correct way to crop the white space of a pdf figure produced by Python.
+> Refer to:  
+> https://tex.stackexchange.com/questions/20883/how-to-convert-pdf-to-eps/133239
+
+In short, create a new batch file named "pdf2eps" for example and paste in the below content:
+```
+rem pdf2eps <page number> <pdf file without ext>  
+echo off  
+pdfcrop "%2.pdf" "%2-temp.pdf"  
+pdftops -f %1 -l %1 -eps "%2-temp.pdf" "%2.eps"  
+del  "%2-temp.pdf"  
+```
+
+Now change directory to the directory with the pdf file and open cmd.exe and type in:
+```
+pdf2eps_crop 1 <pdf-file-name-without-suffix>
+```
 
 # pdf2eps (texlive is installed)
 ```batch
@@ -26,6 +129,112 @@ move %arg1%-temp.eps %arg1%.eps
 rem ref: https://stackoverflow.com/questions/26551/how-can-i-pass-arguments-to-a-batch-file
 rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- font will be lost
 ```
+
+# latexmk
+Overleaf: 
+> https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten
+```
+:: make sure you have "latexmk" file from overleaf in the directory(https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten)
+
+:: (Optional) Renmae your .tex file to "output.tex".
+
+:: Do not use -halt-on-error or -file-line-error. No effect.
+
+:: Option 1
+::latexmk -pdf -synctex=1 
+
+:: Option 2 (This is my favorite)
+latexmk -pdf -synctex=1 -pvc -view=none :: <- latexmk will panic if you error with references.
+
+:: [Important] Sometimes, latexmk will remove the already generated .pdf file at the end of compilation and insists that there are errors (e.g., refer to bibtex's log file .blg). By searching online, people put \end{document} before \bibliographystyle command, but this is not your case. In fact, if you put your files back to overleaf, it just compiles really well. In this situation, my working solution is to create a new .tex file with a different name and paste your original .tex content to the new .tex file and run ```latexmk -pdf <your-new-tex-file-name>. It works for me.```
+```
+preview continuously:
+```
+latexmk -pdflatex="pdflatex -synctex=1 -halt-on-error -interaction=nonstopmode" -pdf -pvc -view=none <Tex-file>
+```
+pdfLaTeX with synctex
+```
+latexmk -pdflatex="pdflatex -synctex=1" -pdf <tex-file-name>
+```
+XeLaTeX 
+```
+latexmk -pdf -e "$pdflatex=q/xelatex %O %S/" document.tex
+:: https://stackoverflow.com/questions/3124273/compile-xelatex-tex-file-with-latexmk
+```
+
+# Inkscape tips
+In order to remove white space around a figure, there are two ways. First is to save your figure as .pdf file and use "pdfcrop" in cmd.exe to crop out the white space. Second is to save it as an .eps file, but before you do "save as", you need go to File->Document Properties->Custome size->Resize page to content->Resize page to drawing or selection, and also check here Border->Show page border if you like.
+
+# RStudio
+- Tools-Code-Saving-Default text encoding: set to UTF-8
+
+# JMAG Designer Script
+Set cases via python---slip
+```python
+app = designer.GetApplication()
+app.SetCurrentStudy(u"2D_DPNV@60Hz_Ime=13A_Ise=0A_s=Cases")
+app.View().SetCurrentCase(1)
+which_variable = 0
+for index, slip in enumerate([1, 0.8, 0.6, 0.4, 0.3, 0.2, 0.1, 0.09, 0.08, 0.07, 0.04, 0.01, 0]):
+	app.GetModel(u"Motor Performance_Torque vs Speed(Slip)_13Arms").GetStudy(u"2D_DPNV@60Hz_Ime=13A_Ise=0A_s=Cases").GetDesignTable().AddCase()
+	app.GetModel(u"Motor Performance_Torque vs Speed(Slip)_13Arms").GetStudy(u"2D_DPNV@60Hz_Ime=13A_Ise=0A_s=Cases").GetDesignTable().SetValue(index+1, which_variable, slip)
+```
+Set cases via python---current amplitude (DW_AMP is the current per torque winding rather than inverter current.)
+```python
+app = designer.GetApplication()
+app.SetCurrentStudy(u"ind88888Tran2TSS-ForceCapabilityTest-Rated")
+app.View().SetCurrentCase(1)
+
+DW_AMP = 77.3295312916975
+BW_AMP = 3.96561698931782
+
+for ind in range(20):
+	app.GetModel(u"ind88888").GetStudy(u"ind88888Tran2TSS-ForceCapabilityTest-Rated").GetDesignTable().AddCase()
+	app.GetModel(u"ind88888").GetStudy(u"ind88888Tran2TSS-ForceCapabilityTest-Rated").GetDesignTable().SetValue(ind+1, 3, DW_AMP - BW_AMP*(ind))
+	app.GetModel(u"ind88888").GetStudy(u"ind88888Tran2TSS-ForceCapabilityTest-Rated").GetDesignTable().SetValue(ind+1, 4, BW_AMP*(ind+1))
+```
+
+# Anaconda 3 (after installing it, I tend to do what is follows)
+1. Revise history.py
+	```
+	File "D:\Users\horyc\Anaconda3\lib\site-packages\pyreadline\lineeditor\history.py", line 82, in read_history_file
+	    for line in open(filename, 'r'):
+	UnicodeDecodeError: 'gbk' codec can't decode byte 0x81 in position 2260: illegal multibyte sequence
+	```
+	Go to line 82 of history.py, and change it to ```for line in open(filename, 'r', encoding='utf-8'):```.
+
+2. Install control. (read: https://python-control.readthedocs.io/en/0.8.3/intro.html#installation)
+	```conda install -c conda-forge control ```
+
+3. Install pygmo via conda.
+	```
+	conda config --add channels conda-forge
+	conda install pygmo
+	```
+
+4. pip install pyx.
+
+5. pip install pyfemm.
+
+6. pip install you-get.
+
+7. Put the path of open-ssl (D:\Users\horyc\Anaconda3\pkgs\pyopenssl-19.1.0-py37_0\Library\bin) to system enviroment variable path. The path depends on Anaconda version. Mine is Anaconda 2020-03.
+
+8. If you encounter "The procesure entry point not located" error, see https://stackoverflow.com/questions/59645179/update-anaconda-failed-entry-point-not-found 
+	> Removed pythoncom37.dll and pywintypes37 from C:\Windows\System32.
+
+# My ways to use SSH with Github
+> Environment: Windows, WSL
+1. ```cd ~/.ssh```, make sure there are no existing files named ```id_rsa*```. If so, rm ```id_rsa*```. This is possible if you have done this before and you forget how you did it, like me.
+2. ```cd ~```, ```ssh-keygen -t rsa```, press enter, enter, enter...
+3. ```ssh-add -l```, if it says "The agent has no identities.", run ```ssh-add ~/.ssh/id_rsa```, and it says ```Identity added: ~/.ssh/id\_rsa (~/.ssh/id\_rsa)```. If it prompts ```no authetification agent```, you need to manually start ssh agent by ```eval $(ssh-agent -s)```.
+4. Add yoru generated public key to "https://github.com/settings/keys". To attain the public key, use ```cat ~/.ssh/id_rsa.pub``` to print and copy from the terminal you are using.
+5. Test it with ```ssh -T git@github.com```, it says: "Hi horychen! You've successfully authenticated, but GitHub does not provide shell access."
+6. ```git remote set-url origin git@github.com:horychen/snippets.git```
+7. If you want to automatically start ssh agent when you open bash, see https://stackoverflow.com/questions/18880024/start-ssh-agent-on-login/38980986
+8. After you add those snippets from step 7 to .bashrc (I do not have .bash_profile), you need to restart bash or compile it by ```source ~/.bashrc``` to make it effective.
+9. Now you can git pull and git push without entering your user account and password anymore for this repo.
+
 
 # AutoHotkey (use ".ahk to .exe" tool to convert .ahk file to .exe file)
 ```
@@ -68,6 +277,14 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 - WinEdt -> Execution Modes -> LaTeX or XeLaTeX -> Start Viewer -> Forward Search -> Use shift F8 to forward search
 - SumatraPDF -> File -> Setting -> Options -> Set inverse search command-line
 	- "D:\Program Files\WinEdt Team\WinEdt 10\WinEdt.exe" -C="WinEdt 10.3" "[Open(|%f|);SelPar(%l,8);]"
+- Options -> Toolbar -> 2 row Small
+- Shortcuts:
+	- Ctrl+Shift+Alt+right arrow = comment
+	- Ctrl+Shift+H = set current directory
+	- Ctrl+Shift+C = Hide output window
+	- Ctrl+Enter = Auto fill
+	- Shift+Enter = Auto spell
+	
 
 # Sublime Text 3
 ## User settings
@@ -137,11 +354,13 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 - GitGutter
 - JsPrettier
 - Materialize
-- Package Control
+- *Package Control*
 - PackageResourceViewer
 - Predawn
 - Predawn Monokai
-- SideBarEnhancements
+- *SideBarEnhancements*
 - SideBarTools
 - SublimeLinter
 - Theme - Soda
+- *Outline* (Ctrl+Shfit+P type in Browse Mode, Dark mode: {"color_scheme": "Packages/Outline/outline-Dark.hidden-tmTheme"}, see https://packagecontrol.io/packages/Outline
+
