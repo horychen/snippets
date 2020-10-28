@@ -1,15 +1,28 @@
 # Snippets
 Userful snippets (keep updating).
 
+# Typora: Change Width of Writing Area
+> Edit-Preference-Appearance-Themes-Open Theme Folder-xxx.css-find 'max-width'-replace with following:
+```css
+#write {
+	/*max-width: 914px;*/
+	color: #333;
+}
+#typora-source .CodeMirror-lines {
+  max-width: 1800px;
+}
+```
+> see https://support.typora.io/Width-of-Writing-Area/
+
 # Compressed folder name: .vscode.7z
-由于每台电脑安装gcc等编译器的情况不同，解压后需要修改的地方：
+由于每台电脑安装 gcc 等编译器的情况不同，在 acmsimc_tut 代码所在目录解压后需要修改的地方与操作步骤：
 1. c_cpp_properies.json 中的 compilerPath：修改为你的 gcc.exe 所在地址
 2. launch.json 中的 miDebuggerPath：修改为你的 gcc.exe 所在地址
 3. tasks.json 中的 command：修改为你的 gcc.exe 所在地址
 4. 完事以后，在 acmsimc_tut 代码所在目录右键用 vs code 打开当前文件夹
 5. 打开 main.c，
-6. 快捷键：按ctrl+shift+b是编译但不会运行
-7. 快捷键：按F5是编译+运行debug
+6. 快捷键：按 ctrl+shift+b 是编译但不会运行 main.exe
+7. 快捷键：按 F5 是编译 + 运行 debug
 
 # File name: makefile 
 ```
