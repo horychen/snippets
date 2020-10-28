@@ -1,0 +1,745 @@
+我说ergodic，eric都听不懂我想表达什么。
+不知道traverse有没有遍历的意思？
+traversed: Here dα/p is used, since the angle α obtains values from 0 to p·2 as the rotor periphery is traversed.
+
+
+rudimentary != fundamental
+
+Nullify: As a result, compensation voltages are added to Vd and Vq which nullify these other voltage terms
+cancel
+
+Are we doomed to ...
+we are bound to ...
+
+exacerbate: The problem is exacerbated when ...
+deteriorate
+
+a乘以b：a times b
+a乘以b：multiplies The main difficulty with such set up is that the unknown gradient term multiplies the control at the differential equation of J so that the system itself possesses a variable structure behavior
+
+介于中间的 intervening: This was a very timely contribution to the literature since it created a focus for the current research activity into the theory and application of extremum-seeking control,an activity that has continued to grow in the intervening years.
+
+imitate
+mimic
+
+组成
+a, b, c constitutes a whole
+the whole consists of a, b, c
+
+
+Bellow coupling 波纹管联轴器 from 2019 Verdeghem 2019 Experimental Investigations on Passively Levitated Electrodynamic Thrust Self-Bearing Motors
+
+oil  lubricated journal bearings
+
+
+force is exerted on/applied to
+
+hamper: If you’re carrying too much — physical or emotional — your progress will be hampered.
+hinder
+
+
+祝b站的小姐姐：
+落雁沉鱼 兰质蕙心 明眸皓齿 靡颜腻理 清词丽句 清辞丽曲 琪花瑶草 曲眉丰颊 螓首蛾眉 水木清华 爽心悦目 天生丽质 天香国色 我见犹怜 宛转蛾眉 霞光万道 小家碧玉 杏脸桃腮 煦色韶光 杏腮桃脸 雄伟壮观 杏雨梨云 涎玉沫珠 妍蚩好恶 鱼沉雁落 宜嗔宜喜 旖旎风光 远山芙蓉 艳色绝世 余霞成绮 宜喜宜嗔 瘗玉埋香 艳紫妖红 朱唇皓齿 左家娇女 章台杨柳 阿娇金屋 闭月羞花 逞娇呈美 春暖花香 春深似海 彩云易散 姹紫嫣红 斗美夸丽 尽态极妍 斗艳争辉 蛾眉皓齿飞阁流丹 国色天香 胡天胡帝 花颜月貌 绝色佳人天生丽质 慧质兰心 秀外慧中 暗香盈袖 闭月羞花 沉鱼落雁 倾国倾城 温婉娴淑 千娇百媚 仪态万千 美艳绝世 国色天香 花容月貌 明目皓齿 淡扫峨眉 清艳脱 俗香肌玉肤 清丽绝俗 仪态万端 婉风流转 美撼凡尘 聘婷秀雅 娥娜翩跹 俏丽多姿 如花似月 风姿卓越 顾盼流转 清丝纠缠 举步轻摇 美若天仙 美愈天人 清秀高雅 艳冠群芳 剪水双瞳 美艳绝伦 神仙玉骨 楚楚动人 貌赛西施 姿容绝代 如花似玉 窈窕淑女 气质高雅 美丽四射 樱桃小口 静若处子 动若脱兔 小鸟宜人 善解人意 明眸善睐 娇艳妩媚 玲珑剔透 玉指如葱 肤如凝脂 眉如新月 秋波流转 樱桃小口 粉妆玉琢 桃腮杏脸 亭亭玉立 楚楚动人 贤良淑德 秀色可餐 水灵秀气 小家碧玉 完美无暇 娇羞可爱 婀娜多姿 美丽动人 人面桃花 柳眉杏眼 温文尔雅 明艳动人 天生尤物 芙蓉如面 娇艳惊人 冠压群芳 风华绝代 绝代佳人 一代佳人 一代容华 绝色美人 月里嫦娥 华如桃李 桃羞杏让。
+
+hamper: In order to avoid the disturbance caused by asynchronous and synchronous torques and the vibration hampering the operation of an induction motor
+
+Crude: This is sort of a crude model of a complicated phenomenon
+Rough
+
+
+
+Incidentally, it follows that 
+Consequently, 
+As a result
+
+
+Harvard's list words for active verbs for CV
+
+incentive
+motive
+
+appreciably
+apparently
+
+
+In simple terms
+Roughly speaking <- Not recommended
+
+anticipate: each performance variable to the design parameters is difficult to anticipate.
+predict
+
+Similarly
+Likewise
+
+segregate: whereby terminals for torque/power generation are segregated from terminals for magnetic transverse force action
+separate
+
+
+
+
+
+
+--------------------------Y730之前的在下面
+【词汇积累】
+
+incipient
+early stage
+
+对“里、外”的描述：
+a) change of the rotor orbit when the control winding was open (outermost orbit) and then suddenly shortcut (innermost orbit)
+
+示意图
+schematic: field distribution is schematically depicted; a schematic picture of the experimental set-up.
+
+where N refers to the time instant t=nTs with Ts denoting the sample time.
+
+asymptote - 渐近线 
+
+torque as a function of current - good!
+the relation between torque and current
+the mapping between torque and current
+
+ventilation
+aeration
+
+
+超过
+beyond
+over
+in excess of: 
+impeding thermal transfer and thereby decreasing system efficiency in excess of 10%
+
+
+in the meantime (adv) = meanwhile (adv)
+
+尝试：
+attempt
+endeavor
+tentative: Tentatives to obtain linear parameterization in models where unknown parameters occur nonlinearly may give rise to overparameterization and its underlying problems
+
+ancillary
+auxiliary
+
+incarnation
+
+剧烈地
+drasticly
+
+support
+corroborate: The normal conditions are mainly used to corroborate the required accuracy of the adaptive observer,
+
+
+偶然发现
+stumble upon
+encounter
+come across
+
+
+如何提前定义符号：
+For later use, define ...
+
+
+impeccably
+perfectly
+
+fully
+totally
+completely
+utterly
+
+state-of-the-art
+cutting-edge: at the latest or most advanced stage of development; innovative or pioneering. E.g., cutting-edge technology.
+
+according to 优先使用 优于 as per
+as per
+
+mistake
+error
+oversight
+omission
+
+adhere to the requirements 
+correspond to 
+comply
+accord with
+
+intrinsic
+essencial
+innate -> describe people
+
+
+basic
+rudimentary
+fundamental
+elementary
+primary school
+
+enthrall vt. 迷住，吸引住； 使感到非常愉快 
+spellbinding
+charisma
+charming
+
+selfless 无私的
+altruistic 利他的
+
+cliche n
+trite adj
+
+值得
+worth further reading
+merit further reading 
+
+https://www.youtube.com/watch?v=nJDvbcIby38
+long for
+thirsty for
+jonesing for
+
+imply 
+insinuate = imply in a bad way
+
+attribute to
+belong to
+
+feature
+hallmark
+specialty
+trait
+
+
+also
+as well
+likewise
+
+
+system setup
+test bench setup
+
+absorbed
+can be conveniently incorporated in the gains of the
+PI controller (adaptation mechanism)
+
+way
+idea
+solution
+
+
+表达感谢
+be indebted
+acknowledge
+be grateful for
+
+
+
+故意调错：
+deliberate <- just-so-so
+intentionally detuned <-good
+manually <- bad
+artificially <- bad
+
+传统方法、常规方法
+conventional
+traditional
+regular
+common
+
+
+码盘线数：ppr = pulse per round
+
+detrimental
+vicious
+negative effect
+
+
+work in tandem
+
+expect
+envisage
+
+满足：
+satisfy
+suffice
+fulfill
+meet
+cater
+satiable
+ - insatiable 无法满足的；greedy
+
+
+
+Beginner, Intermediate, Advanced, Proficient, Native
+
+involved
+intricate
+complicated
+
+involve
+entail: These changes may entail small changes to text (not to exceed a paragraph) or captions, or fine-tuning figures.
+
+handy
+
+形成优势【句型】afford an advantage of converntional methods, particularly regarding xxx.
+These reductions afford a significant advantage over conventional approaches to controller design, particularly regarding the DSP requirements of a practical implementation
+
+consolidate? 去dictionary上查一下
+部件 make up 系统
+系统 consist of 部件
+comprise: the fifth layer comproses nodes implementing the centre-of-area defuzzification algorithm.
+
+(A outperforms B by xxx) 
+Hybrid learning outperfoms purely supervised learning by reducing training times.
+
+
+
+to be specific (自创
+More specifically (found in Farza09)
+
+关于
+pertaining to, with respect to, according to, corresponding to, accounting for, 
+
+comprehensive of the repetitive block and the FIR filter
+
+barely
+hardly
+scarcely
+
+generic frame
+
+tentative
+
+可观的：
+remarkable
+noteworthy
+exceptional
+marvelous
+notable
+noticeable
+
+thank you, thanks.
+grateful
+we’re also indebted to Kristen for designing this beautiful book jacket
+appreciate
+root out
+The cover painting is by Karen A. Prendergast. The cover design is by
+Dan Dawson. The interior design is by Marie McAdam.
+A draft of this book was read by Boris Katz, who has a special gift for
+rooting out problems and tenaciously insisting on improvements.
+
+
+
+出名的
+well-known
+celebrated
+famed
+
+1. Meta-discourse
+Meta-discourse is writing about what you’re writing about. 
+Also known as do you stuff your shirts yourself, or do you send them out?
+BAD: I would like to take this opportunity to extend to you a hearty congratulations on your promotion.
+GOOD: Congratulations on your promotion!
+BAD: I would like to take this opportunity to sincerely express my gratitude and appreciation for your donation.
+GOOD: Thank you for your donation, it’s truly appreciated.
+2. No five dollar words if a nickel will do…
+Unless you’re writing a paper in which vocabulary will be graded and scored, skip the pretentious words that readers may not understand. Some of the best selling books of all time can be understood by a sixth-grader.
+Utilize: use
+Ameliorate: improve
+Ascertain: find out
+3. Write Tight
+Don’t use 50 words if 23 will do. When you tighten up your writing, you increase impact. Ever thought about what “paying attention” means? If you want people to pay attention, don’t ramble.
+I really think that we should consider reducing taxes.
+I believe we should cut taxes.
+We should cut taxes.
+Cut taxes!
+
+http://english.stackexchange.com/questions/16172/should-i-always-use-a-comma-after-e-g-or-i-e
+The distinction probably emerges from their different meanings in Latin, which grants them different usages in writing.
+E.g. (exempli gratia in Latin, meaning “for example”) should be generally followed by a list of examples. Thus, adhering to proper English style usually requires commas to follow e.g. to delimit the beginning of that list.
+I.e. (id est in Latin, meaning “that is”) is used to recapture the meaning of an antecedent clause by rephrasing. Typically, it is only followed by a clause describing a singular entity, and so does not require a comma.
+
+阻碍
+impede
+hinder
+obstacle n.
+barrage: Victor Rice suffered a barrage of criticism from shareholders and the British media
+hamper: However, there are two implementation issues that hamper the simplicity
+
+to be specific,
+precise
+accurate
+
+有益的：
+it would be rewarding to do <-这个好！
+helpful
+beneficial
+facilitate
+【好词】vt. 促进，助长； 使容易； 帮助  facilitates = possesses the potential to yield
+fortify: Fortify a model with data.
+
+dispense with: the restrictive assumption of a constant shaft velocity can be dispensed with by augmenting the regressor dimension
+relax
+get rid of
+eliminate
+dismiss
+
+出现
+arise
+emerge
+appear
+occur
+come into place???
+
+come into charge
+
+formidable
+intractable
+challenging
+
+因为
+because of
+owing to
+thanks to
+due to (used after the be-verb only!)
+
+明显的
+apparent
+obvious
+plainly
+pronounced
+marked
+remarkable
+
+
+尤其
+notably
+especially
+particularly
+
+依赖：
+hinge on 以...为转移：The success of this approach, however, hinges on the selection of the injection frequency because the rotor resistance estimate is subject to the skin effect
+			Therefore, the effectiveness of the above control design, based on the reduced-order model (6.21), hinges upon the stability of the internal dynamics.
+rely on
+depend on
+
+有效：
+effectiveness
+feasibility
+efficacy: The efficacy of the proposed controller is verified via simulations and experimental tests.
+
+conceal 隐藏
+superficial 表明上的
+discemible 可识别的
+ameliorate 改良 we motivate an algorithm that ameliorates the disadvantages inherent in this general approach.
+amendable 可修正的
+
+按照：
+in light of
+according to
+
+观点：
+standpoint: From an identification and estimation standpoint
+view, form a sysid view,
+In the light of 
+perspective
+
+that is, viz, i.e., to this effect
+
+erratic behavior
+judicious/proper selection
+
+crude = coarse = rough 粗糙的
+rigorous 严谨的 反义：roughly speaking, loosely
+unequivocal 不含糊的 反义词：ambiguous vague equivocal
+vague
+obscure: If one thing obscures another, it prevents it from being seen or heard properly
+
+albeit = although
+save = save for = Besides
+
+表明、意味着
+designate
+denote
+be
+stand for
+mean
+
+
+原型：
+archetypal
+prototype
+
+暗指
+allude to
+imply
+
+处理、讨论
+treat
+investigate
+discuss
+deal with
+cope with
+tackle
+handle
+consider
+
+假定
+postulate
+assume
+presume
+
+精简记号
+to condense the notation
+
+
+不可避免
+unavoidable
+inevitable
+inextricably
+imperatively???
+避免：
+obviate:how by using energy shaping (passivity-based) design techniques 	we can obviate the need of state observers for the control of 	induction motors
+avoid
+to circumvent the problem by introducing
+减缓
+mitigate
+alleviate
+palliate: it could be approximated as in [10] to palliate its behavior when doing near non-observable zones. Dib2012
+忽视
+neglect
+ignore
+overlook
+
+
+abscissa 横坐标
+ordinate 纵坐标
+
+差异
+distinct adj
+difference
+discrepancy: discrepancies between the structure of the model and that of the actual
+mismatch
+error
+
+设计
+devise
+design
+
+增加
+increase
+enhance
+enlarge
+boost
+rise
+grow
+go up
+fortify【New】
+proliferate: which statred proliferating in the 1970s.
+
+减少
+reduce
+decrease
+diminish
+degrades
+curtail 缩短； 剥夺（特权，官衔等）； 削减 such as the EWP ‘forgetting factor’, for curtailing the memory of the estimation;
+abate (If something bad or undesirable abates, it becomes much less strong or severe.)
+lower
+
+
+利用、采用
+use
+utilize
+exploit
+employ
+apply
+accept
+adopt
+
+
+认为：
+reckon
+consider
+think
+regard
+treat
+deem
+
+描述、呈现：
+show
+demonstrate
+manifest
+render???
+express
+present
+elaborate
+describe
+XXX will be delineated Khalil@118
+delineate: If you delineate something such as an idea or situation, you describe it or 	define it, often in a lot of detail.
+elucidate: If you elucidate something, you make it clear and easy to understand.
+illuminate
+illustrate
+set forth 详细描述
+draws conclusions
+[Example]:
+This paper is organized as follows. The IM model and control
+problem formulation are given in Section II. The proposed
+solution is presented in Section III. In Section IV, the stability
+analysis and the proposed flux selection algorithm are reported.
+Details on the stability proof based on the singular perturbation
+technique are given in Appendixes I and II. In Section V, results
+of simulation and experimental tests are reported. Finally,
+Section VI draws conclusions.
+
+带有画的意味的单词
+show
+plot
+sketch
+give
+present
+record 示波器记录下来的感觉。
+
+描述波形：
+be shown to
+be observed to
+be found to
+demonstrate: the waveform demonstrates the possibility of ... (学Lei Zhou2017)
+
+
+the next proposition, known as xxx, confirms this conjecture/perspective.
+xxx suggest/imply/infer
+surmise: It can be surmised that, with omg_n = 4rad/s, the maximum wad
+that can be attained before instability is about 15Hz.
+confer (5) % 与(5)对照 cf.
+
+
+影响
+have impact on
+affect 
+influence
+appears to exert a significant influence on parameter estimation
+
+导致：
+result in 
+lead to
+cause
+incur
+beget: identity capital begets identity capital.
+raise
+arise (vi.): problem arises
+
+前文：
+preceding example Khalil@p123
+aforementioned
+foregoing
+antecedent clause
+
+后文：
+in the sequel: Sequel is from the Latin sequi ("to follow") and was presumably in use long before the 	modern concept of film and book sequels became so ingrained in popular culture. The use of 	sequel to denote 'that which follows' is valid and survives in academic literature, although it 	is likely to confuse lay readers.
+posterior
+hereafter
+in the remainder text
+ensuing, ensue from 
+in the subsequent experiment
+ensuing: the uc5 input in the first two lines can be used to cancel torque tracking terms during the ensuing flux tracking control objective flux
+as listed hereunder:
+in the following text
+	之后：
+	hereinafter 在下文中 For the results presented hereinafter, we choose A and B. Jadot09
+	hereafter, thereafter
+	in the remainder
+	in the sequel 在续集中
+
+
+推导：
+We have
+We obtain
+are attained as follows
+deduce
+derive
+it yields
+it gives
+it follows as
+
+总结：
+To recap/summarize/
+we draw conclusions that
+we conclude
+
+逻辑关系连接词
+thereby
+herein
+Therein xxx is xxx.
+
+in order to
+so as to
+to this end
+to this effect
+
+using A, one gets successively
+under the assumption
+from which it follows
+from xxxx it is deduced that if xxx holds, then xx also holds with xxx
+on which several important properties can be elucidated.
+which yields the expected results.
+
+regardless of 
+despite
+although
+though
+
+	除外：
+	Save
+	Except
+	Besides
+	In addition
+	as an aside:
+1. A phrase that prefaces a comment indirectly related to the topic being discussed. Today we will be discussing the electoral college, but, as an aside, did anyone see the debate last night?
+2. Said quietly to certain people, not an entire group. "Wow, the lead sure needs acting lessons," my mother muttered as an aside when intermission began.
+
+	但是：
+	but
+	however
+	nevertheless
+	whereas
+	whilst
+	
+	因此、所以：
+	hence
+	therefore
+	so
+	thus
+	consequently
+	as a result
+	the resultant conclusion
+	
+	至于：
+	As for
+	As regards saturation, ...
+	As concerns
+
+	实际上：
+	Actually
+	Indeed
+	As a matter of fact
+	In fact
+	in effect
+	de facto
+
+	之后：
+	hereinafter 在下文中 For the results presented hereinafter, we choose A and B. Jadot09
+	hereafter, thereafter
+	in the remainder
+	in the sequel 在续集中
+	ensuing 
+
+	之前：
+	aforementioned
+	beforehand
+	preceding
+	
+
+其他：
+Sontag1998@p330 reduced definition of K and KL class in Exercise 7.3.11.
+
+an infinitesimal perturbation in P - from Doyle
+the performance specification can be expressed succinctly
+
+preclude vt. 阻止； 排除； 妨碍
+Engineers are often confronted with 

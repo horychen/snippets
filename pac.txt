@@ -1363,6 +1363,7 @@ var rules = [
   "||ytimg.com",
   "||torrentkitty.tv",
   "||sci-hub.tw",
+  "||share.dmhy.org",
   "||olevod.com",
   "||zynamics.com",
   "||naughtyamerica.com",
