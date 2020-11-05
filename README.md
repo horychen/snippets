@@ -16,6 +16,7 @@ In Windows, you need to copy those 4 files at:
 to:
 
 >	D:\Users\horyc\Anaconda3\Lib\venv\scripts\nt\
+
 Then instead of linux command ```source```, you need to use DOS command ```start```, for example:
 ```DOS
 start project1_env/Scripts/activate.bat
