@@ -1,6 +1,17 @@
 # Snippets
 Userful snippets (keep updating).
 
+# Steps to use Pyinstaller to create small .exe file
+1. Download python installer from https://www.python.org/downloads/, don't download embeddable version--that won't work with pyinstaller even you get-pip.
+2. Custom install python (only check pip) in, e.g., python37/
+3. ```cd python37/Scripts```
+4. ```pip install pyinstaller```
+5. Download vanilla numpy ```numpy-1.18.5+vanilla-cp37-cp37m-win_amd64.whl``` here: https://www.lfd.uci.edu/~gohlke/pythonlibs/
+6. In Scripts/, ```pip install numpy-1.18.5+vanilla-cp37-cp37m-win_amd64.whl```
+7. In Scripts/, ```pyinstaller -F -w --onefile your-python-file.py```
+8. In Scripts/dist, you can find you .exe file.
+9. In my case, the .exe file built with Anaconda is over 200 MB, but now my new .exe file is only 10.9 MB.
+
 # virtualenv
 See https://www.youtube.com/watch?v=N5vscPTWKOk
 
