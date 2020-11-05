@@ -21,7 +21,9 @@ Then instead of linux command ```source```, you need to use DOS command ```start
 ```DOS
 start project1_env/Scripts/activate.bat
 ```
-and this will open up a new cmd.exe in virtual environment.
+and this will open up a new cmd.exe in virtual environment. Or you can ```cd``` to the project1_env/Scripts/ and run .bat file there.
+
+With that said, I still suggest to use WSL (Windows Subsystem for Linux) instead of cmd.exe for trying out virtualenv.
 
 # Typora: Change Width of Writing Area
 > Edit-Preference-Appearance-Themes-Open Theme Folder-xxx.css-find 'max-width'-replace with following:
