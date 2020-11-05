@@ -43,6 +43,7 @@ activate
 In project1_env/Scripts/, type ```pip list```, you will have a clean pip list now.
 
 With that said, you can also use WSL (Windows Subsystem for Linux) instead of cmd.exe for trying out virtualenv.
+Because, the proper way to do virtual env in Windoes is to use VENV, see https://www.youtube.com/watch?v=APOPm01BVrk
 
 By the way, for using pyinstaller to convert py to exe, don't use Anaconda. See https://stackoverflow.com/questions/48629486/how-can-i-create-the-minimum-size-executable-with-pyinstaller
 
