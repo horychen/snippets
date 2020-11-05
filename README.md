@@ -17,14 +17,21 @@ to:
 
 >	D:\Users\horyc\Anaconda3\Lib\venv\scripts\nt\
 
-Then instead of linux command ```source```, you need to use run the .bat file, for example:
+Then, follow Corey's video:
+```
+mkdir Environments
+cd Environments
+virtualenv project1_env
+```
+
+Finally, instead of linux command ```source```, you need to use run the .bat file, for example:
 ```DOS
 cd project1_env/Scripts
 activate
 ```
 In project1_env/Scripts/, type ```pip list```, you will have a clean pip list now.
 
-With that said, I still suggest to use WSL (Windows Subsystem for Linux) instead of cmd.exe for trying out virtualenv.
+With that said, you can also use WSL (Windows Subsystem for Linux) instead of cmd.exe for trying out virtualenv.
 
 # Typora: Change Width of Writing Area
 > Edit-Preference-Appearance-Themes-Open Theme Folder-xxx.css-find 'max-width'-replace with following:
