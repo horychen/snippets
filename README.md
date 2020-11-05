@@ -3,13 +3,14 @@ Userful snippets (keep updating).
 
 # virtualenv
 See https://www.youtube.com/watch?v=N5vscPTWKOk
+
 In Windows, you need to copy those 4 files at:
-	D:\Users\horyc\Anaconda3\python.exe
-	D:\Users\horyc\Anaconda3\python.pdb
-	D:\Users\horyc\Anaconda3\pythonw.exe
-	D:\Users\horyc\Anaconda3\pythonw.exe
+>	D:\Users\horyc\Anaconda3\python.exe
+>	D:\Users\horyc\Anaconda3\python.pdb
+>	D:\Users\horyc\Anaconda3\pythonw.exe
+>	D:\Users\horyc\Anaconda3\pythonw.exe
 to:
-	D:\Users\horyc\Anaconda3\Lib\venv\scripts\nt\
+>	D:\Users\horyc\Anaconda3\Lib\venv\scripts\nt\
 Then instead of linux command ```source```, you need to use DOS command ```start```, for example:
 ```DOS
 start project1_env/Scripts/activate.bat
