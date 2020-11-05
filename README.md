@@ -17,11 +17,12 @@ to:
 
 >	D:\Users\horyc\Anaconda3\Lib\venv\scripts\nt\
 
-Then instead of linux command ```source```, you need to use DOS command ```start```, for example:
+Then instead of linux command ```source```, you need to use run the .bat file, for example:
 ```DOS
-start project1_env/Scripts/activate.bat
+cd project1_env/Scripts
+activate
 ```
-and this will open up a new cmd.exe in virtual environment. Or you can ```cd``` to the project1_env/Scripts/ and run .bat file there.
+In project1_env/Scripts/, type ```pip list```, you will have a clean pip list now.
 
 With that said, I still suggest to use WSL (Windows Subsystem for Linux) instead of cmd.exe for trying out virtualenv.
 
