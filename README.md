@@ -415,6 +415,9 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 ```
 
 ## Packages
+- *Package Control*
+- *SideBarEnhancements*
+- *ConvertToUTF8*: This allows you to properly open files with GB2312 encoding.
 - BracketHighlighter
 - Dayle Rees Color Schemes
 - DocBlockr
@@ -423,11 +426,9 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 - GitGutter
 - JsPrettier
 - Materialize
-- *Package Control*
 - PackageResourceViewer
 - Predawn
 - Predawn Monokai
-- *SideBarEnhancements*
 - SideBarTools
 - SublimeLinter
 - Theme - Soda
