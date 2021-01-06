@@ -2,10 +2,14 @@
 Userful snippets (keep updating).
 
 # Avoid putting passwords when working with Overleaf + Git
-Overleaf supports Git but does not support SSH (to avoid inputing username and password). The following command will avoid your inputing password in 3600 sec.
+Overleaf supports Git but does not support SSH (to avoid inputing username and password). 
+
+The following command will avoid your inputing password in 3600 sec.
+
 ```git config credential.helper "cache --timeout=3600"```
 
 Since this command is a bit long, I use following command to recall it with WSL:
+
 ```histroy | grep credential```
 
 # Avoid seeing ^M in Git Diff for Git-handled Files
@@ -302,6 +306,11 @@ for ind in range(20):
 
 8. If you encounter "The procesure entry point not located" error, see https://stackoverflow.com/questions/59645179/update-anaconda-failed-entry-point-not-found 
 	> Removed pythoncom37.dll and pywintypes37 from C:\Windows\System32.
+
+# Change https remote to ssh remote
+See https://stackoverflow.com/questions/55246165/how-to-ssh-a-git-repository-after-already-cloned-with-https
+
+```git remote set-url origin user@example.com:PATH/REPOSITORY```
 
 # My ways to use SSH with Github
 > Environment: Windows, WSL
