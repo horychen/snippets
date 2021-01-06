@@ -310,6 +310,16 @@ for ind in range(20):
 # Change https remote to ssh remote
 See https://stackoverflow.com/questions/55246165/how-to-ssh-a-git-repository-after-already-cloned-with-https
 
+First remove old https origin, then add new ssh origin, and finally set upstream between your local branch and the remote origin branch.
+
+```
+git remote remove origin
+git remote add origin git@github.com:horychen/snippets.git
+git push -u origin master
+git push -u origin main
+git push -u origin your-other-branches
+```
+
 ```git remote set-url origin user@example.com:PATH/REPOSITORY```
 
 # My ways to use SSH with Github
