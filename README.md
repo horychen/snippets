@@ -1,6 +1,17 @@
 # Snippets
 Userful snippets (keep updating).
 
+# Avoid putting passwords when working with Overleaf + Git
+Overleaf supports Git but does not support SSH (to avoid inputing username and password). The following command will avoid your inputing password in 3600 sec.
+```git config credential.helper "cache --timeout=3600"```
+
+Since this command is a bit long, I use following command to recall it with WSL:
+```histroy | grep credential```
+
+# Avoid seeing ^M in Git Diff for Git-handled Files
+Use \n for newline.
+https://stackoverflow.com/questions/1889559/git-diff-to-ignore-m
+
 # Steps to use Pyinstaller to create small .exe file
 1. Download python installer from https://www.python.org/downloads/, don't download embeddable version--that won't work with pyinstaller even you get-pip.
 2. Custom install python (only check pip) in, e.g., python37/
