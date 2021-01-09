@@ -1,6 +1,9 @@
 # Snippets
 Userful snippets (keep updating).
 
+# Revert a Git Commit that has been pushed to Remote
+https://gist.github.com/gunjanpatel/18f9e4d1eb609597c50c2118e416e6a6
+
 # Avoid putting passwords when working with Overleaf + Git
 Overleaf supports Git but does not support SSH (to avoid inputing username and password). 
 
