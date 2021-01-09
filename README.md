@@ -154,7 +154,7 @@ git checkout -b <new branch name for this commit>
 # Revert a Git Commit that has been pushed to Remote
 See https://gist.github.com/gunjanpatel/18f9e4d1eb609597c50c2118e416e6a6
 
-However, I would first make the newest commit a new branch for backup, and then checkout to the history commit that I want to revert back to such that HEAD would be pointed at this history commit and then delete the current branch, e.g., main, and make the history commit a branch named to the name of the deleted branch, which would be main.
+If the changes are local, you may want to use ```git reset --hard 2e75f2<some commit hash>``` and ```git clean -df``` instead. See https://www.youtube.com/watch?v=FdZecVxzJbk
 
 # OBS Studio 
 Issue 1: For laptop haveing two GPUs (for me, it has one integrated from intel and one from NVDIA something with 1050Ti), if you see a black screen, you may need to 
