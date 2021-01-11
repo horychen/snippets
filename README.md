@@ -1,6 +1,15 @@
 # Snippets
 Userful snippets (keep updating).
 
+# CCS 10
+If you see "A firmware update is recommended for XDS200 debug probe" when debugging, try:
+
+```
+Help-Check for Updates-Emulator blah blah-Next...
+```
+
+This does not make sure that warning will go away, though.
+
 # Avoid putting passwords when working with Overleaf + Git
 Overleaf supports Git but does not support SSH (to avoid inputing username and password). 
 
