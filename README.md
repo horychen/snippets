@@ -1,6 +1,15 @@
 # Snippets
 Userful snippets (keep updating).
 
+# 2837xD Dual Core Debugging
+- Build both cpu01 project and cpu02 project and there will be .out file below Binaries in Project Explorer.
+- Start debugging cpu01, for example.
+- In Debug window (PS: there are, e.g., Expressions, Registers, Console and Debug windows.), right click on <Texas Instruments XDS2xx" USB Debug Probe_0/C28xx_CPU1> and select connect target. Then, in menu, click in order: Run-Load-Load Program-load the .out file to CPU1. Also load .out file to CPU2 this way.
+
+
+Reference:
+https://blog.csdn.net/qq_42151264/article/details/106986787
+
 # CCS 10
 If you see "A firmware update is recommended for XDS200 debug probe" when debugging, try:
 
