@@ -20,9 +20,10 @@ Help-Check for Updates-Emulator blah blah-Next...
 This does not make sure that warning will go away, though.
 
 # CCS 10 __cplusplus display bug
-
 Window-Preferences-Show advanced settings-C/C++/Language Mappings/Add/Content type: C Source-Language: GNU C
-See also screenshot: [LanguageMappingInCCS](https://1drv.ms/u/s!AhJy_zY_lX2qgbpQJAPMCOe_kpEA_w)
+
+See also screenshot: ![LanguageMappingInCCS](https://1drv.ms/u/s!AhJy_zY_lX2qgbpQJAPMCOe_kpEA_w)
+
 Reference: https://sir.ext.ti.com/jira/browse/EXT_EP-9603
 
 Bonus: Window-Preferences-Show advanced settings-C/C++/Editor/Folding
