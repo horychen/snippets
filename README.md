@@ -5,6 +5,12 @@ Userful snippets (keep updating).
 - Build both cpu01 project and cpu02 project and there will be .out file below Binaries in Project Explorer.
 - Start debugging cpu01, for example.
 - In Debug window (PS: there are, e.g., Expressions, Registers, Console and Debug windows.), right click on <Texas Instruments XDS2xx" USB Debug Probe_0/C28xx_CPU1> and select connect target. Then, in menu, click in order: Run-Load-Load Program-load the .out file to CPU1. Also load .out file to CPU2 this way.
+- See also https://e2e.ti.com/support/microcontrollers/c2000/f/171/t/718227?LAUNCHXL-F28379D-Unable-to-download-CPU2-flash and I quote:
+> 1. Build both CPU1 and CPU2 projects.
+> 2. Using target ccxml, launch the configuraiton.
+> 3. For CPU1, connect target. Load the CPU1 binary. CPU1 should halt in main. Do not run.
+> 4. For CPU2, connet target. Load the CPU2 binary. CPU2 should halt in main.
+> 5. Now run CPU1 then CPU2.
 
 
 Reference:
