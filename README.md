@@ -10,6 +10,14 @@ Userful snippets (keep updating).
 Reference:
 https://blog.csdn.net/qq_42151264/article/details/106986787
 
+# CCS 10 Encoding
+It's 2021. Let's use UTF-8 for all. However, you need to do this for every project and convert GBK encoded files to UTF-8 files.
+So think twice before you do it.
+
+```
+Menu-Window-Preferences-General-Workspace-Text file encoding-Other-UTF-8
+```
+
 # CCS 10 Emulator Firmware Warning
 If you see "A firmware update is recommended for XDS200 debug probe" when debugging, try:
 
