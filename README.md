@@ -491,9 +491,17 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 ```
 
 ## Packages
+Must have:
 - *Package Control*
+- *Outline* (Ctrl+Shfit+P type in Browse Mode, Dark mode: {"color_scheme": "Packages/Outline/outline-Dark.hidden-tmTheme"}, see https://packagecontrol.io/packages/Outline
 - *SideBarEnhancements*
 - *ConvertToUTF8*: This allows you to properly open files with GB2312 encoding.
+
+Syntax Coloring:
+- [PackageResourceViewer](https://stackoverflow.com/questions/32227791/syntax-coloring-in-comments-on-sublime-text-3)
+- [PackageDev](http://ilkinulas.github.io/programming/2016/02/05/sublime-text-syntax-highlighting.html)
+
+Less often used:
 - BracketHighlighter
 - Dayle Rees Color Schemes
 - DocBlockr
@@ -508,5 +516,4 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 - SideBarTools
 - SublimeLinter
 - Theme - Soda
-- *Outline* (Ctrl+Shfit+P type in Browse Mode, Dark mode: {"color_scheme": "Packages/Outline/outline-Dark.hidden-tmTheme"}, see https://packagecontrol.io/packages/Outline
 
