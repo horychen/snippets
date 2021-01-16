@@ -24,6 +24,15 @@ So think twice before you do it.
 Menu-Window-Preferences-General-Workspace-Text file encoding-Other-UTF-8
 ```
 
+# CCS + Sublime Text 3
+ST3 likes UTF-8, but CCS would stick with GBK. Here is one workaround.
+
+After installing [Convert​To​UTF8](https://packagecontrol.io/packages/ConvertToUTF8), ST3 can open GBK file with one extra fresh.
+However, CCS with GBK as default coding cannot display UTF-8 encoded file correctly.
+As a rescue, we can first open the UTF-8 file in ST3, and then select File-Set File Encoding to Chineses Simplified (GBK).
+Finally, CCS can edit this file without encoding error.
+
+
 # CCS 10 Emulator Firmware Warning
 If you see "A firmware update is recommended for XDS200 debug probe" when debugging, try:
 
