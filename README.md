@@ -438,7 +438,7 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 	- Ctrl+Shift+C = Hide output window
 	- Ctrl+Enter = Auto fill
 	- Shift+Enter = Auto spell
-	
+- My Preferred Font: Georgia, fontsize=14
 
 # Sublime Text 3
 ## User settings
