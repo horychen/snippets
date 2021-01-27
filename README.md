@@ -1,6 +1,140 @@
 # Snippets
 Userful snippets (keep updating).
 
+# 2837xD Dual Core Debugging
+- Build both cpu01 project and cpu02 project and there will be .out file below Binaries in Project Explorer.
+- Start debugging cpu01, for example.
+- In Debug window (PS: there are, e.g., Expressions, Registers, Console and Debug windows.), right click on <Texas Instruments XDS2xx" USB Debug Probe_0/C28xx_CPU1> and select connect target. Then, in menu, click in order: Run-Load-Load Program-load the .out file to CPU1. Also load .out file to CPU2 this way.
+- See also https://e2e.ti.com/support/microcontrollers/c2000/f/171/t/718227?LAUNCHXL-F28379D-Unable-to-download-CPU2-flash and I quote:
+> 1. Build both CPU1 and CPU2 projects.
+> 2. Using target ccxml, launch the configuraiton.
+> 3. For CPU1, connect target. Load the CPU1 binary. CPU1 should halt in main. Do not run.
+> 4. For CPU2, connet target. Load the CPU2 binary. CPU2 should halt in main.
+> 5. Now run CPU1 then CPU2.
+
+
+Reference:
+https://blog.csdn.net/qq_42151264/article/details/106986787
+
+# CCS 10 Encoding
+It's 2021. Let's use UTF-8 for all. However, you need to do this for every project and convert GBK encoded files to UTF-8 files.
+So think twice before you do it.
+
+```
+Menu-Window-Preferences-General-Workspace-Text file encoding-Other-UTF-8
+```
+
+# CCS + Sublime Text 3
+ST3 likes UTF-8, but CCS would stick with GBK. Here is one workaround.
+
+After installing [Convert​To​UTF8](https://packagecontrol.io/packages/ConvertToUTF8), ST3 can open GBK file with one extra fresh.
+However, CCS with GBK as default coding cannot display UTF-8 encoded file correctly.
+As a rescue, we can first open the UTF-8 file in ST3, and then select File-Set File Encoding to Chineses Simplified (GBK).
+Finally, CCS can edit this file without encoding error.
+
+
+# CCS 10 Emulator Firmware Warning
+If you see "A firmware update is recommended for XDS200 debug probe" when debugging, try:
+
+```
+Help-Check for Updates-Emulator blah blah-Next...
+```
+
+This does not make sure that warning will go away, though.
+
+# CCS 10 __cplusplus display bug
+Window-Preferences-Show advanced settings-C/C++/Language Mappings/Add/Content type: C Source-Language: GNU C
+
+See also screenshot: ![LanguageMappingInCCS](https://1drv.ms/u/s!AhJy_zY_lX2qgbpQJAPMCOe_kpEA_w)
+
+Reference: https://sir.ext.ti.com/jira/browse/EXT_EP-9603
+
+Bonus: Window-Preferences-Show advanced settings-C/C++/Editor/Folding
+
+# Avoid putting passwords when working with Overleaf + Git
+Overleaf supports Git but does not support SSH (to avoid inputing username and password). 
+
+The following command will avoid your inputing password in 3600 sec.
+
+```git config credential.helper "cache --timeout=3600"```
+
+Since this command is a bit long, I use following command to recall it with WSL:
+
+```histroy | grep credential```
+
+# Avoid seeing ^M in Git Diff for Git-handled Files
+Use \n for newline.
+https://stackoverflow.com/questions/1889559/git-diff-to-ignore-m
+
+# Steps to use Pyinstaller to create small .exe file
+1. Download python installer from https://www.python.org/downloads/, don't download embeddable version--that won't work with pyinstaller even you get-pip.
+2. Custom install python (only check pip) in, e.g., python37/
+3. ```cd python37/Scripts```
+4. ```pip install pyinstaller```
+5. Download vanilla numpy ```numpy-1.18.5+vanilla-cp37-cp37m-win_amd64.whl``` here: https://www.lfd.uci.edu/~gohlke/pythonlibs/
+6. In Scripts/, ```pip install numpy-1.18.5+vanilla-cp37-cp37m-win_amd64.whl```
+7. In Scripts/, ```pyinstaller -F -w --onefile your-python-file.py```
+8. In Scripts/dist, you can find you .exe file.
+9. In my case, the .exe file built with Anaconda is over 200 MB, but now my new .exe file is only 10.9 MB.
+
+# virtualenv
+See https://www.youtube.com/watch?v=N5vscPTWKOk
+
+In Windows, you need to copy those 4 files at:
+>	D:\Users\horyc\Anaconda3\python.exe
+>
+>	D:\Users\horyc\Anaconda3\python.pdb
+>
+>	D:\Users\horyc\Anaconda3\pythonw.exe
+>
+>	D:\Users\horyc\Anaconda3\pythonw.pdb
+
+to:
+
+>	D:\Users\horyc\Anaconda3\Lib\venv\scripts\nt\
+
+Then, follow Corey's video:
+```
+mkdir Environments
+cd Environments
+virtualenv project1_env
+```
+
+Finally, instead of linux command ```source```, you need to use run the .bat file, for example:
+```DOS
+cd project1_env/Scripts
+activate
+```
+In project1_env/Scripts/, type ```pip list```, you will have a clean pip list now.
+
+With that said, you can also use WSL (Windows Subsystem for Linux) instead of cmd.exe for trying out virtualenv.
+Because, the proper way to do virtual env in Windoes is to use VENV, see https://www.youtube.com/watch?v=APOPm01BVrk
+
+By the way, for using pyinstaller to convert py to exe, don't use Anaconda. See https://stackoverflow.com/questions/48629486/how-can-i-create-the-minimum-size-executable-with-pyinstaller
+
+# Typora: Change Width of Writing Area
+> Edit-Preference-Appearance-Themes-Open Theme Folder-xxx.css-find 'max-width'-replace with following:
+```css
+#write {
+	/*max-width: 914px;*/
+	color: #333;
+}
+#typora-source .CodeMirror-lines {
+  max-width: 1800px;
+}
+```
+> see https://support.typora.io/Width-of-Writing-Area/
+
+# Compressed folder name: .vscode.7z
+由于每台电脑安装 gcc 等编译器的情况不同，在 acmsimc_tut 代码所在目录解压后需要修改的地方与操作步骤：
+1. c_cpp_properies.json 中的 compilerPath：修改为你的 gcc.exe 所在地址
+2. launch.json 中的 miDebuggerPath：修改为你的 gcc.exe 所在地址
+3. tasks.json 中的 command：修改为你的 gcc.exe 所在地址
+4. 完事以后，在 acmsimc_tut 代码所在目录右键用 vs code 打开当前文件夹
+5. 打开 main.c，
+6. 快捷键：按 ctrl+shift+b 是编译但不会运行 main.exe
+7. 快捷键：按 F5 是编译 + 运行 debug
+
 # File name: makefile 
 ```
 # Should be equivalent to your list of C files, if you don't build selectively
@@ -66,6 +200,11 @@ Reference: https://bugs.launchpad.net/inkscape/+bug/295564
 ```
 git checkout -b <new branch name for this commit>
 ```
+
+# Revert a Git Commit that has been pushed to Remote
+See https://gist.github.com/gunjanpatel/18f9e4d1eb609597c50c2118e416e6a6
+
+If the changes are local, you may want to use ```git reset --hard 2e75f2<some commit hash>``` and ```git clean -df``` instead. See https://www.youtube.com/watch?v=FdZecVxzJbk
 
 # OBS Studio 
 Issue 1: For laptop haveing two GPUs (for me, it has one integrated from intel and one from NVDIA something with 1050Ti), if you see a black screen, you may need to 
@@ -223,6 +362,21 @@ for ind in range(20):
 8. If you encounter "The procesure entry point not located" error, see https://stackoverflow.com/questions/59645179/update-anaconda-failed-entry-point-not-found 
 	> Removed pythoncom37.dll and pywintypes37 from C:\Windows\System32.
 
+# Change https remote to ssh remote
+See https://stackoverflow.com/questions/55246165/how-to-ssh-a-git-repository-after-already-cloned-with-https
+
+First remove old https origin, then add new ssh origin, and finally set upstream between your local branch and the remote origin branch.
+
+```
+git remote remove origin
+git remote add origin git@github.com:horychen/snippets.git
+git push -u origin master
+git push -u origin main
+git push -u origin your-other-branches
+```
+
+```git remote set-url origin user@example.com:PATH/REPOSITORY```
+
 # My ways to use SSH with Github
 > Environment: Windows, WSL
 1. ```cd ~/.ssh```, make sure there are no existing files named ```id_rsa*```. If so, rm ```id_rsa*```. This is possible if you have done this before and you forget how you did it, like me.
@@ -284,7 +438,7 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 	- Ctrl+Shift+C = Hide output window
 	- Ctrl+Enter = Auto fill
 	- Shift+Enter = Auto spell
-	
+- My Preferred Font: Georgia, fontsize=14
 
 # Sublime Text 3
 ## User settings
@@ -346,6 +500,19 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 ```
 
 ## Packages
+Must have:
+- *Package Control*
+- *Outline* (Ctrl+Shfit+P type in Browse Mode, Dark mode: {"color_scheme": "Packages/Outline/outline-Dark.hidden-tmTheme"}, see https://packagecontrol.io/packages/Outline
+- *SideBarEnhancements*
+- *ConvertToUTF8*: This allows you to properly open files with GB2312 encoding.
+
+Syntax Coloring:
+- [PackageResourceViewer](https://stackoverflow.com/questions/32227791/syntax-coloring-in-comments-on-sublime-text-3)
+- [PackageDev](http://ilkinulas.github.io/programming/2016/02/05/sublime-text-syntax-highlighting.html)
+- [C Improved](https://packagecontrol.io/packages/C%20Improved)
+- [C++ (fmt)](https://android.googlesource.com/platform/external/fmtlib/+/refs/heads/master/support/C++.sublime-syntax)
+
+Less often used:
 - BracketHighlighter
 - Dayle Rees Color Schemes
 - DocBlockr
@@ -354,13 +521,10 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 - GitGutter
 - JsPrettier
 - Materialize
-- *Package Control*
 - PackageResourceViewer
 - Predawn
 - Predawn Monokai
-- *SideBarEnhancements*
 - SideBarTools
 - SublimeLinter
 - Theme - Soda
-- *Outline* (Ctrl+Shfit+P type in Browse Mode, Dark mode: {"color_scheme": "Packages/Outline/outline-Dark.hidden-tmTheme"}, see https://packagecontrol.io/packages/Outline
 
