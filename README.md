@@ -1,6 +1,19 @@
 # Snippets
 Userful snippets (keep updating).
 
+# Sublime Text 3: chnage color for comment.block in color-syntax scheme
+- Package install PackageResourceViewer.
+- In C improved.tmLanguage, find the scope you want to edit, for example, comment.block
+- Open `Color Scheme (Default)-Monokai..sublime-color-scheme` and add
+```json
+{
+    "name": "CommentBlock",
+    "scope": "comment.block.c",
+    "foreground": "var(orange3)"
+},
+```
+
+
 # 2837xD Dual Core Debugging
 - Build both cpu01 project and cpu02 project and there will be .out file below Binaries in Project Explorer.
 - Start debugging cpu01, for example.
