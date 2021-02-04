@@ -3,8 +3,9 @@ Userful snippets (keep updating).
 
 # Sublime Text 3: chnage color for comment.block in color-syntax scheme
 - Package install PackageResourceViewer.
-- In C improved.tmLanguage, find the scope you want to edit, for example, comment.block
-- Open `Color Scheme (Default)-Monokai..sublime-color-scheme` and add
+- PackageResourceViewer-Open Resource.
+	- Open C improved.tmLanguage, find the scope you want to edit, for example, comment.block for chaging multi-line comment in Clang.
+	- Open `Color Scheme (Default)-Monokai..sublime-color-scheme` and add
 ```json
 {
     "name": "CommentBlock",
