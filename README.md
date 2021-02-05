@@ -518,10 +518,12 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 
 ## Packages
 Must have:
+- **Dark sidebar**: Preferences-Theme-Adaptive.sublime-theme
 - *Package Control*
+- *ConvertToUTF8*: This allows you to properly open files with GB2312 encoding.
+- *PackageResourceViewer*
 - *Outline* (Ctrl+Shfit+P type in Browse Mode, Dark mode: {"color_scheme": "Packages/Outline/outline-Dark.hidden-tmTheme"}, see https://packagecontrol.io/packages/Outline
 - *SideBarEnhancements*
-- *ConvertToUTF8*: This allows you to properly open files with GB2312 encoding.
 
 Syntax Coloring:
 - [PackageResourceViewer](https://stackoverflow.com/questions/32227791/syntax-coloring-in-comments-on-sublime-text-3)
@@ -538,7 +540,6 @@ Less often used:
 - GitGutter
 - JsPrettier
 - Materialize
-- PackageResourceViewer
 - Predawn
 - Predawn Monokai
 - SideBarTools
