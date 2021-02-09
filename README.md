@@ -287,35 +287,45 @@ rem inkscape TDDA_inner_block_cn.pdf --export-eps=TDDA_inner_block_cn.eps <- fon
 ```
 
 # latexmk
-Overleaf: 
+
+TL;DR
+```shell
+latexmk -quiet -pdf -synctex=1 -pvc -view=none <tex-file-name-without-suffix>
+@pause
+::see https://mg.readthedocs.io/latexmk.html
+```
+
+Using Latexmk with Overleaf: 
 > https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten
 ```
 :: make sure you have "latexmk" file from overleaf in the directory(https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten)
-
-:: (Optional) Renmae your .tex file to "output.tex".
-
 :: Do not use -halt-on-error or -file-line-error. No effect.
 
-:: Option 1
+:: Option 1 (manually compile everytime)
 ::latexmk -pdf -synctex=1 
 
-:: Option 2 (This is my favorite)
-latexmk -pdf -synctex=1 -pvc -view=none :: <- latexmk will panic if you error with references.
+:: Option 2 (detect changes and compile so you must be careful now if you want to press ctrl+s)
+latexmk -pdf -synctex=1 -pvc -view=none :: <- latexmk will panic if you have error with references.
 
-:: [Important] Sometimes, latexmk will remove the already generated .pdf file at the end of compilation and insists that there are errors (e.g., refer to bibtex's log file .blg). By searching online, people put \end{document} before \bibliographystyle command, but this is not your case. In fact, if you put your files back to overleaf, it just compiles really well. In this situation, my working solution is to create a new .tex file with a different name and paste your original .tex content to the new .tex file and run ```latexmk -pdf <your-new-tex-file-name>. It works for me.```
+:: [Important] Sometimes, compiler called with latexmk will remove the already generated .pdf file at the end of compilation and insists that there are errors (e.g., refer to bibtex's log file .blg). Searching online, people put \end{document} before \bibliographystyle command, but this is not your case. In fact, if you put your files back to overleaf, it just compiles well. In this situation, my working solution is to create a new .tex file with a different name and paste your original .tex content to the new .tex file and run ```latexmk -pdf <your-new-tex-file-name>. It works for me.```
 ```
-preview continuously:
-```
-latexmk -pdflatex="pdflatex -synctex=1 -halt-on-error -interaction=nonstopmode" -pdf -pvc -view=none <Tex-file>
-```
-pdfLaTeX with synctex
-```
-latexmk -pdflatex="pdflatex -synctex=1" -pdf <tex-file-name>
-```
-XeLaTeX 
-```
+
+Here are some examples I found online. I do not recommend to use them.
+```shell
+:: XeLaTeX
 latexmk -pdf -e "$pdflatex=q/xelatex %O %S/" document.tex
 :: https://stackoverflow.com/questions/3124273/compile-xelatex-tex-file-with-latexmk
+
+:: preview continuously:
+latexmk -pdflatex="pdflatex -synctex=1 -halt-on-error -interaction=nonstopmode" -pdf -pvc -view=none <Tex-file>
+
+:: pdfLaTeX with synctex
+latexmk -pdflatex="pdflatex -synctex=1" -pdf <tex-file-name>
+```
+
+**If you want to use XeLaTeX, go this way**
+```shell
+latexmk -pdf -xelatex -synctex=1 -pvc -view=none <tex-file-name-without-suffix>
 ```
 
 # Inkscape tips
