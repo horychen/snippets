@@ -10,7 +10,7 @@ There is an important post to ease editing CMakeLists.txt:
 
 > https://stackoverflow.com/questions/33653113/how-to-add-existing-source-and-headers-file-to-the-clion-project/42043930
 
-![clion-setting](https://github.com/horychen/emachinery/blob/master/assets/images/clion-setting.png)
+![clion-setting](https://github.com/horychen/snippets/blob/master/assets/images/clion-setting.png)
 
 # Sublime Text 3: change color for comment.block in color-syntax scheme
 
