@@ -6,7 +6,7 @@ _Userful snippets (keeps updating)._
 
 # Implementing Donut.c
 
-First you need to install ubuntu from Windows store, enable WSL, restart PC and open the newly installed ubuntu terminal:
+First you need to install ubuntu from Microsoft Store, enable WSL, restart PC and open the newly installed ubuntu terminal:
 ```shell
 # https://stackoverflow.com/questions/62215963/how-to-install-gcc-and-gdb-for-wslwindows-subsytem-for-linux
 sudo apt-get update
