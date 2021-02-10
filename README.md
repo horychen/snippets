@@ -1,7 +1,19 @@
 # Snippets
-Userful snippets (keep updating).
 
-# Sublime Text 3: chnage color for comment.block in color-syntax scheme
+_Userful snippets (keeps updating)._
+
+
+
+# CLion Setting
+
+There is an important post to ease editing CMakeLists.txt: 
+
+> https://stackoverflow.com/questions/33653113/how-to-add-existing-source-and-headers-file-to-the-clion-project/42043930
+
+![clion-setting](https://github.com/horychen/emachinery/blob/master/assets/images/clion-setting.png)
+
+# Sublime Text 3: change color for comment.block in color-syntax scheme
+
 - Package install PackageResourceViewer.
 - PackageResourceViewer-Open Resource.
 	- Open C improved.tmLanguage, find the scope you want to edit, for example, comment.block for chaging multi-line comment in Clang.
@@ -99,11 +111,11 @@ See https://www.youtube.com/watch?v=N5vscPTWKOk
 
 In Windows, you need to copy those 4 files at:
 >	D:\Users\horyc\Anaconda3\python.exe
->
+>	
 >	D:\Users\horyc\Anaconda3\python.pdb
->
+>	
 >	D:\Users\horyc\Anaconda3\pythonw.exe
->
+>	
 >	D:\Users\horyc\Anaconda3\pythonw.pdb
 
 to:
@@ -387,6 +399,7 @@ for ind in range(20):
 7. Put the path of open-ssl (D:\Users\horyc\Anaconda3\pkgs\pyopenssl-19.1.0-py37_0\Library\bin) to system enviroment variable path. The path depends on Anaconda version. Mine is Anaconda 2020-03.
 
 8. If you encounter "The procesure entry point not located" error, see https://stackoverflow.com/questions/59645179/update-anaconda-failed-entry-point-not-found 
+	
 	> Removed pythoncom37.dll and pywintypes37 from C:\Windows\System32.
 
 # Change https remote to ssh remote
