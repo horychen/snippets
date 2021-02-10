@@ -4,6 +4,21 @@ _Userful snippets (keeps updating)._
 
 
 
+# Implementing Donut.c
+
+First you need to install ubuntu from Windows store, enable WSL, restart PC and open the newly installed ubuntu terminal:
+```shell
+# https://stackoverflow.com/questions/62215963/how-to-install-gcc-and-gdb-for-wslwindows-subsytem-for-linux
+sudo apt-get update
+sudo apt-get upgrade -y
+sudo apt autoremove -y
+# If you see "Aborted (core dumped)"", autoremove would be helpful.
+sudo apt-get install gcc -y
+# -y means --assume-yes
+gcc -o donut donut.c -lm
+./donut
+```
+
 # CLion Setting
 
 There is an important post to ease editing CMakeLists.txt: 
