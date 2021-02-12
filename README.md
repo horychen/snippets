@@ -3,8 +3,11 @@
 _Userful snippets (keeps updating)._
 
 
+# Cannot load plugin fix for PySide2, PyQt5, Qt Creator
+- Add a environment variable `QT_QPA_PLATFORM_PLUGIN_PATH` with value `C:\Users\horyc\anaconda3\Lib\site-packages\PyQt5\Qt\plugins\platforms`.
+- Copy qwindow.dll from `C:\Users\horyc\anaconda3\Lib\site-packages\PySide2\plugins\platforms` to `C:\Users\horyc\Anaconda3\Library\plugins\platforms` ([ref](https://stackoverflow.com/questions/41994485/how-to-fix-could-not-find-or-load-the-qt-platform-plugin-windows-while-using-m))
 
-# Implementing Donut.c
+# Implementing Donut.c in Windows 10
 
 First you need to install ubuntu from Microsoft Store, enable WSL, restart PC and open the newly installed ubuntu terminal:
 ```shell
