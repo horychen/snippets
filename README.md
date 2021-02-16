@@ -2,7 +2,6 @@
 
 _Userful snippets (keeps updating)._
 
-
 # Cannot load plugin fix for PySide2, PyQt5, Qt Creator
 - Add a environment variable `QT_QPA_PLATFORM_PLUGIN_PATH` with value `C:\Users\horyc\anaconda3\Lib\site-packages\PyQt5\Qt\plugins\platforms`.
 - Copy qwindow.dll from `C:\Users\horyc\anaconda3\Lib\site-packages\PySide2\plugins\platforms` to `C:\Users\horyc\Anaconda3\Library\plugins\platforms` ([ref](https://stackoverflow.com/questions/41994485/how-to-fix-could-not-find-or-load-the-qt-platform-plugin-windows-while-using-m))
@@ -565,6 +564,21 @@ Must have:
 - *PackageResourceViewer*
 - *Outline* (Ctrl+Shfit+P type in Browse Mode, Dark mode: {"color_scheme": "Packages/Outline/outline-Dark.hidden-tmTheme"}, see https://packagecontrol.io/packages/Outline
 - *SideBarEnhancements*
+- *highlightwords*: Use ctrl+alt+h (Edit-HighlightWords) to temporarily highlight words, and Preferences-Package Settings-HighlightWords-SettingsUser to permanently highlight words as follows
+```json
+{
+    // Keywords to be always highlighted, clear the list to disable it.
+    // "keyword" are literally matched, and "color" refers to theme scope names.
+    // "flag": 0 - regex, 1 - literal (default), 2 - regex and ignore case, 3 - literal and ignore case
+    // Note that json has some special characters like '\' should be escaped.
+    "permanent_highlight_keyword_color_mappings": [
+        // {"keyword": "TODO", "color": "support.function"},
+        {"keyword": "FIXIT .*", "color": "support.function", "flag": 2},
+        {"keyword": "Note .*", "color": "support.function", "flag": 2},
+    ]
+
+}
+```
 
 Syntax Coloring:
 - [PackageResourceViewer](https://stackoverflow.com/questions/32227791/syntax-coloring-in-comments-on-sublime-text-3)
