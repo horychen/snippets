@@ -584,6 +584,7 @@ Syntax Coloring:
 - [PackageResourceViewer](https://stackoverflow.com/questions/32227791/syntax-coloring-in-comments-on-sublime-text-3)
 - [PackageDev](http://ilkinulas.github.io/programming/2016/02/05/sublime-text-syntax-highlighting.html)
 - [C Improved](https://packagecontrol.io/packages/C%20Improved)
+- [Python Improved]
 - [C++ (fmt)](https://android.googlesource.com/platform/external/fmtlib/+/refs/heads/master/support/C++.sublime-syntax)
 
 Less often used:
