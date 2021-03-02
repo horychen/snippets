@@ -2,6 +2,48 @@
 
 _Userful snippets (keeps updating)._
 
+# Install PyTorch CUDA
+I install torch from [Start Locally | PyTorch](https://pytorch.org/get-started/locally/#windows-pip) with following command:
+```shell
+conda install pytorch torchvision torchaudio cudatoolkit=10.1 -c pytorch
+```
+
+I encounter an intersting python package called "easyocr" and by running it, it suggests my GPU driver is too old. So, I downloaded for my GeForce 1050Ti a new driver (Game Ready Driver) from:
+> https://www.nvidia.com/Download/driverResults.aspx/170799/en-us
+
+It is extracted to:
+> `D:\NVIDIA\DisplayDriver\461.40\Win10-DCH_64\International`
+
+After it is installed, the folder `D:\NVIDIA` is gone, and I tested:
+```python
+>>> import torch
+>>> torch.__version__
+'1.7.1'
+>>> torch.cuda.is_available()
+True
+```
+
+Note if you have previously installed torch. After you do `conda install pytorch torchvision torchaudio cudatoolkit=10.1`, you must manually delete all name matching `/torch*` folders as well as `~orch` in python's `site-packages` folder.
+Mine is at
+```shell
+C:\Users\horyc\Anaconda3\Lib\site-packages
+```
+See the answer of [srodriguez142857](https://discuss.pytorch.org/t/importerror-key-already-registered-with-the-same-priority/86271/2)
+> Conclusion: This problem is due to existent library files in the _torch_ folder due to previous installations. One needs to remove them manually before reinstall again the latest version of PyTorch.
+
+I confirm he is right, because after I do  `conda install pytorch torchvision torchaudio cudatoolkit=10.1`, I can still `import torch`. It is said torch is a module, but there is no `torch.__version__` or `torch.cuda`. This means there is a folder named `/torch` in my python import path.
+
+# Clean up pkgs by conda and pip 
+See answer by [Dr Manhattan](https://stackoverflow.com/users/3571614/dr-manhattan)
+```shell
+pip cache dir
+pip cache purge
+conda clean -a
+```
+For windows users, there is a more aggressive [option](https://stackoverflow.com/questions/56266229/is-it-safe-to-manually-delete-all-files-in-pkgs-folder-in-anaconda-python):
+```shell
+conda clean --force-pkgs-dirs
+```
 
 
 # Implementing Donut.c
@@ -26,6 +68,8 @@ There is an important post to ease editing CMakeLists.txt:
 > https://stackoverflow.com/questions/33653113/how-to-add-existing-source-and-headers-file-to-the-clion-project/42043930
 
 ![clion-setting](https://github.com/horychen/snippets/blob/master/assets/images/clion-setting.png)
+
+Ctrl+Alt+S will call out the settings, locate appearance-font to change for the color scheme to monokai.
 
 # Sublime Text 3: change color for comment.block in color-syntax scheme
 
@@ -387,7 +431,7 @@ for ind in range(20):
 	app.GetModel(u"ind88888").GetStudy(u"ind88888Tran2TSS-ForceCapabilityTest-Rated").GetDesignTable().SetValue(ind+1, 4, BW_AMP*(ind+1))
 ```
 
-# Anaconda 3 (after installing it, I tend to do what is follows)
+# Anaconda 3 (after installing it, I tend to do what follows)
 1. Revise history.py
 	```
 	File "D:\Users\horyc\Anaconda3\lib\site-packages\pyreadline\lineeditor\history.py", line 82, in read_history_file
@@ -584,3 +628,20 @@ Less often used:
 - SublimeLinter
 - Theme - Soda
 
+
+HighlightWords.sublime-settings
+```json
+{
+    // Keywords to be always highlighted, clear the list to disable it.
+    // "keyword" are literally matched, and "color" refers to theme scope names.
+    // "flag": 0 - regex, 1 - literal (default), 2 - regex and ignore case, 3 - literal and ignore case
+    // Note that json has some special characters like '\' should be escaped.
+    "permanent_highlight_keyword_color_mappings": [
+        // {"keyword": "TODO", "color": "support.function"},
+        {"keyword": "FIXIT .*", "color": "support.function", "flag": 2},
+        // {"keyword": "Note .*", "color": "support.function", "flag": 2},
+        {"keyword": "[^#]## .*", "color": "support.comment", "flag": 2},
+        {"keyword": "/// .*", "color": "support.comment", "flag": 2},
+    ]
+}
+```
