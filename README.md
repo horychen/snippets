@@ -755,3 +755,14 @@ HighlightWords.sublime-settings
 - In Sublime Text, install CTags via Package Control
 - run `ctags -R --exclude=.\dat -f .tags` to create ctags file `.tags` in your c-project directory.
 - In Sublime Text, right click on a variable (for example, a float variable) and "Navigate to Definition". If there are multiple definitions, select the one you want.
+- In ST3, add following to Preferences-Packages Settings-CTags-Setting User
+```
+{
+
+    // Additional options to pass to ctags, i.e.
+    // ["--exclude=some/path", "--exclude=some/other/path", ...]
+    "opts" : ["--c-kinds=+l"],
+
+    "file_exclude_patterns": [".tags", ".tags_sorted_by_file", ".gemtags"]
+}
+```
