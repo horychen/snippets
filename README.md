@@ -2,6 +2,57 @@
 
 _Userful snippets (keeps updating)._
 
+# Least Square Snippets
+
+OLS `D:\DrH\Codes\acmsimc_tut\exp.dat\noloadtest_exp_phaseVoltage.py`
+```python
+import statsmodels.api as sm
+# Ordinary least squares regression
+print('Start OLS...')
+model_Simple = sm.OLS(y, x).fit()
+print(model_Simple.summary())
+print('Parameters: ', model_Simple.params)
+
+# Add a constant term like so:
+print('\n', '-'*40)
+print('Start OLS with a constant term (intercept)...')
+model = sm.OLS(y, sm.add_constant(x)).fit()
+print(model.summary())
+print('Parameters: ', model.params)
+
+x = [0] + x.tolist() + [3000]
+print(x)
+
+plt.plot(x, np.array(x)*model_Simple.params[0], 'b--')
+plt.plot(x, np.array(x)*model.params[1] + model.params[0], 'r--')
+
+plt.xlabel('Voltage Squared [$\\rm V^2$]')
+plt.ylabel('Power [W]')
+plt.grid()
+
+# plt.figure()
+# plt.plot(list_volt, list_realpower, 'ko')
+# plt.grid()
+plt.show()
+```
+
+
+# CMake tries to compile nonexisting source file
+CMake will get into error when you delete a c source file, e.g.:
+`cmake mingw32-make.exe[2]: *** No rule to make target commissioning.c`
+
+The simple solution is to modify and save CMakeLists.txt file:
+> From my experience the most reliable way to retrigger the CMake configuration is to touch one of the projects `CMakeLists.txt` files.
+> from: https://stackoverflow.com/questions/30949452/cmake-ninja-attempting-to-compile-deleted-cpp-file
+
+# Obsidian vs. Typora
+They both support markdown and latex. 
+> By the way, mubu now also supports markdown + latex.
+> Jupyter lab also supports markdown + latex.
+
+The differnce is that Obsidian can have a side-by-side preview window (as in VS Code) if you hold ctrl and left click on the preview button on the right top corner.
+> see papaya电脑教室's youtube video on Obsidian.
+
 # Install PyTorch CUDA
 I install torch from [Start Locally | PyTorch](https://pytorch.org/get-started/locally/#windows-pip) with following command:
 ```shell
@@ -71,7 +122,12 @@ There is an important post to ease editing CMakeLists.txt:
 
 ![clion-setting](https://github.com/horychen/snippets/blob/master/assets/images/clion-setting.png)
 
-Ctrl+Alt+S will call out the settings, locate appearance-font to change for the color scheme to monokai.
+Shortcults
+- Ctrl+Alt+S will call out the settings, locate appearance-font to change for the color scheme to monokai. See help from menu-bar for more.
+- Ctrl+Shift+N is equivalent to Ctrl+P in Sublime Text--open file in project
+- Ctrl+N and Ctrl+Shift+Alt+N are kind of equivalent to Ctrl+G in Sublime Text--go to any symbol
+> ref: https://blog.jetbrains.com/clion/2015/03/search-and-navigation-in-clion/
+
 
 # Sublime Text 3: change color for comment.block in color-syntax scheme
 
@@ -624,12 +680,39 @@ Must have:
 }
 ```
 
+Shortcuts
+- CTRL+Shift+P: access to package control
+- CTRL+\`: see ST's python console command
+- CTRL+P: open file in project
+- CTRL+R: go to symbol in current file
+- CTRL+G: go to line number
+- **ALT+O: switch c header and c source file**
+- CTRL+ALT+Up/Down: multi-edit
+- CTRL+LeftClick: multi edit
+- CTRL+D: select same text
+- CTRL+SHIFT+F: search in project
+- CTRL+H, ALT+R: replace, toggle regex
+- CTRL+SHIFT+Z: undo undo
+- CTRL+K, CTRL+1: Fold by level 1
+- CTRL+K, CTRL+J: unfold all
+- CTRL+F2: toggle bookmark
+- F2, jump to next bookmark
+- Alt+-: go to last view
+- CTRL+M: jump to marching bracket
+- SHIFT+ALT+2: split into two views
+- File-New View Into File
+- CTRL+B or CTRL+SHIFT+B: Build
+- **CTRL+SHIFT+R**: brings up the search panel for all indexed symbols.
+
+
 Syntax Coloring:
 - [PackageResourceViewer](https://stackoverflow.com/questions/32227791/syntax-coloring-in-comments-on-sublime-text-3)
 - [PackageDev](http://ilkinulas.github.io/programming/2016/02/05/sublime-text-syntax-highlighting.html)
 - [C Improved](https://packagecontrol.io/packages/C%20Improved)
 - [Python Improved]
 - [C++ (fmt)](https://android.googlesource.com/platform/external/fmtlib/+/refs/heads/master/support/C++.sublime-syntax)
+- LSP
+
 
 Less often used:
 - BracketHighlighter
@@ -645,6 +728,7 @@ Less often used:
 - SideBarTools
 - SublimeLinter
 - Theme - Soda
+- See also https://www.youtube.com/watch?v=-6ikAMmu3Nc
 
 
 HighlightWords.sublime-settings
@@ -663,3 +747,11 @@ HighlightWords.sublime-settings
     ]
 }
 ```
+
+
+# Sublime Text 3 go to variable declaration
+- Download zip file from https://jaist.dl.sourceforge.net/project/ctags/ctags/5.8/
+- Extract zip file and add this folder to System Environment Path
+- In Sublime Text, install CTags via Package Control
+- run `ctags -R --exclude=.\dat -f .tags` to create ctags file `.tags` in your c-project directory.
+- In Sublime Text, right click on a variable (for example, a float variable) and "Navigate to Definition". If there are multiple definitions, select the one you want.

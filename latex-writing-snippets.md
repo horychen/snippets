@@ -1,4 +1,29 @@
-[Subequations](https://tex.stackexchange.com/questions/225517/subequations-with-main-equation-number)
+
+#### Blod Math
+
+To be used inside math environment, \bm is more professional than \boldsymbol. Refer to:
+> https://latex.org/forum/viewtopic.php?t=26738
+
+To be used outside of math environment, consider to try the declration command \boldmath$\chi=Je$
+> https://www.giss.nasa.gov/tools/latex/boldmath.html
+
+Method 1:
+```latex
+\mbox{
+	\boldmath
+	$$math formaula$$
+}
+```
+
+Method 2:
+```latex
+\boldmath
+	$$math formaula$$
+\unboldmath
+```
+
+
+#### [Subequations](https://tex.stackexchange.com/questions/225517/subequations-with-main-equation-number)
 ```latex
 \begin{subequations}\label{eq:CLEST:main}
 \begin{align}
@@ -15,7 +40,22 @@
 \end{subequations}
 ```
 
-Figure
+#### Figure Option 1
+```latex
+\renewcommand{\figlocation}{images/AC-Force-Test-SC+PS-crop.pdf}
+\renewcommand{\figname}{Measured AC force versus slip frequency characteristics of both pole-specific rotor and squirrel cage rotor prototypes at standstill.}
+\renewcommand{\figlabel}{fig:ACForceVersusSlip}
+\begin{figure}[t]
+    \centering
+    \includegraphics[scale=0.4]{\figlocation}
+    \vspace{-2ex}
+    \caption{\figname}
+    \label{\figlabel}
+    \vspace{-2ex}
+\end{figure}
+```
+
+#### Figure Option 2
 ```latex
 \begin{figure}[t]
   \centering
@@ -25,7 +65,29 @@ Figure
 \end{figure}
 ```
 
-Subfloats
+#### Subfloats Option 1
+```latex
+\renewcommand{\figAlocation}{images/EXP-BLOCKED-TORQUE-VERSUS-SLIP-crop.pdf}
+\renewcommand{\figBlocation}{images/EXP-BLOCKED-TORQUE-VERSUS-SLIP-SUSPENSION-REGULATION-crop.pdf}
+\renewcommand{\figAsubcap}{Torque Regulation}
+\renewcommand{\figBsubcap}{Suspension Regulation}
+\renewcommand{\figAlabel}{fig:TorqueVersusSlip}
+\renewcommand{\figBlabel}{fig:TorqueVersusSlipSusReg}
+\renewcommand{\figname}{Measured torque versus slip frequency characteristics from  (a) torque terminals, and (b) suspension terminals, of both pole-specific rotor and squirrel cage rotor prototypes at standstill.}
+\renewcommand{\figlabel}{fig:TorqueTest}
+\begin{figure}[t]
+    \centering
+    \subfloat[\figAsubcap]{\includegraphics[scale=0.395]{\figAlocation}\label{\figAlabel}}
+    \hspace{-0ex}
+    \subfloat[\figBsubcap]{\includegraphics[scale=0.395]{\figBlocation}\label{\figBlabel}}
+    \vspace{-1ex}
+    \caption{\figname}
+    \label{\figlabel}
+    \vspace{-2.5ex}
+\end{figure}
+```
+
+#### Subfloats Option 2
 ```latex
 \begin{figure}[t]
     \centering
@@ -44,7 +106,7 @@ Subfloats
 ```
 
 
-[Table](https://www.tablesgenerator.com/latex_tables#)
+#### [Table](https://www.tablesgenerator.com/latex_tables#)
 ```latex
 \begin{table}[!t]
   \caption{List of All Reviewed Flux Estimators}
@@ -78,7 +140,7 @@ Subfloats
 ```
 
 
-Nomenclature (dedicated package)
+#### Nomenclature 1 (dedicated package)
 ```latex
 % 系统命名法：https://www.overleaf.com/learn/latex/nomenclatures
 \usepackage{nomencl}
@@ -94,7 +156,7 @@ Nomenclature (dedicated package)
 %pdflatex n.tex
 ```
 
-Nomenclature (using what we have)
+#### Nomenclature 2 (using what we have)
 ```latex
 %\setlist[description]{labelindent=25pt,style=multiline,leftmargin=2.5cm}
 \setlist[description]{leftmargin=1.4cm, labelindent=0cm, labelsep=0.4cm, labelwidth=1.0cm}
@@ -106,7 +168,7 @@ Nomenclature (using what we have)
 \end{description}
 ```
 
-Nomenclature (IEEE native, my recommandation)
+#### Nomenclature 3 (IEEE native, my recommandation)
 ```latex
 \section*{Nomenclature}
 \begin{IEEEdescription}[\IEEEusemathlabelsep\IEEEsetlabelwidth{$Q_s,Q_r$}]
@@ -117,7 +179,17 @@ Nomenclature (IEEE native, my recommandation)
 \end{IEEEdescription}
 ```
 
-negative space
+#### Negative space
 ```latex
+	\! = negative \,
     \newcommand{\ns}{\negthickspace\negthickspace\negthickspace\negthickspace\negthickspace\negthickspace}
 ```
+
+#### em and ex
+Please note that `em` is preferably used in horizontal measurements and `ex` in vertical measurements.
+> https://tex.stackexchange.com/questions/338435/how-to-reduce-space-between-end-of-table-and-footnote-using-parnote
+
+
+#### Parnotes (footnote for table)
+> https://tex.stackexchange.com/questions/338435/how-to-reduce-space-between-end-of-table-and-footnote-using-parnote
+
