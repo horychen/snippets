@@ -2,6 +2,24 @@
 
 _Userful snippets (keeps updating)._
 
+# AxGlyph
+alt+c可以增加格式刷，拉一个新的框用alt+ v刷上。
+
+右边侧边栏可以改背景色，我喜欢改成无色，也可以修改线段类型，精确输入框宽和长和椭圆的长短轴。
+
+按住shift拖动图形可以不变形，更多按F1看帮助文档pdf。
+
+嫌文字太大太小，选中流程图框框，回车，找到字体设置，修改大小为16比如，然后应用到新的框框。
+
+此外还有各种对齐的功能等等。
+
+输入文字可以找到流程图所在的菜单的右边第二个，一个T图标，右键它定义快捷键，方便批量输入文字。
+
+在打开的axmath窗口，善用ctrl+1234切换斜体和粗体。
+
+还有比如ctrl+ F可以把视窗对到文件正中间，滚轮调整zoom，右键按住拖动可以平移画布。
+
+
 # Least Square Snippets
 
 OLS `D:\DrH\Codes\acmsimc_tut\exp.dat\noloadtest_exp_phaseVoltage.py`
