@@ -36,6 +36,22 @@ plt.grid()
 plt.show()
 ```
 
+# Solidworks Add 3D annotation for dimension
+(Original Text is missing in Earthquick)
+In View-Show/Hide-
+![[Pasted image 20210429090633.png]]
+![[Pasted image 20210429092508.png]]
+
+# CCS 10: no core is connected bug
+(Original Text is missing in Earthquick)
+![[Pasted image 20210429134716.png]]
+![[Pasted image 20210429134748.png]]
+
+# WinEdt: default PDF viewer
+(Original Text is missing in Earthquick)
+![[Pasted image 20210507130617.png]]
+
+
 
 # CMake tries to compile nonexisting source file
 CMake will get into error when you delete a c source file, e.g.:

@@ -1,3 +1,33 @@
+assumed to be inaccessible
+not available
+
+
+the Euclidean norm = 2 norm
+
+streamline the presentation. Ortega 2011 Estimation
+
+concise
+
+eliminate
+... is obviated. Ortega 2011 Estimation
+
+challenging
+... are daunting tasks. Ortega 2011 Estimation
+
+
+estimated and "actual" velocity overlaid, Lorenz 1993 Limitations
+superimpose
+overlap
+
+
+underscore: we underscore that (Bowen 2019 HFI)
+emphasize
+stress
+
+flinch 退缩；畏缩
+slander 诽谤，中伤
+
+
 我说ergodic，eric都听不懂我想表达什么。
 不知道traverse有没有遍历的意思？
 traversed: Here dα/p is used, since the angle α obtains values from 0 to p·2 as the rotor periphery is traversed.
