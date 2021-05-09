@@ -2,6 +2,17 @@
 
 _Userful snippets (keeps updating)._
 
+# Fancy Annotation using Matplotlib
+```python
+ax.annotate('External Resistors Connected (0.5 $\\Omega$)', xy=(35.5, 3.65), xycoords='data',
+                    xytext=(40, 3.72), size=14, 
+                    arrowprops=dict(arrowstyle="-[,widthB=3.4,lengthB=0.3", connectionstyle="angle,angleA=180,angleB=90,rad=0"))
+```
+
+# JabRef Citation Key Pattern
+Default: [year]-[auth.auth.ea]-[veryshorttitle]
+Book: [year]-[auth.auth.ea]-book-[shorttitle]
+
 # AxGlyph
 alt+c可以增加格式刷，拉一个新的框用alt+ v刷上。
 
