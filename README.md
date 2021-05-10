@@ -2,6 +2,16 @@
 
 _Userful snippets (keeps updating)._
 
+# Git: Stop tracking a file
+See [stackoverflow](https://stackoverflow.com/questions/936249/how-to-stop-tracking-and-ignore-changes-to-a-file-in-git)
+```shell
+git rm --cached Main.pdf
+```
+An alternative solution is 
+```shell
+git update-index --assume-unchanged Main.pdf
+```
+
 # Fancy Annotation using Matplotlib
 ```python
 ax.annotate('External Resistors Connected (0.5 $\\Omega$)', xy=(35.5, 3.65), xycoords='data',

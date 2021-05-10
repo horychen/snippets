@@ -1,5 +1,57 @@
 
-#### Blod Math
+#### Table of Figures
+Instead of 
+```latex
+\begin{figure*}[t]
+    \centering
+    \vspace{-2ex}
+    \subfloat[]{\includegraphics[width=.4\columnwidth]{Figures/Fig16_kb=05_(a).png}\label{fig16-kb05-a}}
+    \subfloat[]{\includegraphics[width=.4\columnwidth]{Figures/Fig16_kb=05_(b).png}\label{fig16-kb05-b}}
+    \subfloat[]{\includegraphics[width=.4\columnwidth]{Figures/Fig16_kb=05_(c).png}\label{fig16-kb05-c}}
+
+    \subfloat[]{\includegraphics[width=.4\columnwidth]{Figures/Fig16_kb=10_(a).png}\label{fig16-kb10-a}}
+    \subfloat[]{\includegraphics[width=.4\columnwidth]{Figures/Fig16_kb=10_(b).png}\label{fig16-kb10-b}}
+    \subfloat[]{\includegraphics[width=.4\columnwidth]{Figures/Fig16_kb=10_(c).png}\label{fig16-kb10-c}}
+
+    \subfloat[]{\includegraphics[width=.4\columnwidth]{Figures/Fig16_kb=20_(a).png}\label{fig16-kb20-a}}
+    \subfloat[]{\includegraphics[width=.4\columnwidth]{Figures/Fig16_kb=20_(b).png}\label{fig16-kb20-b}}
+    \subfloat[]{\includegraphics[width=.4\columnwidth]{Figures/Fig16_kb=20_(c).png}\label{fig16-kb20-c}}
+    \caption{Tracking performance of the three systems for step speed reference under different $k_b$.}
+    \label{fig16}
+    \vspace{-3ex}
+\end{figure*}
+```
+Let's do this:
+```latex
+%\begin{table*}
+\begin{figure*}
+    \centering
+    %\begin{tabular}{cccc}
+    %\begin{tabular}{cM{20mm}M{20mm}M{20mm}}
+    %\begin{tabular}{c@{\hspace{1mm}}M{20mm}M{20mm}M{20mm}}
+    \begin{tabular}{c@{\hspace{-0.0em}}M{.55\columnwidth}M{.55\columnwidth}M{.55\columnwidth}}
+       \toprule
+        $k_b$ & $\rm 3^{rd}ESO\_1$ & $\rm 3^{rd}ESO\_4$ & $\rm 4^{th}ESO\_1$ \\
+        \midrule
+        0.5 & \includegraphics[width=.55\columnwidth]{Figures/Fig16_kb=05_(a).png}\label{fig16-kb05-a} &
+              \includegraphics[width=.55\columnwidth]{Figures/Fig16_kb=10_(a).png}\label{fig16-kb10-a} &
+              \includegraphics[width=.55\columnwidth]{Figures/Fig16_kb=20_(a).png}\label{fig16-kb20-a} \\
+        1.0 & \includegraphics[width=.55\columnwidth]{Figures/Fig16_kb=05_(b).png}\label{fig16-kb05-b} &
+              \includegraphics[width=.55\columnwidth]{Figures/Fig16_kb=10_(b).png}\label{fig16-kb10-b} &
+              \includegraphics[width=.55\columnwidth]{Figures/Fig16_kb=20_(b).png}\label{fig16-kb20-b} \\
+        2.0 & \includegraphics[width=.55\columnwidth]{Figures/Fig16_kb=05_(c).png}\label{fig16-kb05-c} &
+              \includegraphics[width=.55\columnwidth]{Figures/Fig16_kb=10_(c).png}\label{fig16-kb10-c} &
+              \includegraphics[width=.55\columnwidth]{Figures/Fig16_kb=20_(c).png}\label{fig16-kb20-c} \\
+        \bottomrule
+    \end{tabular}
+    \caption{Tracking performance of the three systems for step speed reference under different $k_b$.}
+    \label{tbl:table_of_figures}
+%\end{table*}
+\end{figure*}
+```
+
+
+#### Bold Math
 
 To be used inside math environment, \bm is more professional than \boldsymbol. Refer to:
 > https://latex.org/forum/viewtopic.php?t=26738
