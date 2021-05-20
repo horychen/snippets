@@ -166,7 +166,8 @@ interrupt void CLA_UNDERFLOW_ISR(void);             // 12.16 - CLA Underflow
 
 When CPU is executing the ISR, it will stop receiving any interrupt flag. If you want the ECAP to interrupt the ISR of EPWM ISR, you need to explictly allow it in the EPWM ISR. This is called [interrupt nesting](https://software-dl.ti.com/C2000/docs/c28x_interrupt_nesting/html/index.html).
 > 2.4.4.4 Nesting Interrupts
-By default, interrupts do not nest. It is possible to nest and prioritize interrupts via software control of the IER and PIEIERx registers. Documentation and example code can be found in controlSUITE and on the TI Processors wiki:
+> 
+> By default, interrupts do not nest. It is possible to nest and prioritize interrupts via software control of the IER and PIEIERx registers. Documentation and example code can be found in controlSUITE and on the TI Processors wiki:
 http://processors.wiki.ti.com/index.php/Interrupt_Nesting_on_C28x
 
 Here is an example of mine:
@@ -322,6 +323,20 @@ The simple solution is to modify and save CMakeLists.txt file:
 > From my experience the most reliable way to retrigger the CMake configuration is to touch one of the projects `CMakeLists.txt` files.
 > from: https://stackoverflow.com/questions/30949452/cmake-ninja-attempting-to-compile-deleted-cpp-file
 
+# CMake cannot relief from a previous error
+:: 我遇到了下面的错误，但是这个错误我已经修正了，而且用`gmake.exe`可以编译运行了，但是Cmake不依不饶，继续报错：
+```shell
+[100%] Linking C executable acmsimcv5.exe
+CMakeFiles\acmsimcv5.dir/objects.a(pmsm_observer.c.obj): In function `the_active_flux_estimator':D:/DrH/Codes/emachineryTestPYPI/emachinery/acmsimcv5/c/pmsm_observer.c:820: undefined reference to `general_4states_rk4_solver'  
+collect2.exe: error: ld returned 1 exit status
+CMakeFiles\acmsimcv5.dir\build.make:309: recipe for target 'acmsimcv5.exe' failed     mingw32-make.exe[2]: *** [acmsimcv5.exe] Error 1
+CMakeFiles\Makefile2:74: recipe for target 
+'CMakeFiles/acmsimcv5.dir/all' failed      
+mingw32-make.exe[1]: *** [CMakeFiles/acmsimcv5.dir/all] Error 2
+Makefile:82: recipe for target 'all' failedmingw32-make.exe: *** [all] Error 2
+```
+比起想办法 clean 现有的 Cmake 输出文件，更有效的方法是 touch 一下 你的 CMakeList.txt 文件（就是打开按个回车保存）。
+
 # Obsidian vs. Typora
 They both support markdown and latex. 
 > By the way, mubu now also supports markdown + latex.
@@ -329,6 +344,8 @@ They both support markdown and latex.
 
 The differnce is that Obsidian can have a side-by-side preview window (as in VS Code) if you hold ctrl and left click on the preview button on the right top corner.
 > see papaya电脑教室's youtube video on Obsidian.
+
+I personally prefer how Obsidian handles it when I paste a image from the pasteboard into the document.
 
 # Install PyTorch CUDA
 I install torch from [Start Locally | PyTorch](https://pytorch.org/get-started/locally/#windows-pip) with following command:
