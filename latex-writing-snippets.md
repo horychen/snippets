@@ -1,3 +1,74 @@
+#### Some details about math notations
+% 转置符号不是T
+```
+\newcommand{\transpose}{^\mathsf{T}}
+%$\mathbf{A}^\mathrm{T}$
+%$\mathbf{A}^\top$
+%$\mathbf{A}^\mathsf{T}$
+%$\mathbf{A}^\intercal$
+```
+
+% 微分符号不是d
+
+#### New line in Table Row
+My IEMDC 2019 paper
+```latex
+% for using new line in table
+\usepackage{makecell}
+\renewcommand\theadalign{bc}
+\renewcommand\theadfont{\bfseries}
+\renewcommand\theadgape{\Gape[4pt]}
+\renewcommand\cellgape{\Gape[4pt]}
+```
+
+#### thank note as footnote
+```latex
+\newcommand\blfootnote[1]{%
+  \begingroup
+  \renewcommand\thefootnote{}\footnote{#1}%
+  \addtocounter{footnote}{-1}%
+  \endgroup
+}
+```
+
+#### Todo and Revision
+% For Revision
+```
+\usepackage[final]{changes} % it clears the traces of changes made by the authors and respecting the last changes.
+\usepackage[markup=underlined]{changes}
+\definechangesauthor[name={Jiahao Chen}, color=blue]{CJH}
+\definechangesauthor[name={Eric Loren Severson}, color=orange]{ELS}
+```
+
+% Simple Revision
+```
+ \definecolor{darkgreenOri}{RGB}{84, 139, 34}
+ \definecolor{sthlmRedOri}{RGB}{196,0,100}
+ \definecolor{ranewRedOri}{RGB}{220,0,120}
+ \definecolor{darkBlueOri}{RGB}{15,40,127}
+ \definecolor{sthlmBlueOri}{RGB}{0,110,191}
+\newcommand{\idraft}[1]{#1} %{\textcolor{darkgreen}{#1}}
+\newcommand{\ra}[1]{\textcolor{sthlmRed}{#1}}
+\newcommand{\ranew}[1]{\textcolor{ranewRed}{#1}}
+\newcommand{\ecce}[1]{#1} %{\textcolor{darkBlue}{#1}}
+\newcommand{\rb}[1]{\textcolor{sthlmBlue}{#1}}
+```
+
+% Todo Notes
+```
+\usepackage[colorinlistoftodos,prependcaption,textsize=small]{todonotes}
+%\usepackage[disable]{todonotes}
+\newcommand{\todoINFO}[1]{\todo[inline, color=blue!25]{INFO: #1}}
+\newcommand{\todoIMPORTANT}[1]{\todo[inline, color=red!25]{IMPORTANT: #1}}
+\newcommand{\todoREVA}[1]{\todo[inline, color=green!25]{REVISED: #1}}
+```
+
+
+#### 取消文末对齐
+注释掉 IEEE 提供的模板的这一句：
+```
+%\usepackage{flushend}
+```
 
 #### Table of Figures
 Instead of 
@@ -50,6 +121,35 @@ Let's do this:
 \end{figure*}
 ```
 
+#### [Text Column in Array](https://tex.stackexchange.com/questions/62902/text-column-in-array)
+```
+\usepackage{array,amsmath}
+\newcolumntype{L}{>$l<$}
+
+	\begin{array}{L@{\quad}c@{{}={}}c}
+       some text:            & x^2 & x^2 \\
+       more thoughts:        & y^2 & y^2 \\
+       really deep thoughts: & z^2 & z^2
+    \end{array}
+```
+	
+
+#### [Variant of Capital Geek Variable](https://tex.stackexchange.com/questions/87238/greek-letters-in-italic-in-math-equation)
+```
+\usepackage{amsmath}
+
+\let\Gamma\varGamma
+\let\Delta\varDelta
+\let\Theta\varTheta
+\let\Lambda\varLambda
+\let\Xi\varXi
+\let\Pi\varPi
+\let\Sigma\varSigma
+\let\Upsilon\varUpsilon
+\let\Phi\varPhi
+\let\Psi\varPsi
+\let\Omega\varOmega
+```
 
 #### Bold Math
 
