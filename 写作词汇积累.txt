@@ -1,3 +1,9 @@
+concurrently: run code concurrently/parallel
+at the same time
+simultaneously.
+
+
+
 assumed to be inaccessible
 not available
 

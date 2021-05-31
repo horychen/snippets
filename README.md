@@ -2,6 +2,20 @@
 
 _Userful snippets (keeps updating)._
 
+# Anaconda 3 pkgs folder is huge
+```conda clean --force-pkgs-dirs```
+![[Pasted image 20210530084527.png]]
+
+# VS Code
+- Shift+Alt+F, auto format your codes
+- F2, Ctrl+F2, Ctrl+D, rename symbol, select all that are same, select the same one by one
+- Right click on variable and click on peek can give your call hierachy which is seen in CCS.
+- Extension: Predawm Theme
+- Extension: Ayu File Icon Theme
+- Extension: Remote-WSL
+- Extension: GitLens
+- Extension: Bookmark, ctrl+alt+J/K/L (might need to resolve )
+![[Pasted image 20210526143452.png]]
 
 # C2000 中断优先级和中断嵌套
 In 2837xD Technical Reference Manual @Section2.4.2.2 PIE Stage, it writes:
@@ -303,6 +317,10 @@ plt.show()
 In View-Show/Hide-
 ![[Pasted image 20210429090633.png]]
 ![[Pasted image 20210429092508.png]]
+
+# CCS 10: shortcuts
+- Ctrl+O will open mini-outline window for you to navigate.
+- Ctrl+G to search text.
 
 # CCS 10: no core is connected bug
 (Original Text is missing in Earthquick)

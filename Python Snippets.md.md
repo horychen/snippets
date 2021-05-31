@@ -1,3 +1,25 @@
+### Numba njit + dynamical system + vs code note book 
+
+
+
+
+### Mutable
+All mutable types are only initalized once when it is created.
+
+
+
+### set and list
+Python set is hash table (that enables order 1 look-up) so it is faster than list.
+
+
+
+### traceback
+import traceback
+traceback.print_exc()
+str = traceback.format_exc()
+
+
+
 
 ### Sort
 电压和电流测量结果的顺序调整。
@@ -18,4 +40,10 @@
     x = i_data = i_data[::-1]
     y = u_data = u_data[::-1]
 ```
+
+
+
+### Terms
+double underscore?
+> Yes, "dunder" is "double under" and refers to either methods or variables like \_\_len\_\_, or \_\_my\_var.
 

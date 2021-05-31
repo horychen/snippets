@@ -1,4 +1,8 @@
 
+# 任务管理器 in bash
+htop
+
+
 WSL不支持自动检测文件变化，不论你用entr还是inotifywait。至少，entr至少支持新加文件（-d）时执行指令。
 while sleep 1 ; do ls *.tex | entr -cdp cmd.exe /C z ; done
 while inotifywait -e close_write BLIM_Review.tex; do cmd.exe /C z; done
