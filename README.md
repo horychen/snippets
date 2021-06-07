@@ -2,14 +2,40 @@
 
 _Userful snippets (keeps updating)._
 
+# PYPI project
+Unknown location error. E.g., you need to manually create a `__init__` file in `acmsimpyv1` folder.
+```ImportError: cannot import name 'acmsimpy' from 'emachinery.acmsimpyv1' (unknown location)```
+
+# SWIFT Code
+>中国银行微银行（微信）可以查询开户行
+>
+>https://intl.alipay.com/ihome/help/swiftcode.htm
+>
+>https://www2.swift.com/bsl/?bicSearch_bic=BKCHCNBJ&bicSearch_city=hangzhou&bicSearch_country=CN
+>
+>https://www.bankofchina.com/aboutboc/ab6/200810/t20081016_7363.html
+>
+> 0018657187967385 （在新加坡拨打中国银行浙大支行）
+> "注意：中行的swift code只要找到省或市一级的就可以了，不用详细到各区的分支行。" quote from http://www.xineurope.com/thread-778744-1-1.html
+
 # Anaconda 3 pkgs folder is huge
 ```conda clean --force-pkgs-dirs```
 ![[Pasted image 20210530084527.png]]
 
 # VS Code
+-Ctrl+P, open settings.json (The one in `AppData\Roaming\Code\User`), and add the following (see [this post](https://stackoverflow.com/questions/42307949/color-theme-for-vs-code-integrated-terminal#:~:text=VSCode%20comes%20with%20in%2Dbuilt,on%20mac%20and%20type%20color%20.)): 
+```json
+"workbench.colorCustomizations" : {
+ "terminal.foreground" : "#00FD61",
+ "terminal.background" : "#383737",
+ "terminalCursor.background":"#D0D0D0",
+ "terminalCursor.foreground":"#D0D0D0",
+ },
+ ```
 - Shift+Alt+F, auto format your codes
 - F2, Ctrl+F2, Ctrl+D, rename symbol, select all that are same, select the same one by one
 - Right click on variable and click on peek can give your call hierachy which is seen in CCS.
+- User Setting: search for `autoGuessEncoding` and set it to true.
 - Extension: Predawm Theme
 - Extension: Ayu File Icon Theme
 - Extension: Remote-WSL
