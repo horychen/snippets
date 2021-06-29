@@ -1,3 +1,9 @@
+# Latexmk command that I used
+```
+latexmk -quiet -pdf -synctex=1 -pvc -view=none -jobname=./aux-files/ismb2021 ismb2021
+del pdflatex*.fls
+```
+
 #### Some details about math notations
 % 转置符号不是T
 ```
@@ -263,6 +269,7 @@ Method 2:
 \begin{table}[!t]
   \caption{List of All Reviewed Flux Estimators}
   \centering
+  \renewcommand{\arraystretch}{1.2} % increase vertical space for each row
   \small\addtolength{\tabcolsep}{-3.5pt}
   \scalebox{.9}{
     \begin{tabular}{lccccc}

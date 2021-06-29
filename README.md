@@ -2,9 +2,71 @@
 
 _Userful snippets (keeps updating)._
 
+# Remove a pdf file from git
+See [this](https://stackoverflow.com/questions/40879523/how-to-remove-all-pdf-files-from-a-git-push).
+```
+git rm -r ismb2021.pdf
+```
+or
+```
+git rm -rf ismb2021.pdf
+```
+
+# Python cProfiling, async and await
+See [this](https://www.youtube.com/watch?v=m_a0fN48Alw).
+
+# Sublime Text 4 Python Version
+See [this](https://medium.com/swlh/setting-your-python-version-in-sublime-text-8e8a305e6701). In short, Ctrl+Shift+P install `PackageResourceViewer` and 
+```
+Tools > Command Pallete > type 'PackageResourceViewer' > PackageResourceViewer: Open Resource > python > python.sublime build
+```
+change (py is python 3.9 in my system)
+```
+    "windows": {
+        "cmd": ["py", "-u", "$file"],
+    },
+```
+to (python is python 3.7 from anaconda in my system)
+```
+    "windows": {
+        "cmd": ["python", "-u", "$file"],
+    },
+
+```
+
+# Windows shortcut to folder
+Hit `Win+R` and type:
+```
+shell:startup
+%WindowsEnvVariables%
+```
+
+# mpl, plt
+```
+plt.show(block=False)
+```
+
+pip install --upgrade pip setuptools wheel
+
+# Manifest.in (Python Packaging)
+> https://packaging.python.org/guides/using-manifest-in/
+
+
+# 2to3
+```shell
+2to3 --output-dir=python3-version -W -n python2-version
+```
+
 # PYPI project
 Unknown location error. E.g., you need to manually create a `__init__` file in `acmsimpyv1` folder.
 ```ImportError: cannot import name 'acmsimpy' from 'emachinery.acmsimpyv1' (unknown location)```
+
+# Vitual Env
+```
+C:\Users\horyc\AppData\Local\Programs\Python\Python39\Scripts\virtualenv .venv
+cd .venv/Scripts && activate
+pip install -r requirements.txt
+```
 
 # SWIFT Code
 >中国银行微银行（微信）可以查询开户行
@@ -26,20 +88,46 @@ Unknown location error. E.g., you need to manually create a `__init__` file in `
 -Ctrl+P, open settings.json (The one in `AppData\Roaming\Code\User`), and add the following (see [this post](https://stackoverflow.com/questions/42307949/color-theme-for-vs-code-integrated-terminal#:~:text=VSCode%20comes%20with%20in%2Dbuilt,on%20mac%20and%20type%20color%20.)): 
 ```json
 "workbench.colorCustomizations" : {
- "terminal.foreground" : "#00FD61",
- "terminal.background" : "#383737",
- "terminalCursor.background":"#D0D0D0",
- "terminalCursor.foreground":"#D0D0D0",
+	 "editor.lineHighlightBackground": "#000000",
+	 "terminal.foreground" : "#00FD61",
+	 "terminal.background" : "#383737",
+	 "terminalCursor.background":"#D0D0D0",
+	 "terminalCursor.foreground":"#D0D0D0",
  },
+ 
+ "editor.tokenColorCustomizations": {
+	"textMateRules": [
+		{
+			"scope": "punctuation.definition.comment",
+			"settings": {
+				// "foreground": "#FFFFFF"
+			}
+		},
+		{
+			"scope": "comment.block",
+			"settings": {
+			 	"foreground": "#7DF9FF" //"#00DBFF" //"#EA7CB5"
+			}
+		},
+		{
+			"scope": "comment.block.documentation",
+			"settings": {
+				"foreground": "#FFA87C"
+			}
+		},
+	],
+},
  ```
 - Shift+Alt+F, auto format your codes
+- Ctrl+Alt+arrows, up and down for multi-line edit,** left and right for window split.**
 - F2, Ctrl+F2, Ctrl+D, rename symbol, select all that are same, select the same one by one
 - Right click on variable and click on peek can give your call hierachy which is seen in CCS.
 - User Setting: search for `autoGuessEncoding` and set it to true.
-- Extension: Predawm Theme
-- Extension: Ayu File Icon Theme
-- Extension: Remote-WSL
-- Extension: GitLens
+- Extension: **Predawm** Theme
+- Extension: **Ayu** File Icon Theme
+- ~~Extension: Remote-WSL~~
+- Extension: GitLens (Settings: uncheck add actions to tab bar)
+- Extension: Better Comments
 - Extension: Bookmark, ctrl+alt+J/K/L (might need to resolve )
 ![[Pasted image 20210526143452.png]]
 
@@ -283,8 +371,10 @@ ax.annotate('External Resistors Connected (0.5 $\\Omega$)', xy=(35.5, 3.65), xyc
 ```
 
 # JabRef Citation Key Pattern
+```
 Default: [year]-[auth.auth.ea]-[veryshorttitle]
 Book: [year]-[auth.auth.ea]-book-[shorttitle]
+```
 
 # AxGlyph
 alt+c可以增加格式刷，拉一个新的框用alt+ v刷上。
@@ -343,6 +433,9 @@ plt.show()
 In View-Show/Hide-
 ![[Pasted image 20210429090633.png]]
 ![[Pasted image 20210429092508.png]]
+
+# CCS 10: Code Folding
+![[Pasted image 20210619130632.png]]
 
 # CCS 10: shortcuts
 - Ctrl+O will open mini-outline window for you to navigate.
@@ -762,6 +855,17 @@ latexmk -quiet -pdf -synctex=1 -pvc -view=none <tex-file-name-without-suffix>
 ::see https://mg.readthedocs.io/latexmk.html
 ```
 
+My favorite:
+```shell
+latexmk -quiet -pdf -synctex=1 -pvc -view=none -jobname=./aux-files/ismb2021 ismb2021
+del pdflatex*.fls
+```
+
+**If you want to use XeLaTeX, go this way**
+```shell
+latexmk -pdf -xelatex -synctex=1 -pvc -view=none <tex-file-name-without-suffix>
+```
+
 Using Latexmk with Overleaf: 
 > https://tex.stackexchange.com/questions/518564/what-are-the-steps-for-compiling-overleaf-projects-offline-and-getting-consisten
 ```
@@ -788,11 +892,6 @@ latexmk -pdflatex="pdflatex -synctex=1 -halt-on-error -interaction=nonstopmode" 
 
 :: pdfLaTeX with synctex
 latexmk -pdflatex="pdflatex -synctex=1" -pdf <tex-file-name>
-```
-
-**If you want to use XeLaTeX, go this way**
-```shell
-latexmk -pdf -xelatex -synctex=1 -pvc -view=none <tex-file-name-without-suffix>
 ```
 
 # Inkscape tips
