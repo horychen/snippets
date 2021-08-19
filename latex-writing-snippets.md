@@ -1,3 +1,147 @@
+# Two separate figures side by side for double column space
+```latex
+\begin{figure*}
+\centering
+\begin{minipage}[t]{.66\textwidth}
+        \subfloat[]{\!\!\!\!\!\!\!\!
+            \includegraphics[width=0.495\hsize]{images/805-0700-slessinv-Vdc-2-crop-FontAsPath.pdf}
+            \label{fig:varyVdc:a}
+        }
+        %\hspace{-0.5em}
+        \subfloat[]{
+            \includegraphics[width=0.505\hsize]{images/805-0700-slessinv-Vdc-4-crop-FontAsPath.pdf}
+            \label{fig:varyVdc:b}
+            \!\!\!\!\!
+        }
+        %\vspace{-1ex}
+        \caption{Experimental sensorless operation with varying dc bus voltage.}
+        \label{fig:varyVdc}
+        %\vspace{-1ex}
+\end{minipage}
+%\qquad
+\begin{minipage}[t]{.33\textwidth}
+        \includegraphics[width=1\hsize]{images/805-0700-slessinv-load-2-crop-FontAsPath.pdf}
+        %\vspace{-1ex}
+        \caption{Experimental sensorless operation with varying load torque.}
+        \label{fig:varyLoad}
+        %\vspace{-1.5ex}
+\end{minipage}
+\end{figure*}
+```
+
+# Table with footnote
+
+```latex
+\usepackage{tikz, soul}
+\newcommand*{\mycheckmark}[1][]{\tikz[x=1em, y=1em]\fill[#1] (0,.35) -- (.25,0) -- (1,.7) -- (.25,.15) -- cycle;}
+
+\begin{table*}[t]
+  \vspace{-1ex}
+  \caption{Undesired Ingredients and Polar Plot Results \hl{What should caption be?}}
+  \renewcommand{\arraystretch}{1.0}
+  \scalebox{.95}
+  {
+        \centering
+        \begin{tabular}{l|cccccc}
+        \hline
+        Design No.                             & 1   & 2   & 3   & 4    & 5   & 6   \\
+        \hline
+        \hline
+        Harmonics at $h=p\pm1$                    & -$\!\!~^*$   & \mycheckmark$\!\!~^\dagger$ & \mycheckmark & \mycheckmark  & \mycheckmark & \mycheckmark \\
+        Amplitude asymmetry in working harmonics $h=p_s$ & -   & -   & - & \mycheckmark  & \mycheckmark & -   \\
+        Phase asymmetry in working harmonics $h=p_s$ & -   & -   & \mycheckmark & \mycheckmark  & \mycheckmark & -   \\
+        Asymmetry in harmonics $h=p\pm1$       & -   & \mycheckmark   & \mycheckmark & \mycheckmark  & \mycheckmark & -   \\
+        Elliptical force polar plot?              & No  & Yes   & Yes & Yes & Yes & No  \\
+        Force difference in FPP, $\Delta F$ {[}N{]}                     & 0.06   & 5.6 & 9.4 & 27.5 & 5.3 & 0.27  \\
+        $E_a$ variation in $E_a$ polar plot, $\Delta E_a$ [mech. deg] & 0.8   & 2.1   & 5.2  & 9.0   & 2.3  & 7.4 \\
+        Acceptable Design? & Yes   & Yes  & No   & No    & Yes  & No \\
+        \hline
+        \end{tabular}
+  }
+  {
+        \vspace{-2.0ex}
+        \\
+    \begin{flushleft}
+            \begin{tabular}{l}
+                \multicolumn{1}{l}{*Check mark ``\mycheckmark'' means the description applies.}\\
+                \multicolumn{1}{l}{$\dagger$Dash ``-'' means the description does not apply.}
+            \end{tabular}
+    \end{flushleft}
+  }
+  \label{tab:ListOfIngredients}
+\end{table*}
+```
+
+```latex
+\begin{table}[t]
+	\begin{minipage}{\columnwidth}
+		%% increase table row spacing, adjust to taste
+		\renewcommand{\arraystretch}{1.4}
+		% if using array.sty, it might be a good idea to tweak the value of
+		% \extrarowheight as needed to properly center the text within the cells
+		\caption{Properties of Winding Types\cite{2009-Pyrhonen.Jokinen.ea-book-Designrotatingelectrical}.}
+		\label{tab:FractionalSlotWinding}
+		\centering
+		%% Some packages, such as MDW tools, offer better commands for making tables
+		%% than the plain LaTeX2e tabular which is used here.
+		\scalebox{.8}{
+			\begin{tabular}{c|cccc}\hline\hline
+				& Integer-slot & First-grade & \multicolumn{2}{c}{Second grade}\\\hline
+				% $Q'/m$ & ? & Even & \multicolumn{2}{c}{Odd} \\
+				$t~\ra{\triangleq{\rm GCD}(Q,p)}$ & $p$ & $\frac{p}{n}$ & \multicolumn{2}{c}{$\frac{2p}{n}$} \\
+				$n$ & $1$ & Odd & \multicolumn{2}{c}{Even} \\
+				$180^\circ$ phasors?\footnote{whether the phasor star contains phasors in $180^\text{e}$ pairs} & Yes & Yes & \multicolumn{2}{c}{No} \\
+				& & & Single layer & Double layer \\
+				$Q^*$ & $Q'$ & $Q'$ & $2Q'$ & $Q'$ \\
+				$p^*$ & $p'$ & $p'$ & $2p'$ & $p'$ \\ %\hline
+		\end{tabular}}
+	\end{minipage}
+\end{table}
+```
+
+# Table with newline in a cell
+Option 1:
+```latex
+\begin{table}[t]
+	\begin{minipage}{\columnwidth}
+		\renewcommand{\arraystretch}{1.4} %modify in conjunction with \extrarowheight to adjust row spacing
+		\caption{Stator Winding Symmetry Requirements.}
+		\label{tab:SymmetryRequirements}
+		\centering
+		\begin{tabular}{llc}\hline\hline
+			%Winding & Requirement\\\hline
+			%\multirow{2}{*}{1) Integer no. of coils per phase} & \vline {~~Single layer} & {Double layer} \\
+          %& \vline ~~$\frac{p}{n} \in \mathbb{N} $ & $2\frac{p}{n} \in \mathbb{N}$ \\
+			\multirow{2}{*}{1) Integer no. of coils per phase} & \multicolumn{1}{|c}{Single layer} & \multicolumn{1}{|l}{Double layer} \\
+          & \multicolumn{1}{|c}{$\frac{p}{n} \in\mathbb{N}$} & \multicolumn{1}{|l}{$2\frac{p}{n} \in \mathbb{N}$} \\
+         \hline
+			2) Star of slots angular spacing  & \multicolumn{2}{|l}{$m$ and $n$ must be co-prime} \\
+         %2) Star of slots angular spacing  & \vline \multicolumn{2}{c}{$m$ and $n$ must be co-prime} \\
+% https://tex.stackexchange.com/questions/286922/misplaced-omit-multispan-omit
+			% & & & & \\ \hline
+       \hline
+       \vspace{-3.5ex}
+       \\
+%       \multicolumn{3}{l}{Note: $m$ is phase number, $p$ is pole pair number, and $n$ is \hl{den of $q$?}.}\\
+%       \multicolumn{3}{l}{$n$ is \hl{??? (n is harmonic order in this paper already)}}
+		\end{tabular}
+	\end{minipage}
+\end{table}
+```
+
+Option 2:
+IEMDC 2019 paper
+
+# Extra { bug can de deadly
+```latex
+%令人绝望的bug（无法debug）：
+\multicolumn{7}{l}{*{*The phase angles of $\bar {\boldsymbol{k}}_{Sw}(4)$ of the three phases are 0, 110, -140 $\rm [elec.deg]$.}
+
+%正确
+\multicolumn{7}{l}{*The phase angles of $\bar {\boldsymbol{k}}_{Sw}(4)$ of the three phases are 0, 110, -140 $\rm [elec.deg]$.}
+
+```
+
 # Latexmk command that I used
 ```
 latexmk -quiet -pdf -synctex=1 -pvc -view=none -jobname=./aux-files/ismb2021 ismb2021
@@ -317,13 +461,13 @@ Method 2:
 
 #### Nomenclature 2 (using what we have)
 ```latex
+\usepackage{enumitem}% http://ctan.org/pkg/enumitem, for \setlist
 %\setlist[description]{labelindent=25pt,style=multiline,leftmargin=2.5cm}
 \setlist[description]{leftmargin=1.4cm, labelindent=0cm, labelsep=0.4cm, labelwidth=1.0cm}
 \begin{description}
 \item[$\hat ~,\tilde ~$] For derived symbols, $\hat ~$ and $\tilde ~$ stand for estimation and error quantities, respectively, e.g., $\tilde \alpha = \alpha-\hat \alpha$.
 \item[$~^*$] An aster $~^\ast$ indicates the commanded quantities.
 \item[$M$-$T$] The $M$-$T$ frame designates the rotor field oriented frame, where $M$-axis is aligned with the rotor flux vector while the $T$-axis is $90^\circ$ leading to the $M$-axis.
-\item[$I,J$]
 \end{description}
 ```
 

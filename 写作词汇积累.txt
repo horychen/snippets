@@ -1,3 +1,12 @@
+in later parts of the paper
+in sequel
+
+
+innate = inherent?
+inborn
+natural
+
+
 concurrently: run code concurrently/parallel
 at the same time
 simultaneously.

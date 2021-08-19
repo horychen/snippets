@@ -1,0 +1,249 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!DOCTYPE preferences SYSTEM "http://java.sun.com/dtd/preferences.dtd">
+<preferences EXTERNAL_XML_VERSION="1.0">
+  <root type="user">
+    <map/>
+    <node name="org">
+      <map/>
+      <node name="jabref">
+        <map>
+          <entry key="bindings" value="ctrl+alt+A;ctrl+ENTER;ctrl+G;F7;;ctrl+F8;alt+F8;;ESCAPE;Esc;ctrl+W;ctrl+C;ctrl+K;ctrl+shift+K;ctrl+alt+K;ctrl+shift+alt+K;ctrl+shift+C;ctrl+shift+alt+T;ctrl+X;DELETE;;alt+F7;ctrl+T;alt+DOWN;ctrl+TAB;ctrl+PLUS;alt+UP;ctrl+shift+TAB;ctrl+MINUS;ctrl+ENTER;ctrl+alt+e;ctrl+shift+e;ctrl+DOWN;ctrl+UP;alt+1;F1;ctrl+I;ctrl+alt+I;;;ctrl+M;;;;;;;;;;;ctrl+shift+A;ctrl+shift+B;ctrl+N;ctrl+shift+N;ctrl+shift+I;;ctrl+shift+M;ctrl+shift+T;ctrl+shift+P;;ctrl+shift+U;ctrl+PAGE_DOWN;F9;ctrl+E;alt+0;F3;F4;ctrl+shift+O;ctrl+O;ctrl+shift+L;ctrl+V;alt+S;ctrl+PAGE_UP;shift+F9;ctrl+shift+R;ctrl+L;ctrl+Q;ctrl+Y;ctrl+alt+O;;;;ctrl+R;ctrl+shift+D;ctrl+alt+S;ctrl+S;ctrl+shift+S;ctrl+F;shift+F7;ctrl+A;HOME;END;;;ctrl+N;shift+DELETE;ctrl+shift+F7;alt+3;ctrl+alt+shift+A;ctrl+Z;alt+4;F6"/>
+          <entry key="autoCompleteFields" value="author;related;editor;keywords;entryset;publisher;title;crossref;journal"/>
+          <entry key="pushToApplication" value="WinEdt"/>
+          <entry key="mainWindowPosX" value="-8.0"/>
+          <entry key="mainWindowPosY" value="-8.0"/>
+          <entry key="mainWindowSizeX" value="1839.0"/>
+          <entry key="mainWindowSizeY" value="1096.0"/>
+          <entry key="collectTelemetry" value="true"/>
+          <entry key="askedCollectTelemetry" value="true"/>
+          <entry key="entryEditorHeight" value="400"/>
+          <entry key="workingDirectory" value="D:\DrH\[03]Ref"/>
+          <entry key="useOwner" value="false"/>
+          <entry key="overwriteOwner" value="false"/>
+          <entry key="useTimeStamp" value="true"/>
+          <entry key="overwriteTimeStamp" value="true"/>
+          <entry key="updateTimestamp" value="false"/>
+          <entry key="enforceLegalBibtexKey" value="true"/>
+          <entry key="memoryStickMode" value="true"/>
+          <entry key="confirmDelete" value="false"/>
+          <entry key="warnAboutDuplicatesInInspection" value="true"/>
+          <entry key="defaultOwner" value="horyc"/>
+          <entry key="timeStampFormat" value="yyyy-MM-dd"/>
+          <entry key="timeStampField" value="timestamp"/>
+          <entry key="defaultEncoding" value="UTF-8"/>
+          <entry key="markImportedEntries" value="true"/>
+          <entry key="unmarkAllEntriesBeforeImporting" value="true"/>
+          <entry key="biblatexMode" value="false"/>
+          <entry key="fileDirectory" value=""/>
+          <entry key="bibLocAsPrimaryDir" value="false"/>
+          <entry key="runAutomaticFileSearch" value="false"/>
+          <entry key="allowFileAutoOpenBrowse" value="true"/>
+          <entry key="useRegExpSearch" value="false"/>
+          <entry key="autolinkExactKeyOnly" value="false"/>
+          <entry key="newline" value="&#13;&#10;"/>
+          <entry key="backup" value="true"/>
+          <entry key="reformatFileOnSaveAndExport" value="false"/>
+          <entry key="openLastEdited" value="true"/>
+          <entry key="resolveStringsAllFields" value="false"/>
+          <entry key="doNotResolveStringsFor" value="url"/>
+          <entry key="localAutoSave" value="false"/>
+          <entry key="namesAsIs" value="true"/>
+          <entry key="namesFf" value="false"/>
+          <entry key="namesNatbib" value="false"/>
+          <entry key="namesLastOnly" value="false"/>
+          <entry key="abbrAuthorNames" value="true"/>
+          <entry key="autoResizeMode" value="false"/>
+          <entry key="priDescending" value="false"/>
+          <entry key="secDescending" value="false"/>
+          <entry key="terDescending" value="false"/>
+          <entry key="priSort" value="year"/>
+          <entry key="secSort" value=""/>
+          <entry key="terSort" value=""/>
+          <entry key="floatMarkedEntries" value="true"/>
+          <entry key="fileColumn" value="true"/>
+          <entry key="urlColumn" value="true"/>
+          <entry key="preferUrlDoi" value="false"/>
+          <entry key="arxivColumn" value="false"/>
+          <entry key="extraFileColumns" value="false"/>
+          <entry key="listOfFileColumns" value=""/>
+          <entry key="cyclePreviewPos" value="0"/>
+          <entry key="cyclePreview" value="Customized preview style;/ieee.csl"/>
+          <entry key="previewPanelHeight" value="344"/>
+          <entry key="previewStyle" value="&lt;font face=&quot;sans-serif&quot;&gt;&lt;b&gt;&lt;i&gt;\bibtextype&lt;/i&gt;&lt;a name=&quot;\citationkey&quot;&gt;\begin{citationkey} (\citationkey)&lt;/a&gt;\end{citationkey}&lt;/b&gt;&lt;br&gt;__NEWLINE__\begin{author} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\author}&lt;BR&gt;\end{author}__NEWLINE__\begin{editor} \format[Authors(LastFirst,Initials,Semicolon,Amp),HTMLChars]{\editor} &lt;i&gt;(\format[IfPlural(Eds.,Ed.)]{\editor})&lt;/i&gt;&lt;BR&gt;\end{editor}__NEWLINE__\begin{title} \format[HTMLChars]{\title} \end{title}&lt;BR&gt;__NEWLINE__\begin{chapter} \format[HTMLChars]{\chapter}&lt;BR&gt;\end{chapter}__NEWLINE__\begin{journal} &lt;em&gt;\format[HTMLChars]{\journal}, &lt;/em&gt;\end{journal}__NEWLINE__\begin{booktitle} &lt;em&gt;\format[HTMLChars]{\booktitle}, &lt;/em&gt;\end{booktitle}__NEWLINE__\begin{school} &lt;em&gt;\format[HTMLChars]{\school}, &lt;/em&gt;\end{school}__NEWLINE__\begin{institution} &lt;em&gt;\format[HTMLChars]{\institution}, &lt;/em&gt;\end{institution}__NEWLINE__\begin{publisher} &lt;em&gt;\format[HTMLChars]{\publisher}, &lt;/em&gt;\end{publisher}__NEWLINE__\begin{year}&lt;b&gt;\year&lt;/b&gt;\end{year}\begin{volume}&lt;i&gt;, \volume&lt;/i&gt;\end{volume}\begin{pages}, \format[FormatPagesForHTML]{\pages} \end{pages}__NEWLINE__\begin{abstract}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Abstract: &lt;/b&gt; \format[HTMLChars]{\abstract} \end{abstract}__NEWLINE__\begin{comment}&lt;BR&gt;&lt;BR&gt;&lt;b&gt;Comment: &lt;/b&gt; \format[Markdown,HTMLChars]{\comment} \end{comment}&lt;/dd&gt;__NEWLINE__&lt;p&gt;&lt;/p&gt;&lt;/font&gt;"/>
+          <entry key="previewEnabled" value="true"/>
+          <entry key="emailSubject" value="References"/>
+          <entry key="openFoldersOfAttachedFiles" value="false"/>
+          <entry key="citeCommand" value="\cite"/>
+          <entry key="useDefaultConsoleApplication" value="true"/>
+          <entry key="consoleCommand" value="C:\Program Files\ConEmu\ConEmu64.exe /single /dir &quot;%DIR&quot;"/>
+          <entry key="adobeAcrobatCommand" value="C:\Program Files (x86)\Adobe\Acrobat Reader DC\Reader"/>
+          <entry key="sumatraCommand" value="C:\Program Files\SumatraPDF"/>
+          <entry key="grayOutNonHits" value="true"/>
+          <entry key="groupsDefaultField" value="keywords"/>
+          <entry key="autoAssignGroup" value="true"/>
+          <entry key="groupKeywordSeparator" value=","/>
+          <entry key="groupIntersectSelections" value="false"/>
+          <entry key="autoOpenForm" value="true"/>
+          <entry key="defaultShowSource" value="true"/>
+          <entry key="showRecommendations" value="true"/>
+          <entry key="validateInEntryEditor" value="true"/>
+          <entry key="autoComplete" value="false"/>
+          <entry key="autoCompFirstNameMode" value="BOTH"/>
+          <entry key="autoCompLF" value="false"/>
+          <entry key="autoCompFF" value="false"/>
+          <entry key="defaultBibtexKeyPattern" value="[year]-[auth.auth.ea]-[veryshorttitle]"/>
+          <entry key="warnBeforeOverwritingKey" value="false"/>
+          <entry key="avoidOverwritingKey" value="false"/>
+          <entry key="KeyPatternRegex" value=""/>
+          <entry key="KeyPatternReplacement" value=""/>
+          <entry key="generateKeysAfterInspection" value="true"/>
+          <entry key="generateKeysBeforeSaving" value="false"/>
+          <entry key="keyGenFirstLetterA" value="false"/>
+          <entry key="keyGenAlwaysAddLetter" value="false"/>
+          <entry key="importAlwaysUsePDFImportStyle" value="false"/>
+          <entry key="importDefaultPDFimportStyle" value="2"/>
+          <entry key="importFileNamePattern" value="[bibtexkey] - [title]"/>
+          <entry key="importFileDirPattern" value=""/>
+          <entry key="exportInOriginalOrder" value="false"/>
+          <entry key="exportInSpecifiedOrder" value="false"/>
+          <entry key="exportPriDescending" value="false"/>
+          <entry key="exportSecDescending" value="false"/>
+          <entry key="exportTerDescending" value="true"/>
+          <entry key="exportPriSort" value="citationkey"/>
+          <entry key="exportSecSort" value="author"/>
+          <entry key="exportTerSort" value="title"/>
+          <entry key="useXmpPrivacyFilter" value="false"/>
+          <entry key="useProxy" value="false"/>
+          <entry key="proxyHostname" value=""/>
+          <entry key="proxyPort" value="80"/>
+          <entry key="useProxyAuthentication" value="false"/>
+          <entry key="proxyUsername" value=""/>
+          <entry key="proxyPassword" value=""/>
+          <entry key="remoteServerPort" value="6050"/>
+          <entry key="useRemoteServer" value="true"/>
+          <entry key="useCaseKeeperOnSearch" value="true"/>
+          <entry key="useUnitFormatterOnSearch" value="true"/>
+          <entry key="useDefaultLookAndFeel" value="true"/>
+          <entry key="lookAndFeel" value="com.sun.java.swing.plaf.windows.WindowsLookAndFeel"/>
+          <entry key="fxFontRenderingTweak" value="false"/>
+          <entry key="tableColorCodesOn" value="false"/>
+          <entry key="tableResolvedColorCodesOn" value="false"/>
+          <entry key="fontFamily" value="Dialog"/>
+          <entry key="fontStyle" value="0"/>
+          <entry key="fontSize" value="12"/>
+          <entry key="overrideDefaultFonts" value="false"/>
+          <entry key="tableText" value="0:0:0"/>
+          <entry key="markedEntryBackground0" value="255:255:180"/>
+          <entry key="tableBackground" value="255:255:255"/>
+          <entry key="markedEntryBackground1" value="255:220:180"/>
+          <entry key="tableReqFieldBackground" value="230:235:255"/>
+          <entry key="markedEntryBackground2" value="255:180:160"/>
+          <entry key="tableOptFieldBackground" value="230:255:230"/>
+          <entry key="markedEntryBackground3" value="255:120:120"/>
+          <entry key="incompleteEntryBackground" value="250:175:175"/>
+          <entry key="markedEntryBackground4" value="255:75:75"/>
+          <entry key="gridColor" value="210:210:210"/>
+          <entry key="markedEntryBackground5" value="220:255:220"/>
+          <entry key="fieldEditorTextColor" value="0:0:0"/>
+          <entry key="validFieldBackgroundColor" value="255:255:255"/>
+          <entry key="activeFieldEditorBackgroundColor" value="220:220:255"/>
+          <entry key="invalidFieldBackgroundColor" value="255:0:0"/>
+          <entry key="tableResolvedFieldBackground" value="240:240:240"/>
+          <entry key="iconEnabledColor" value="79:95:143"/>
+          <entry key="iconDisabledColor" value="200:200:200"/>
+          <entry key="tableShowGrid" value="false"/>
+          <entry key="tableRowPadding" value="9"/>
+          <entry key="windowMaximised" value="true"/>
+          <entry key="toolbarVisible" value="true"/>
+          <entry key="lastFocused" value="D:\DrH\[03]Ref\pntu.bib"/>
+          <entry key="recentDatabases" value="D:\\DrH\\[03]Ref\\pbl.bib;D:\\DrH\\[03]Ref\\pInv.bib;D:\\DrH\\[03]Ref\\pntu.bib;D:\\DrH\\[03]Ref\\p.bib;D:\\DrH\\latex-files\\references.bib"/>
+          <entry key="userId" value="77bf61d0-d81b-40b1-a395-c95aff6a9c92"/>
+          <entry key="groupSidepaneVisible" value="true"/>
+          <entry key="sidePaneWidth" value="290"/>
+          <entry key="selectedFetcherIndex" value="0"/>
+          <entry key="webSearchVisible" value="false"/>
+          <entry key="sidePaneWidthFX" value="0.0916072408118486"/>
+          <entry key="entryEditorHeightFX" value="0.6616862326574173"/>
+          <entry key="columnNames" value="entrytype;citationkey;Comment;title;journal/booktitle;author/editor"/>
+          <entry key="columnWidths" value="100;100;100;100;100;100"/>
+          <entry key="columnSortTypes" value=""/>
+          <entry key="columnSortOrder" value=""/>
+          <entry key="previewPanelHeightFX" value="0.65"/>
+          <entry key="previewAsTab" value="false"/>
+          <entry key="allowIntegerEditionBibtex" value="false"/>
+          <entry key="showAdvancedHints" value="true"/>
+          <entry key="specialFieldsEnabled" value="true"/>
+          <entry key="autoSyncSpecialFieldsToKeywords" value="true"/>
+          <entry key="serializeSpecialFields" value="false"/>
+          <entry key="usePDFReader" value="C:\Program Files\SumatraPDF"/>
+          <entry key="userDefaultFileBrowserApplication" value="true"/>
+          <entry key="fileBrowserCommand" value="explorer.exe /select, &quot;%DIR&quot;"/>
+          <entry key="groupIntersectUnionViewModes" value="INTERSECTION"/>
+          <entry key="acceptRecommendations" value="false"/>
+          <entry key="showLatexCitations" value="true"/>
+          <entry key="nameFormatterNames" value=""/>
+          <entry key="nameFormatterFormats" value=""/>
+          <entry key="xmpPrivacyFilters" value="review;keywords;owner;pdf;note;timestamp"/>
+          <entry key="lastEdited" value="D:\\DrH\\[03]Ref\\p.bib;D:\\DrH\\[03]Ref\\pntu.bib;D:\\DrH\\[03]Ref\\pInv.bib;D:\\DrH\\[03]Ref\\pbl.bib"/>
+          <entry key="versionIgnoreUpdate" value="5.3"/>
+          <entry key="sidePaneComponentNames" value=""/>
+          <entry key="sidePaneComponentPreferredPositions" value=""/>
+          <entry key="mainTableColumnNames" value="groups;files;linked_id;field:entrytype;field:citationkey;field:Comment;field:title;field:journal/booktitle;field:author/editor"/>
+          <entry key="mainTableColumnWidths" value="28.0;28.0;28.0;119.0;242.0;440.0;463.0;139.0;194.0"/>
+          <entry key="mainTableColumnSortTypes" value="ASCENDING;ASCENDING;ASCENDING;DESCENDING;DESCENDING;ASCENDING;ASCENDING;DESCENDING;ASCENDING"/>
+          <entry key="mainTableColumnSortOrder" value="field:author/editor"/>
+          <entry key="customTabName_0" value="General"/>
+          <entry key="customTabFields_0" value="doi;crossref;keywords;eprint;url;file;groups;owner;timestamp;printed;priority;qualityassured;ranking;readstatus;relevance"/>
+          <entry key="customTabName_1" value="Abstract"/>
+          <entry key="customTabFields_1" value="abstract"/>
+          <entry key="customTabName_2" value="Comments"/>
+          <entry key="customTabFields_2" value="comment"/>
+          <entry key="defaultUnwantedBibtexKeyCharacters" value="`ʹ:!;?^+"/>
+          <entry key="nonWrappableFields" value="pdf;ps;url;doi;file;isbn;issn"/>
+          <entry key="importWorkingDirectory" value="C:\Users\horyc"/>
+          <entry key="lastUsedExport" value=""/>
+          <entry key="exportWorkingDirectory" value="C:\Users\horyc"/>
+          <entry key="emacsPath" value="emacsclient.exe"/>
+          <entry key="lyxpipe" value="C:\Users\horyc\.lyx/lyxpipe"/>
+          <entry key="texmakerPath" value="C:\Program Files (x86)\Texmaker\texmaker.exe"/>
+          <entry key="TeXstudioPath" value="C:\Program Files (x86)\TeXstudio\texstudio.exe"/>
+          <entry key="vim" value="vim"/>
+          <entry key="winEdtPath" value="C:\Program Files (x86)\WinEdt Team\WinEdt\WinEdt.exe"/>
+          <entry key="emacsParameters" value="-n -e"/>
+          <entry key="vimServer" value="vim"/>
+          <entry key="displayGroupCount" value="true"/>
+          <entry key="downloadLinkedFiles" value="true"/>
+          <entry key="AskAutoNamingPDFsAgain" value="true"/>
+          <entry key="regExpSearchExpression" value="**/.*[citationkey].*\\.[extension]"/>
+          <entry key="overrideDefaultFontSize" value="false"/>
+          <entry key="mainFontSize" value="9"/>
+          <entry key="fxTheme" value="Dark.css"/>
+          <entry key="idEntryGenerator" value="DOI"/>
+          <entry key="mergeEntriesDiffMode" value="WORD"/>
+          <entry key="addCreationDate" value="false"/>
+          <entry key="addModificationDate" value="false"/>
+          <entry key="bindNames" value="Abbreviate;Accept;Autogenerate citation keys;Automatically link files;Capitalize word;Check integrity;Cleanup;Clear read status;Clear search;Close dialog;Close library;Copy;Copy \\cite{citation key};Copy citation key;Copy citation key and link;Copy citation key and title;Copy preview;Copy title;Cut;Delete entry;Delete;Download full text documents;Edit strings;Entry editor, next entry;Entry editor, next panel;Entry editor, next panel 2;Entry editor, previous entry;Entry editor, previous panel;Entry editor, previous panel 2;Execute default action in dialog;Export;Export Selected;File list editor, move entry down;File list editor, move entry up;Focus entry table;Help;Import into current library;Import into new library;Lowercase word;Uppercase word;Merge entries;Move caret left;Move caret right;Move caret to beginning of line;Move caret to  of line;Move caret to next word;Move caret to previous word;Move caret down;Move caret to beginning of text;Move caret to end of text;Move caret up;New article;New book;New entry;New entry from plain text;New inbook;New inproceesings;New mastersthesis;New phdthesis;New proceedings;New technical report;New unpublished;Next library;Next preview layout;Open / close entry editor;Open OpenOffice/LibreOffice connection;Open URL or DOI;Open file;Open folder;Open library;Open terminal here;Paste;Preamble editor, store changes;Previous library;Previous preview layout;Pull changes from shared database;Push to application;Quit JabRef;Redo;Refresh OO;Remove characters until next word;Remove all characters caret to end of line;Characters until previous word;Replace string;Resolve duplicate citation keys;Save all;Save library;Save library as ...;Search;Search for unlinked local files;Select all;Select first entry;Select last entry;Set read status to read;Set read status to skimmed;String dialog, add string;String dialog, remove string;Synchronize files;Toggle groups interface;Unabbreviate;Undo;Web search;Write XMP"/>
+          <entry key="protectedTermsEnabledExternal" value=""/>
+          <entry key="protectedTermsDisabledExternal" value=""/>
+          <entry key="protectedTermsEnabledInternal" value="/protectedterms/months_weekdays.terms;/protectedterms/countries_territories.terms;/protectedterms/electrical_engineering.terms"/>
+          <entry key="protectedTermsDisabledInternal" value=""/>
+          <entry key="externalJournalLists" value=""/>
+          <entry key="useCustomDOIURI" value="false"/>
+          <entry key="baseDOIURI" value="https://doi.org"/>
+          <entry key="generateKeyOnImport" value="true"/>
+        </map>
+        <node name="bibtexkeypatterns">
+          <map>
+            <entry key="book" value="[year]-[auth.auth.ea]-book-[shorttitle]"/>
+          </map>
+        </node>
+        <node name="customizedBiblatexTypes">
+          <map/>
+        </node>
+        <node name="customizedBibtexTypes">
+          <map/>
+        </node>
+      </node>
+    </node>
+  </root>
+</preferences>

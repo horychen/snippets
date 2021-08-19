@@ -2,6 +2,47 @@
 
 _Userful snippets (keeps updating)._
 
+# Adobe Acrobat Reader Shortcuts
+- Ctrl+H, reading mode
+- Alt+-, jump back
+- F4 and Shift+F4, open side bar menu
+
+# Matplotlib tips:
+
+https://stackoverflow.com/questions/31357611/format-y-axis-as-percent
+
+# Altium Designer
+Green X error markers appear when design is updated. 
+Shortcut is `T-M`. 
+See this [post](https://electronics.stackexchange.com/questions/341075/altium-designer-how-to-remove-green-xs-error-markers)
+
+Ctrl+M：测距
+
+如果要更新封装（Footprint），可以直接在PCBDoc上右键替换某个元件的封装为新的。然后按T-M清除绿色的Error Makers。
+
+# Circuitikz 
+There are two use cases of symbol "-|":
+1. Specifying a perpendicular coordinates
+3. `|-` ("first vertical, then horizontal" path modifier
+>https://tex.stackexchange.com/questions/228486/lining-amplifiers-up-in-circuitikz
+>https://tex.stackexchange.com/questions/286194/working-with-perpendicular-coordinates-in-circuitikz
+
+How to add two coordinates to get a new one?
+```latex
+($ (a) + (0,1) $)
+```
+>https://tex.stackexchange.com/questions/48756/tikz-relative-coordinates
+
+# Git: Line-ending 
+This is an issue I met when I use the git in WSL between local windows system and remote overleaf server. The line-ending is LF in windows system, but when I git in WSL, sometimes the whole file is changed as the line-ending is all somehow conveted by either my system or the overleaf server.
+
+See this [post](https://stackoverflow.com/questions/10418975/how-to-change-line-ending-settings)
+
+My expected hehavior is to do nothing:
+```shell
+git config --global core.autocrlf false
+```
+
 # Remove a pdf file from git
 See [this](https://stackoverflow.com/questions/40879523/how-to-remove-all-pdf-files-from-a-git-push).
 ```
@@ -14,6 +55,7 @@ git rm -rf ismb2021.pdf
 
 # Python cProfiling, async and await
 See [this](https://www.youtube.com/watch?v=m_a0fN48Alw).
+Maybe also [this](https://www.youtube.com/watch?v=8qEnExGLZfY)
 
 # Sublime Text 4 Python Version
 See [this](https://medium.com/swlh/setting-your-python-version-in-sublime-text-8e8a305e6701). In short, Ctrl+Shift+P install `PackageResourceViewer` and 
@@ -439,7 +481,7 @@ In View-Show/Hide-
 
 # CCS 10: shortcuts
 - Ctrl+O will open mini-outline window for you to navigate.
-- Ctrl+G to search text.
+- Ctrl+G to search text and replace.
 
 # CCS 10: no core is connected bug
 (Original Text is missing in Earthquick)
@@ -1023,6 +1065,7 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 	- Enable UTF-8 Formart for Modes: ```*;UTF-8;EDT;INI|UNICODE;UTF-7;ACP;OEM```
 	- Enable ANSI Format for Modes: ```ACP|UNICODE;UTF-8;UTF-7;OEM```
 - WinEdt -> Execution Modes -> LaTeX or XeLaTeX -> Start Viewer -> Forward Search -> Use shift F8 to forward search
+- SumatraPDF (version higher than 3.3.2) -> File -> Setting -> Avanced Option -> Find `EnableTeXEnhancements` -> set to `true`
 - SumatraPDF -> File -> Setting -> Options -> Set inverse search command-line
 	- "D:\Program Files\WinEdt Team\WinEdt 10\WinEdt.exe" -C="WinEdt 10.3" "[Open(|%f|);SelPar(%l,8);]"
 - Options -> Toolbar -> 2 row Small
@@ -1032,7 +1075,11 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 	- Ctrl+Shift+C = Hide output window
 	- Ctrl+Enter = Auto fill
 	- Shift+Enter = Auto spell
-- My Preferred Font: Georgia, fontsize=14
+	- Ctrl+G to go to line number.
+	- Ctrl+L will open .log file.
+	- Right click on the editor's left margin area (there is a blue arrow there!), you can set bookmark and jump between book mark.
+	- Shift+F8 is forward search (jump to pdf file) which is equivalent to double click on the editor's left margin area.
+- My Preferred Font: Georgia, fontsize=14. It gives me an unknown desire to type/write.
 
 # Sublime Text 3
 ## User settings
