@@ -1,0 +1,17 @@
+{
+    "working_dir": "$file_path",
+    "cmd": "gcc -Wall $file_name -o $file_base_name",
+    "file_regex": "^(..[^:]*):([0-9]+):?([0-9]+)?:? (.*)$",
+    "selector": "source.c",
+    "variants": 
+    [
+        {   
+        "name": "ACMSIMC_TUT",
+            "shell_cmd": "gmake $file && start cmd /c \"${file_path}/${file_base_name}\""
+            // "shell_cmd": "gcc $file controller.c observer.c -L. -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+            // "shell_cmd": "gcc $file controller.c observer_OmgZhang02.c observerNatural.c -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+            // "shell_cmd": "gcc $file controller.c observer.c observerTAAO.c -L. -lsatlut -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+            // "shell_cmd": "gcc $file inverter.c controller.c observer.c observerTAAO.c -L. -lsatlut -o $file_base_name && start cmd /c \"${file_path}/${file_base_name}\""
+        }
+    ]
+}
