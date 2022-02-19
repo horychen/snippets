@@ -415,6 +415,7 @@ Method 2:
   \centering
   \renewcommand{\arraystretch}{1.2} % increase vertical space for each row
   \small\addtolength{\tabcolsep}{-3.5pt}
+  %https://tex.stackexchange.com/questions/56101/spaces-between-rows-and-cols-in-a-table-better-ways-than-mine
   \scalebox{.9}{
     \begin{tabular}{lccccc}
     \hline\hline
