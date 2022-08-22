@@ -4,7 +4,8 @@ nano .bash_prompt
 粘贴内容，ctrl+x保存并退出
 source .bash_prompt
 
-注意：需要把.bash_prompt和.aliases粘贴到~文件夹下后，每次启动需要source编译：
+注意：把.bash_prompt和.aliases粘贴到~文件夹下后，发现每次启动需要source编译它们，这样太麻烦了，
+我们可以在.bashrc的最后加上下面这些指令来实现启动时编译。
 
 # Add `~/bin` to the `$PATH`
 export PATH="$HOME/bin:$PATH";

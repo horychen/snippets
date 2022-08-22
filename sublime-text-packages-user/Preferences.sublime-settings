@@ -1,0 +1,24 @@
+// Settings in here override those in "Default/Preferences.sublime-settings",
+// and are overridden in turn by syntax-specific settings.
+{
+	// "color_scheme": "Packages/Color Scheme - Default/Monokai.sublime-color-scheme",
+	"file_exclude_patterns":
+	[
+		"dat/**",
+		"emachinery/gui/",
+		"cmake-build-debug/"
+	],
+	"font_size": 14,
+	"line_padding_bottom": -1,
+	"line_padding_top": 0,
+	"show_encoding": true,
+	"show_legacy_color_schemes": true,
+	"tabs_small": true,
+	// "theme": "Cyanide - Love.sublime-theme",
+	"theme": "Adaptive.sublime-theme",
+	"translate_tabs_to_spaces": true,
+	"update_check": false,
+	"caret_style": "smooth",
+	"highlight_line": true,
+	"overlay_scroll_bars": "enabled",
+}

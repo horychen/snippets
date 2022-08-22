@@ -1,0 +1,5 @@
+{
+  "cmd": ["C:/Users/horyc/AppData/Local/Programs/Python/Python37/python", "-u", "$file"],
+  "file_regex": "^ ]*File \"(...*?)\", line ([0-9]*)",
+  "selector": "source.python"
+}

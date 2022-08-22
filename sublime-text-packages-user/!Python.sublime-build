@@ -1,0 +1,6 @@
+{
+  "cmd": ["D:/Programs/anaconda38/python", "-u", "$file"],
+  "file_regex": "^ ]*File \"(...*?)\", line ([0-9]*)",
+  "selector": "source.python",
+  "shell": true // this line is added to fix figure not showing bug with matplotiib in ST 4.
+}

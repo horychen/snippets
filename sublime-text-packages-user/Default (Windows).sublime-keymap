@@ -1,0 +1,7 @@
+[
+    { "keys": ["ctrl+o"], "command": "show_panel", "args": {"panel": "output.exec"} },
+    { "keys": ["alt+z"], "command": "unfold" },
+    { "keys": ["alt+q"], "command": "unfold" },
+    { "keys": ["alt+x"], "command": "fold" },
+    { "keys": ["`"], "command": "toggle_side_bar" },
+]
