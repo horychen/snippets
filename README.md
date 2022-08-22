@@ -2,6 +2,22 @@
 
 _Userful snippets (keeps updating)._
 
+# Font Setup for Matplotlib that I Ever Wanted
+```python
+plt.style.use('classic')
+plt.rcParams['mathtext.fontset'] = 'stix'
+mpl.rc('font', family='Times New Roman', size=14.0)
+mpl.rc('legend', fontsize=8)
+
+fig, axes = plt.subplots(nrows=6, ncols=1, dpi=150, facecolor='w', figsize=(8,6), sharex=True)
+
+ax = axes[0]
+ax.plot(t, y1, label=r'$\omega_r^*$')
+ax.plot(t, y2, label=r'$\omega_r$')
+ax.set_ylabel(r'Speed [r/min]', multialignment='center') #) #, fontdict=font)
+ax.legend(loc=2, fontsize=6)
+```
+
 # Adobe Acrobat Reader Shortcuts
 - Ctrl+H, reading mode
 - Alt+-, jump back
