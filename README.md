@@ -2,12 +2,46 @@
 
 _Userful snippets (keeps updating)._
 
+# Use CMake and MinGW on Windows
+hello.cpp
+```cpp
+#include <iostream>
+
+int main(){
+    std::cout << "Hello world\n";
+    return 1;
+}
+```
+
+CMakeLists.txt
+```
+cmake_minimum_required(VERSION 3.10)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+project(hello VERSION 1.0)
+add_executable(hello hello.cpp)
+```
+
+camke-on-windows.bat
+```
+mkdir build
+cd build
+cmake .. -G "MinGW Makefiles"
+mingw32-make
+```
+
+> Assuming CMake and MinGW (not mingw-64) are installed 
+
 # Font Setup for Matplotlib that I Ever Wanted
 ```python
+from pylab import mpl, plt, np
 plt.style.use('classic')
 plt.rcParams['mathtext.fontset'] = 'stix'
 mpl.rc('font', family='Times New Roman', size=14.0)
 mpl.rc('legend', fontsize=8)
+
+font = {'family':'Times New Roman', 'weight':'normal', 'size':14} # now we can delete this
 
 fig, axes = plt.subplots(nrows=6, ncols=1, dpi=150, facecolor='w', figsize=(8,6), sharex=True)
 
@@ -15,7 +49,10 @@ ax = axes[0]
 ax.plot(t, y1, label=r'$\omega_r^*$')
 ax.plot(t, y2, label=r'$\omega_r$')
 ax.set_ylabel(r'Speed [r/min]', multialignment='center') #) #, fontdict=font)
-ax.legend(loc=2, fontsize=6)
+ax.legend(loc=2, fontsize=6) # one can change fontsize locally if needed
+
+for tick in ax.xaxis.get_major_ticks() + ax.yaxis.get_major_ticks(): # now we can delete this
+    tick.label.set_font(font)
 ```
 
 # Adobe Acrobat Reader Shortcuts
