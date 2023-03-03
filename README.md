@@ -91,15 +91,6 @@ How to add two coordinates to get a new one?
 ```
 >https://tex.stackexchange.com/questions/48756/tikz-relative-coordinates
 
-# Git: Line-ending 
-This is an issue I met when I use the git in WSL between local windows system and remote overleaf server. The line-ending is LF in windows system, but when I git in WSL, sometimes the whole file is changed as the line-ending is all somehow conveted by either my system or the overleaf server.
-
-See this [post](https://stackoverflow.com/questions/10418975/how-to-change-line-ending-settings)
-
-My expected hehavior is to do nothing:
-```shell
-git config --global core.autocrlf false
-```
 
 # Remove a pdf file from git
 See [this](https://stackoverflow.com/questions/40879523/how-to-remove-all-pdf-files-from-a-git-push).
@@ -457,12 +448,6 @@ An alternative solution is
 git update-index --assume-unchanged Main.pdf
 ```
 
-# Git Warning: Change CL to CRLF
-See [this](https://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf/20653073#20653073)
-```
-git config --global core.autocrlf false
-```
-
 # Fancy Annotation using Matplotlib
 ```python
 ax.annotate('External Resistors Connected (0.5 $\\Omega$)', xy=(35.5, 3.65), xycoords='data',
@@ -735,10 +720,6 @@ The following command will avoid your inputing password in 3600 sec.
 Since this command is a bit long, I use following command to recall it with WSL:
 
 ```histroy | grep credential```
-
-# Avoid seeing ^M in Git Diff for Git-handled Files
-Use \n for newline.
-https://stackoverflow.com/questions/1889559/git-diff-to-ignore-m
 
 # instaloader
 A python tool to download instagram pictures.
@@ -1143,7 +1124,37 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 When you want work with both WinEdt and Overleaf, you need git to do the version control.
 Sometimes, however, the overleaf server (linux system) would delete your <0x0d> character, which causes an overwrite to the whole .tex file. To avoid this, you need to check `Strict EOLN Matching` in your document settings. Otherwise, even though you have chosen to use LF (Unix) in WinEdt, it will not do the auto conversion for you. Refer to the screenshot below.
 
-![[Pasted image 20230303111119.png]]
+![WinEdt-setting-line-ending](https://github.com/horychen/snippets/blob/master/assets/images/WinEdt-setting-line-ending.png)
+
+Learn more about CRLF here: https://developer.mozilla.org/en-US/docs/Glossary/CRLF
+
+
+# Avoid seeing ^M in Git Diff for Git-handled Files
+Use \n for newline.
+https://stackoverflow.com/questions/1889559/git-diff-to-ignore-m
+
+**(This is not working for me.)**
+
+
+# Git Warning: Change CL to CRLF
+See [this](https://stackoverflow.com/questions/1967370/git-replacing-lf-with-crlf/20653073#20653073)
+```
+git config --global core.autocrlf false
+```
+**(This is not working for me.)**
+
+# Git: Line-ending 
+This is an issue I met when I use the git in WSL between local windows system and remote overleaf server. The line-ending is LF in windows system, but when I git in WSL, sometimes the whole file is changed as the line-ending is all somehow conveted by either my system or the overleaf server.
+
+See this [post](https://stackoverflow.com/questions/10418975/how-to-change-line-ending-settings)
+
+My expected hehavior is to do nothing:
+```shell
+git config --global core.autocrlf false
+```
+
+**(This is not working for me.)**
+
 
 # Sublime Text 3
 ## User settings
