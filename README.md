@@ -2,6 +2,11 @@
 
 _Userful snippets (keeps updating)._
 
+# os.path utility for Python
+```python
+os.path.abspath(os.path.dirname(__file__)).replace(os.sep, '/')[:-6] + '/acmsimcv5/c/'
+```
+
 # Use CMake and MinGW on Windows
 hello.cpp
 ```cpp
@@ -1133,6 +1138,12 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 	- Right click on the editor's left margin area (there is a blue arrow there!), you can set bookmark and jump between book mark.
 	- Shift+F8 is forward search (jump to pdf file) which is equivalent to double click on the editor's left margin area.
 - My Preferred Font: Georgia, fontsize=14. It gives me an unknown desire to type/write.
+
+# WinEdt and Overleaf | Git CRLF issue
+When you want work with both WinEdt and Overleaf, you need git to do the version control.
+Sometimes, however, the overleaf server (linux system) would delete your <0x0d> character, which causes an overwrite to the whole .tex file. To avoid this, you need to check `Strict EOLN Matching` in your document settings. Otherwise, even though you have chosen to use LF (Unix) in WinEdt, it will not do the auto conversion for you. Refer to the screenshot below.
+
+![[Pasted image 20230303111119.png]]
 
 # Sublime Text 3
 ## User settings
