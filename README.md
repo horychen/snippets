@@ -2,7 +2,46 @@
 
 _Userful snippets (keeps updating)._
 
+# VMMEM 100% CPU Usage Issue
+
+1. winkey+R, type in %USERPROFILE%
+
+2. create a new file named `.wslconfig` with content
+
+> **[wsl2]** 
+>
+> guiApplications=false
+
+3. restart wsl by opening a cmd.exe with admin privilege running command `wsl --shutdown`
+
+
+see
+
+`https://x410.dev/cookbook/wsl/disabling-wslg-or-using-it-together-with-x410/`
+
+
+
+# Drake
+
+https://drake.mit.edu/pydrake/pydrake.tutorials.html
+https://drake.mit.edu/python_bindings.html#using-the-python-bindings
+
+```bash
+ON WSL2 Ubuntu 20.04
+
+sudo apt-get update
+sudo apt install python3-pip
+sudo apt install python3.8-venv
+python3 -m venv main
+main/bin/pip install drake
+main/bin/pip install notebook
+main/python3 -m pydrake.tutorials
+http://localhost:7000/
+```
+
+
 # os.path utility for Python
+
 ```python
 os.path.abspath(os.path.dirname(__file__)).replace(os.sep, '/')[:-6] + '/acmsimcv5/c/'
 ```
@@ -208,7 +247,7 @@ pip install -r requirements.txt
 		},
 	],
 },
- ```
+```
 - Shift+Alt+F, auto format your codes
 - Ctrl+Alt+arrows, up and down for multi-line edit,** left and right for window split.**
 - F2, Ctrl+F2, Ctrl+D, rename symbol, select all that are same, select the same one by one
@@ -740,11 +779,11 @@ See https://www.youtube.com/watch?v=N5vscPTWKOk
 
 In Windows, you need to copy those 4 files at:
 >	D:\Users\horyc\Anaconda3\python.exe
->	
+>					
 >	D:\Users\horyc\Anaconda3\python.pdb
->	
+>					
 >	D:\Users\horyc\Anaconda3\pythonw.exe
->	
+>					
 >	D:\Users\horyc\Anaconda3\pythonw.pdb
 
 to:
@@ -1122,7 +1161,7 @@ Winkey -> type in "region settings" -> related settings -> Additional data, time
 
 # WinEdt and Overleaf | Git CRLF issue
 When you want work with both WinEdt and Overleaf, you need git to do the version control.
-Sometimes, however, the overleaf server (linux system) would delete your <0x0d> character, which causes an overwrite to the whole .tex file. To avoid this, you need to check `Strict EOLN Matching` in your document settings. Otherwise, even though you have chosen to use LF (Unix) in WinEdt, it will not do the auto conversion for you. Refer to the screenshot below.
+Sometimes, however, the overleaf server (linux system) would delete your `<0x0d>` character, which causes an overwrite to the whole .tex file. To avoid this, you need to check `Strict EOLN Matching` in your document settings. Otherwise, even though you have chosen to use LF (Unix) in WinEdt, it will not do the auto conversion for you. Refer to the screenshot below.
 
 ![WinEdt-setting-line-ending](https://github.com/horychen/snippets/blob/master/assets/images/WinEdt-setting-line-ending.png)
 

@@ -35,13 +35,16 @@ class SVgen_Object:
         self.EPwm3Regs_CMPA_bit_CMPA = 2500
 def SVGEN_DQ(v, one_over_Vdc, Unot=0.0):
 
+    # Note an additional factor of 1.7320508 is introduced to be equivalent to normalizing Ualfa and Ubeta to a base value of Vdc/sqrt(3)
+    one_over_maximum_phase_voltage = one_over_Vdc * 1.7320508
+
     # Normalization (which converts [Volt] into [s])
-    Talpha = v.Ualfa * one_over_Vdc # v.Ualfa is in sense of amplitude invariant Clarke transformation
-    Tbeta  = v.Ubeta * one_over_Vdc # v.Ubeta is in sense of amplitude invariant Clarke transformation
-    Tz     = v.Unot  * one_over_Vdc # duration of the added zero sequence voltage
+    Talpha = v.Ualfa * one_over_maximum_phase_voltage # v.Ualfa is in sense of amplitude invariant Clarke transformation
+    Tbeta  = v.Ubeta * one_over_maximum_phase_voltage # v.Ubeta is in sense of amplitude invariant Clarke transformation
+    Tz     = v.Unot  * one_over_maximum_phase_voltage # duration of the added zero sequence voltage
 
     # Inverse clarke transformation??
-    A = Tbeta # (It should really be 0.5*Tbeta) 0 degree line pointing at 0 degree
+    A =                     Tbeta # 0 degree line pointing at 0 degree
     C =  1.7320508*Talpha - Tbeta # C =  sin( 60/180*np.pi)*Talpha - sin(30/180*np.pi)*Tbeta
     B = -1.7320508*Talpha - Tbeta # B = -sin( 60/180*np.pi)*Talpha - sin(30/180*np.pi)*Tbeta
 
@@ -51,10 +54,10 @@ def SVGEN_DQ(v, one_over_Vdc, Unot=0.0):
     if (C > 0): Sector = Sector+2
     if (B > 0): Sector = Sector+4
 
-    # X,Y,Z calculations (Note an additional factor of 1.7320508 is introduced to be equivalent to normalizing Ualfa and Ubeta to a base value of Vdc/sqrt(3))
-    XXX =               Tbeta*1.7320508 # This is also the A line
-    YYY =  1.5*Talpha + Tbeta*0.8660254 # This is also the B line
-    ZZZ = -1.5*Talpha + Tbeta*0.8660254 # This is also the C line
+    # X,Y,Z calculations ()
+    XXX =                            Tbeta # This is also the A line
+    YYY =  0.86602540378444*Talpha + Tbeta*0.5 # This is also the B line
+    ZZZ = -0.86602540378444*Talpha + Tbeta*0.5 # This is also the C line
 
     if Sector == 0: # Sector 0: this is special case for (Ualfa,Ubeta) = (0,0)*/
         v.Ta = 0.5
@@ -202,7 +205,7 @@ def main():
     AMPL = 25
 
     # 测试1
-    for ANGLE in range(0, 360, 10):
+    for ANGLE in range(0, 360, 5):
 
         svgen1.Ualfa = AMPL * np.cos(ANGLE/180*np.pi)
         svgen1.Ubeta = AMPL * np.sin(ANGLE/180*np.pi)
@@ -217,15 +220,31 @@ def main():
             EPwm1Regs_CMPA_bit_CMPA, EPwm2Regs_CMPA_bit_CMPA, EPwm3Regs_CMPA_bit_CMPA, end=' | ')
         print(f'{svgen1.Ta=:.2f}, {svgen1.Tb=:.2f}, {svgen1.Tc=:.2f}')
 
+        # myTbeta = svgen1.Ta
+        myTbeta  = (svgen1.Tb + svgen1.Tc)
+        myTalpha = (svgen1.Tb - svgen1.Tc) / 1.7320508
+        plt.plot(myTalpha, myTbeta, '.')
+
+        myTalpha = (svgen1.Ta - 0.500*svgen1.Tb - 0.500*svgen1.Tc) * 2 / 3
+        myTbeta  = (            0.866*svgen1.Tb - 0.866*svgen1.Tc) * 2 / 3
+        plt.plot(myTalpha, myTbeta, 'o')
+        plt.gca().set_aspect('equal')
+    # plt.show()
+
+
     # 测试2
     # main loop
     CPU_TICK_PER_SAMPLING_PERIOD = 500
-    AMPL = 20 # V
-    ANGLE = 0 # deg
-    for ii in range(8*CPU_TICK_PER_SAMPLING_PERIOD):
+    AMPL = 25 # V
+    ANGLE = 90 # deg
+    plt.figure()
+    plt.gca().set_aspect('equal')
+    for ii in range(16*CPU_TICK_PER_SAMPLING_PERIOD):
 
         if ii%CPU_TICK_PER_SAMPLING_PERIOD == 0:
-            ANGLE += 1e-4 * 200000
+            # ANGLE += 1e-4 * 20e4
+            ANGLE += 1e-4 * 5e4
+
             svgen1.Ualfa = AMPL * np.cos(ANGLE/180*np.pi)
             svgen1.Ubeta = AMPL * np.sin(ANGLE/180*np.pi)
             SVGEN_DQ(svgen1, one_over_Vdc)
@@ -235,6 +254,8 @@ def main():
             svgen1.EPwm1Regs_CMPA_bit_CMPA = (int)(svgen1.Ta*CPU_TICK_PER_SAMPLING_PERIOD*0.5) #50000000*CL_TS)
             svgen1.EPwm2Regs_CMPA_bit_CMPA = (int)(svgen1.Tb*CPU_TICK_PER_SAMPLING_PERIOD*0.5) #50000000*CL_TS)
             svgen1.EPwm3Regs_CMPA_bit_CMPA = (int)(svgen1.Tc*CPU_TICK_PER_SAMPLING_PERIOD*0.5) #50000000*CL_TS)
+
+            plt.plot(svgen1.Ualfa, svgen1.Ubeta, 'o')
 
         gate_signal_generator(ii, svgen1, CPU_TICK_PER_SAMPLING_PERIOD=CPU_TICK_PER_SAMPLING_PERIOD, DEAD_TIME_AS_COUNT=200/10000*CPU_TICK_PER_SAMPLING_PERIOD)
 
@@ -262,7 +283,8 @@ def main():
     S5 = np.array(plot_register.data)[:, 8]
     S6 = np.array(plot_register.data)[:, 9]
 
-    plt.subplot(611); plt.ylabel(u'Carrier')
+    plt.subplots(sharex=True)
+    plt.subplot(611 ); plt.ylabel(u'Carrier')
     plt.plot(Carrier)
 
     plt.subplot(612); plt.ylabel(u'Terminal Voltage [V]')
@@ -284,6 +306,25 @@ def main():
     plt.subplot(616); plt.ylabel('S3, S6')
     plt.plot(S3, '--')
     plt.plot(S6, '--')
+
+
+
+    fig, axes = plt.subplots(5, 1, sharex=True)
+    axes[0].set_ylabel(u'Carrier')
+    axes[0].plot(Carrier)
+
+    axes[1].set_ylabel('S1')
+    axes[1].plot(S1, '--')
+
+    axes[2].set_ylabel('S2')
+    axes[2].plot(S2, '--')
+
+    axes[3].set_ylabel('S3')
+    axes[3].plot(S3, '--')
+
+    axes[4].set_ylabel('Zero')
+    # axes[4].plot(S1+S2+S3, '--')
+    axes[4].plot((U+V+W) * Vdc)
 
     plt.show()
 
