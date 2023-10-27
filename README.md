@@ -14,30 +14,67 @@ _Userful snippets (keeps updating)._
 
 3. restart wsl by opening a cmd.exe with admin privilege running command `wsl --shutdown`
 
-
 see
 
 `https://x410.dev/cookbook/wsl/disabling-wslg-or-using-it-together-with-x410/`
 
 
+# Drake + VS Code + WSL2
 
-# Drake
+Step 1, get WSL2.
+1. Type winkey (the Windows key between Ctrl and Alt), type `Turn Tindows Features on or off` and open, tick `Windows subsystem for Linux`. 
+2. Install Ubuntu 20.04 version from Microsoft Store.
+3. Retart and configure your Ubuntu (wsl).
+4. Check out "VMMEM 100% CPU Usage Issue" to avoid burning down you PC by disabling the GUI feature.
 
-https://drake.mit.edu/pydrake/pydrake.tutorials.html
-https://drake.mit.edu/python_bindings.html#using-the-python-bindings
 
+Step 2, get VS Code.
+In VS Code, install the extension named "WSL". It allows you to work with a terminal as if you are on an Ubuntu machine.
+
+Step 3, install pydrake.
+> https://drake.mit.edu/pydrake/pydrake.tutorials.html
+> https://drake.mit.edu/python_bindings.html#using-the-python-bindings
+
+The official steps are:
 ```bash
 ON WSL2 Ubuntu 20.04
 
 sudo apt-get update
 sudo apt install python3-pip
 sudo apt install python3.8-venv
-python3 -m venv main
-main/bin/pip install drake
-main/bin/pip install notebook
-main/python3 -m pydrake.tutorials
+
+# this will create a folder named "./main2" in the current directory "."
+python3 -m venv main2
+
+main2/bin/pip install drake
+main2/bin/pip install notebook
+main2/python3 -m pydrake.tutorials
 http://localhost:7000/
 ```
+BUT somehow I cannot enable my python3 venv encironment in wsl2. Instead, I run pydrake without setting an virtual environment.
+
+
+
+# Drake C++
+
+```bash
+  315  wget -qO- https://drake-apt.csail.mit.edu/drake.asc | gpg --dearmor -   | sudo tee /etc/apt/trusted.gpg.d/drake.gpg >/dev/null
+  316  echo "deb [arch=amd64] https://drake-apt.csail.mit.edu/$(lsb_release -cs) $(lsb_release -cs) main"   | sudo tee /etc/apt/sources.list.d/drake.list >/dev/null
+  317  sudo apt-get update
+  318  sudo apt-get install --no-install-recommends drake-dev
+  334  sudo apt-get --no-install-recommends install build-essential cmake
+  349  git clone git@github.com:RobotLocomotion/drake-external-examples.git
+  350  cd drake-external-examples/
+  352  cd drake_cmake_installed_apt/
+  353  mkdir build
+  354  cd build
+  355  cmake ..
+  356  make
+  357  explorer.exe .
+  358  ctest .
+```
+
+`https://github.com/RobotLocomotion/drake-external-examples/tree/main/drake_cmake_installed_apt`
 
 
 # os.path utility for Python
